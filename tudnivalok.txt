@@ -1,0 +1,10 @@
+install nodemon: sudo npm i -g nodemon // ez arra jó, hogy ne kelljen állandóan újraindítani a webszervert
+how to start webserver: nodemon ./index.js
+dependencies letöltése: npm i // ez a package.json mappában lévő dependencies-eket automatikusan letölti
+új projekt létrehozása: npm init // ezután meg kell adni projekt nevet stb, ha enter-t nyomunk a default értéket kapja meg -> ez kerül bele a package.json-ba
+node_modules mappa: ez tartalmazza a dependency-ket, itt látható a forráskódjuk is és ne töltsük fel pl. gitre hanem használjuk a package.json fájlt meg a npm i parancsot hogy leszedjünk mindent
+path.join(__dirname) == C:\Users\csaba\Desktop\OKJ VIZSGA\Project
+
+git:
+git init
+git remote add origin https://github.com/CsabaVK/okjproject.git
