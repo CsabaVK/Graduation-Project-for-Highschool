@@ -1,10 +1,14 @@
 {
   "name": "okjproject",
   "version": "1.0.0",
-  "description": "",
+  "description": "Csaba's project for a school assignment",
   "main": "index.js",
   "author": "Csaba Garaguly",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CsabaVK/okjproject.git"
+  },
   "dependencies": {
     "express": "^4.17.1"
   },
