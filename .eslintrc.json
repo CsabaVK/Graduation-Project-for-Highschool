@@ -18,5 +18,5 @@
         "linebreak-style": 0,
         "require-jsdoc": 0
     },
-    "ignorePatterns": ["public/bootstrap/", "node_modules/"]
+    "ignorePatterns": ["public/bootstrap/", "node_modules/", "public/fontawesome-5.12.1/"]
 }
