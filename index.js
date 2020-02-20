@@ -4,10 +4,8 @@ const app = express();
 const port = 3000;
 const path = require('path');
 
-// set routes
+// set and use routes
 const mainRoutes = require('./routes/main');
-
-// use routes
 app.use('/', mainRoutes);
 
 // set public folder to public
