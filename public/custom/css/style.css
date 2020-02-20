@@ -7,7 +7,7 @@ body {
 }
 
 .dropdown{
-    padding-right: 100px;
+    padding-right: 50px;
 }
 
 /* DROP BUTTON */
@@ -19,4 +19,13 @@ body {
 
 #exampleFormControlInput5{
     padding: 20px 300px;
+}
+
+/* ERROR */
+#searchBT{
+border-radius: 10px;
+}
+
+#LoginBT{
+    float: right;
 }
