@@ -1,0 +1,88 @@
+<nav class="navbar navbar-expand-sm bg-light">
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+
+        <!-- Logo -->
+        <!-- Size!!! -->
+        <a class="navbar-brand" href="#">
+        <img src="/public/img/CCCLogo.png" alt="Logo" id="Logo">
+        </a>
+
+        <!-- DROPDOWN -->
+        <!-- ICONS, POSTION, NO BUTTON -->
+      <div class="dropdown">
+        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Location
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+          <a class="dropdown-item">Country
+            <input class="form-control" type="text" placeholder="Example: Hungary" aria-label="Search">
+          </a>
+
+          <a class="dropdown-item" href="#">City
+            <input class="form-control" type="text" placeholder="Example: Budapest" aria-label="Search">
+          </a>
+
+        </div>
+        
+      </div>
+      <!-- ... -->
+
+      <!-- Underlined search bars with buttons -->
+      <form>
+        <div class="row">
+          <div class="col-md-9">
+            <input id="exampleFormControlInput5" placeholder="What're you searching for?" class="form-control form-control-underlined">
+          </div>
+          <div class="form-group col-md-3">
+            <button type="submit" id="searchBT" class="btn btn-primary rounded-pill btn-block shadow-sm">Search</button>
+          </div>
+        </div>
+      </form>
+      <!-- End -->
+
+      <!-- LOGIN BUTTON -->
+      <div class="">
+      <button onclick="document.getElementById('id01').style.display='block'" type="button" class="btn btn-info btn-lg" id="LoginBT">Login</button>
+      
+      <!-- POPUP -->
+      <div id="id01" class="modal">
+  
+        <form class="modal-content animate" action="/action_page.php" method="post">
+          <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="/public/img/LoginPopUpAvatar.png" alt="Avatar" class="avatar">
+          </div>
+      
+          <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+      
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+              
+            <button type="submit">Login</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+          </div>
+      
+          <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+          </div>
+        </form>
+      </div>
+      <!-- POPUP END -->
+
+      </div>
+      <!-- LogEND -->
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0 float-right">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    
+  </nav>
