@@ -1,3 +1,22 @@
 body {
     background-color: lightgoldenrodyellow;
 }
+
+#Logo{
+    width: 100px;
+}
+
+.dropdown{
+    padding-right: 100px;
+}
+
+/* DROP BUTTON */
+#dropdownMenuButton{
+    padding: 19px 40px;
+    font-size: 26px;
+    border-radius: 12px;
+}
+
+#exampleFormControlInput5{
+    padding: 20px 300px;
+}
