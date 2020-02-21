@@ -15,80 +15,100 @@
   
   <!-- FILTER-BAR -->
   <div class="" id="navbarSupportedContenFilter"> <!-- collapse-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-info p-0 pl-3">
+      <nav class="navbar navbar-light bg-info p-0 pl-3">
+      
+        <!-- !!! -->
+        <!-- phone dropwdown btn -->
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContenSec" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+
+        <!-- END phone btn-->
     
-      <!-- !!! -->
-      <!-- phone dropwdown btn -->
-      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContenSec" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button> -->
-
-      <!-- END phone btn-->
-  
-        <div class="col-5 form-inline">
-          <!-- BTN Advanced Filters -->
-          <button class="btn btn-warning mr-sm-2">Advanced Filters...</button>
-          <!-- End BTN AF -->
-          <!-- Dropdown -->
-          <div class="dropdown">
-            
-            <button class="btn btn-success dropdown-toggle mr-sm-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Sort By
-          </button>
-          <!-- dropdown items -->
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Standard Sorting</a>
-            <a class="dropdown-item" href="#">Best Deals</a>
-            <a class="dropdown-item disabled" href="#">Recommendation</a> 
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Milage: Ascending</a>
-            <a class="dropdown-item" href="#">Milage: Descending</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Date: Newest First</a>
-            <a class="dropdown-item" href="#">Date: Oldest First</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Price: Highest First</a>
-            <a class="dropdown-item" href="#">Price: Lowest First</a>
-          </div>
-          </div>
-          <!-- End Dropdwon -->
-          <!-- Refresh btn icon -->
-          <span class="btn btn-success mr-sm-2">
-            <span class="fas fa-sync-alt"></span>
-          </span>
-          <!-- Reset BTN ICON -->
-          <span class="btn btn-danger mr-sm-2">
-            <span class="fas fa-trash-alt"></span>
-          </span>
-        </div>
-        <div class="col-7">
-          <!-- PRE-FILTERS -->
-          <form class="form-inline my-2 my-lg-0 p-2">
-            <div class="row justify-content-end">
-              <div class="col-1 navbar-brand btn btn-outline-warning mr-1 p-1" data-toggle="tooltip" data-placement="bottom" title="First time"> <img src="/public/img/FirstTimersCar.png" class="img-fluid"></div>
-              <div class="col-1 navbar-brand btn btn-outline-warning mr-1 p-1"> <img src="/public/img/FirstTimersCar.png" class="img-fluid mx-auto"></div>
-              <div class="col-1 navbar-brand btn btn-outline-warning mr-1 p-1"> <img src="/public/img/FirstTimersCar.png" class="img-fluid mx-auto"></div>
-              <div class="col-1 navbar-brand btn btn-outline-warning mr-1 p-1"> <img src="/public/img/FirstTimersCar.png" class="img-fluid mx-auto"></div>
-              <div class="col-1 navbar-brand btn btn-outline-warning mr-1 p-1"> <img src="/public/img/FirstTimersCar.png" class="img-fluid mx-auto"></div>
-              <div class="col-1 navbar-brand btn btn-outline-warning mr-1 p-1"> <img src="/public/img/FirstTimersCar.png" class="img-fluid mx-auto"></div>
-              <div class="col-1 navbar-brand btn btn-outline-warning mr-1 p-1"> <img src="/public/img/FirstTimersCar.png" class="img-fluid mx-auto"></div>
-              <div class="col-1 navbar-brand btn btn-outline-warning mr-1 p-1"> <img src="/public/img/FirstTimersCar.png" class="img-fluid mx-auto"></div>
-              <div class="col-1 navbar-brand btn btn-outline-warning mr-1 p-1"> <img src="/public/img/FirstTimersCar.png" class="img-fluid mx-auto"></div>
+          <div class="col-5 form-inline">
+            <!-- BTN Advanced Filters -->
+            <button class="btn btn-warning mr-sm-2">Advanced Filters...</button>
+            <!-- End BTN AF -->
+            <!-- Dropdown -->
+            <div class="dropdown">
+              
+              <button class="btn btn-success dropdown-toggle mr-sm-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sort By
+            </button>
+            <!-- dropdown items -->
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Standard Sorting</a>
+              <a class="dropdown-item" href="#">Best Deals</a>
+              <a class="dropdown-item disabled" href="#">Recommendation</a> 
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Milage: Ascending</a>
+              <a class="dropdown-item" href="#">Milage: Descending</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Date: Newest First</a>
+              <a class="dropdown-item" href="#">Date: Oldest First</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Price: Highest First</a>
+              <a class="dropdown-item" href="#">Price: Lowest First</a>
             </div>
-          </form>
-        </div>
+            </div>
+            <!-- End Dropdwon -->
+            <!-- Refresh btn icon -->
+            <span class="btn btn-success mr-sm-2">
+              <span class="fas fa-sync-alt"></span>
+            </span>
+            <!-- Reset BTN ICON -->
+            <span class="btn btn-danger mr-sm-2">
+              <span class="fas fa-trash-alt"></span>
+            </span>
+          </div>
+          <div class="col-7">
+            <!-- PRE-FILTERS -->
+            <form class="form-inline my-2 my-lg-0 p-2">
+              <div class="row justify-content-end">
+                <!-- Icons -->
+                <div class="col-1 navbar-brand btn btn-outline-warning mr-1 p-1" data-toggle="tooltip" data-placement="bottom" title="First time"> 
+                  <img src="/public/img/FirstTimersCar.png" class="img-fluid">
+                </div>
+                <div class="col-1 navbar-brand btn btn-outline-warning mr-1 p-1" data-toggle="tooltip" data-placement="bottom" title="First time"> 
+                  <img src="/public/img/FirstTimersCar.png" class="img-fluid">
+                </div>
+                <div class="col-1 navbar-brand btn btn-outline-warning mr-1 p-1" data-toggle="tooltip" data-placement="bottom" title="First time"> 
+                  <img src="/public/img/FirstTimersCar.png" class="img-fluid">
+                </div>
+                <div class="col-1 navbar-brand btn btn-outline-warning mr-1 p-1" data-toggle="tooltip" data-placement="bottom" title="First time"> 
+                  <img src="/public/img/FirstTimersCar.png" class="img-fluid">
+                </div>
+                <div class="col-1 navbar-brand btn btn-outline-warning mr-1 p-1" data-toggle="tooltip" data-placement="bottom" title="First time"> 
+                  <img src="/public/img/FirstTimersCar.png" class="img-fluid">
+                </div>
+                <div class="col-1 navbar-brand btn btn-outline-warning mr-1 p-1" data-toggle="tooltip" data-placement="bottom" title="First time"> 
+                  <img src="/public/img/FirstTimersCar.png" class="img-fluid">
+                </div>
+                <div class="col-1 navbar-brand btn btn-outline-warning mr-1 p-1" data-toggle="tooltip" data-placement="bottom" title="First time"> 
+                  <img src="/public/img/FirstTimersCar.png" class="img-fluid">
+                </div>
+                <div class="col-1 navbar-brand btn btn-outline-warning mr-1 p-1" data-toggle="tooltip" data-placement="bottom" title="First time"> 
+                  <img src="/public/img/FirstTimersCar.png" class="img-fluid">
+                </div>
+                <div class="col-1 navbar-brand btn btn-outline-warning mr-1 p-1" data-toggle="tooltip" data-placement="bottom" title="First time"> 
+                  <img src="/public/img/FirstTimersCar.png" class="img-fluid">
+                </div>
+                
+              </div>
+            </form>
+          </div>
 
-      <!-- ONLY SEEN IN PHONE MODE -->
-      <!-- <div class="" id="navbarSupportedContenSec">
-        <ul class="navbar-nav mr-auto">
-          <button class="btn btn-outline-danger">asd</button>
-          <button class="btn btn-outline-danger">asd</button>
-        </ul> -->
-        <!-- END PHONE MODE -->
-        
-        
-      </div>
-    </nav>
+        <!-- ONLY SEEN IN PHONE MODE -->
+        <!-- <div class="" id="navbarSupportedContenSec">
+          <ul class="navbar-nav mr-auto">
+            <button class="btn btn-outline-danger">asd</button>
+            <button class="btn btn-outline-danger">asd</button>
+          </ul> -->
+          <!-- END PHONE MODE -->
+          
+          
+        </div>
+      </nav>
   </div>
   <!-- END FILTERBAR -->
 

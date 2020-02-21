@@ -1,3 +1,6 @@
 .mycontent-left {
   border-right: 20px solid #333;
 }
+#navMaxHeight{
+  max-height: 65px;
+}
