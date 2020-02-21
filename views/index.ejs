@@ -14,32 +14,89 @@
   
   
   <!-- FILTER-BAR -->
-  <div class="" id="navbarSupportedContenFilter">
+  <div class="" id="navbarSupportedContenFilter"> <!-- collapse-->
     <nav class="navbar navbar-expand-lg navbar-light bg-info">
     
   
       <!-- phone dropwdown btn -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContenSec" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContenSec" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button> -->
       <!-- END phone btn-->
     
-      <button class="btn btn-outline-danger">asd2</button>
+      <ul class="navbar-nav mr-auto">
 
+      <!-- BTN Advanced Filters -->
+      <button class="btn btn-warning mr-sm-2">Advanced Filters...</button>
+      <!-- End BTN AF -->
+
+      <!-- Dropdown -->
+      <div class="dropdown">
+        
+        <button class="btn btn-success dropdown-toggle mr-sm-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sort By
+        </button>
+        <!-- dropdown items -->
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Standard Sorting</a>
+          <a class="dropdown-item" href="#">Best Deals</a>
+          <a class="dropdown-item disabled" href="#">Recommendation</a> 
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Milage: Ascending</a>
+          <a class="dropdown-item" href="#">Milage: Descending</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Date: Newest First</a>
+          <a class="dropdown-item" href="#">Date: Oldest First</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Price: Highest First</a>
+          <a class="dropdown-item" href="#">Price: Lowest First</a>
+        </div>
+      </div>
+      <!-- End Dropdwon -->
+
+      <!-- Refresh btn icon -->
+      <span class="btn btn-success mr-sm-2">
+        <span class="fas fa-sync-alt"></span>
+      </span>
+
+      <!-- Reset BTN ICON -->
+      <span class="btn btn-danger mr-sm-2">
+        <span class="fas fa-trash-alt"></span>
+      </span>
+
+
+      </ul>
+
+      <!-- PRE-FILTERS -->
+      <form class="form-inline my-2 my-lg-0">
+        <div class="countainer border-danger">
+
+          <div class="row border-warning">
+
+            <div class="col border border-dark "><span class="navbar-brand"> <img src="/public/img/FirstTimersCar.png" alt="" width="30" height="30"></span></div>
+            <div class="col border border-dark"><span class="navbar-brand"> <img src="/public/img/FirstTimersCar.png" alt="" width="30" height="30"></span></div>
+            <div class="w-50"></div>
+            
+            
+            <div class="col border border-success">First-Timer's Car</div>
+            <div class="col border border-success">First-Timer's Car</div>
+            <div class="w-50"></div>
+
+          </div>
+        </div>
+        <!-- <div class="col"><span class="navbar-brand"> <img src="/public/img/FirstTimersCar.png" alt="" width="50" height="30"></span></div>
+        <div class="col"><span class="navbar-brand"> <img src="/public/img/FirstTimersCar.png" alt="" width="50" height="30"></span></div> -->
+
+          
+      </form>
+
+      <!-- ONLY SEEN IN PHONE MODE -->
       <div class="collapse" id="navbarSupportedContenSec">
         <ul class="navbar-nav mr-auto">
-    
-          <button class="btn btn-outline-danger">asd</button>
-
           <button class="btn btn-outline-danger">asd</button>
           <button class="btn btn-outline-danger">asd</button>
-          <button class="btn btn-outline-danger">asd</button>
-          <button class="btn btn-outline-danger">asd</button>
-          <button class="btn btn-outline-danger">asd</button>
-          <button class="btn btn-outline-danger">asd</button>
-    
         </ul>
-    
+        <!-- END PHONE MODE -->
         
         
       </div>
