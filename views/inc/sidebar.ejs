@@ -1,12 +1,42 @@
 <!-- Sidebar Holder -->
-  <!-- Delete active for dev mode -->
-  <nav id="sidebar" class="active">
-      <div class="sidebar-header">
-          <h3>Bootstrap Sidebar</h3>
+  <nav id="sidebar" class=" filterbarbg"> <!-- Delete active for dev mode -->
+      <div class="p-3 filterbarbg">
+          <h3>Advanced Filter</h3>
+          
+          <form class="form-inline mb-2">
+            <h6 class="pr-2 text-center m-0 ">Make</h6>
+              <select class="custom-select short-select">
+                <option selected disabled>--Select--</option>
+                <option value="1">Audi</option>
+                <option value="2">Tesla</option>
+                <option value="3">BMW</option>
+                <option value="3">Kia</option>
+                <option value="3">Opel</option>
+                <option value="3">Maserati</option>
+              </select>
+          </form>
+
+          <form class="form-inline">
+            <h6 class="pr-2 text-center m-0 ">Model</h6>
+              <select class="custom-select short-select" disabled>
+                <option selected disabled>--Select--</option>
+                <option value="1">Astra</option>
+                <option value="2">TT</option>
+                <option value="3">TTS</option>
+                <option value="3">Model 3</option>
+                <option value="3">Superb</option>
+                <option value="3">I8</option>
+              </select>
+          </form>
+
       </div>
 
-      <ul class="list-unstyled components">
-          <p>Dummy Heading</p>
+      <ul class="list-unstyled components p-2">
+          <p class="m-0">Dummy Heading</p>
+          <p>Make
+            
+          </p>
+
           <li class="active">
               <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
               <ul class="collapse list-unstyled" id="homeSubmenu">
