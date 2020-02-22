@@ -57,10 +57,13 @@
 ----------------------------------------------------- */
 @media (max-width: 768px) {
     #sidebar {
-        margin-left: -250px;
+        min-width: 250px;
+        max-width: 600px;
+        color: #fff;
+        transition: all 0.3s;
     }
     #sidebar.active {
-        margin-left: 0;
+        margin-left: -250px;
     }
     #sidebarCollapse span {
         display: none;
