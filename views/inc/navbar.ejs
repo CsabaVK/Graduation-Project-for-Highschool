@@ -19,7 +19,7 @@
 
       <!-- FILTER BTN -->
       <li class="nav-item mr-sm-3 my-2">
-        <span class="btn btn-outline-info my-2 btn-lg" data-toggle="collapse" data-target="#navbarSupportedContenFilter">
+        <span class="btn btn-outline-info my-2 btn-lg dropdown-toggle" data-toggle="collapse" data-target="#navbarSupportedContenFilter">
           <span class="fas fa-filter"></span> Filters <span class="sr-only">(current)</span></span>
       </li>
       <!-- END FILTER BTN -->
@@ -45,9 +45,23 @@
     </ul>
 
     <form class="form-inline my-2 my-lg-0">
+      <!-- Language -->
+      <div class="dropdown">
+        <span class="btn btn-secondary dropdown-toggle btn-lg my-2 my-sm-0 mr-sm-3 my-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="fas fa-globe"></span> English
+        </span>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">(EN) English</a>
+          <a class="dropdown-item disabled" href="#">(HU) Hungarian</a>
+        </div>
+      </div>
+      <!-- END Languagebtn -->
+
+
       <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
       <!-- LOGIN BUTTONN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
       <span class="btn btn-primary btn-lg my-2 my-sm-0" data-toggle="modal" data-target="#loginModal">Login</span>
+
     </form>
 
   </div>
