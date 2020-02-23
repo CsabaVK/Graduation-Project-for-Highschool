@@ -1,5 +1,7 @@
-.mycontent-left {
-  border-right: 20px solid #333;
+.borderonmain {
+  border-right: 6px solid #333;
+  border-left: 6px solid #333;
+  border-bottom: 6px solid #333;
 }
 
 .filterbarbg{
@@ -18,4 +20,12 @@
 
 .short-select{
   max-width: 170px;
+}
+
+.maintitle{
+  background-color: #333;
+}
+
+.maintitle:hover{
+  background-color: #333;
 }
