@@ -8,4 +8,9 @@ router.get('/', (req, res) => {
   // res.send('Hello World!');
 });
 
+router.get('/profile', (req, res) => {
+  res.render('profile');
+});
+
+
 module.exports = router;
