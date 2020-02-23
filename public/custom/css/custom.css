@@ -39,3 +39,9 @@
 .scrollbarfix {
   overflow: auto;
 } */
+
+.avatarpic{
+  width: 48px;
+  object-fit: cover;
+  height: 48px;
+  }
