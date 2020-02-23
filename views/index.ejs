@@ -18,7 +18,6 @@
 </head>
 <body>
   <%- include('inc/navbar'); -%>
-  <%- include('inc/navbardefault'); -%>
   <%- include('inc/filterbar'); -%>
 
   <!-- SIDEBAR -->
@@ -32,7 +31,18 @@
       <div class="row mr-0 ml-0">
         <div class="col borderonmain p-0">
 
-          <h3 class="text-center m-0 p-2 d-block maintitle rounded-0 text-white">Market Site</h3>
+          <!-- TITLE XDDDD -->
+          <div class="row maintitle m-0">
+            <div class="col-3"></div>
+            <div class="col-6 text-white text-center m-0 p-2 maintitle">
+              <h3 class="m-0">Market site</h3>
+            </div>
+            <div class="col-3 p-0">
+              <div class="float-right pt-1 pb-1 pr-2 h-100">
+                <button class="btn btn-outline-success h-100"><span class="fas fa-hand-holding-usd"></span> Sell your car</button>
+              </div>
+            </div>
+          </div>
 
           <!-- FIRST CAR -->
           <div class="card mb-3 m-4 ml-4">
@@ -331,7 +341,18 @@
         </div>
         <div class="col borderonmain p-0">
 
-          <h3 class="text-center m-0 p-2 d-block maintitle rounded-0 text-white">Forum Site</h3>
+          <!-- TITLE Forum-->
+          <div class="row maintitle m-0">
+            <div class="col-4 p-0">
+              <div class="float-left pt-1 pb-1 pl-2 h-100">
+                <button class="btn btn-outline-success h-100"><span class="fas fa-scroll"></span> Create a thread</button>
+              </div>
+            </div>
+            <div class="col-4 text-white text-center m-0 p-2 maintitle">
+              <h3 class="m-0">Forum Site</h3>
+            </div>
+            <div class="col-4"></div>
+          </div>
 
           <!-- FIRST CAR -->
           <div class="card mb-3 m-4 ml-4">
