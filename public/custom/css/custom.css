@@ -1,7 +1,13 @@
+/* body{
+  overflow: hidden;
+} */
+
 .borderonmain {
   border-right: 6px solid #333;
   border-left: 6px solid #333;
   border-bottom: 6px solid #333;
+  /* height: 100%;
+  overflow-y: scroll; */
 }
 
 .filterbarbg{
@@ -29,3 +35,7 @@
 .maintitle:hover{
   background-color: #333;
 }
+/* 
+.scrollbarfix {
+  overflow: auto;
+} */

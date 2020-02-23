@@ -6,4 +6,11 @@
 <script type="text/javascript">
   // this is required for tooltips (used in filterbar)
   $("[data-toggle=\"tooltip\"]").tooltip();
+
+  //SIDEBAR TOGGLE
+  $(document).ready(function () {
+      $('#sidebarCollapse').on('click', function () {
+          $('#sidebar').toggleClass('active');
+      });
+  });
 </script>
