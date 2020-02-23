@@ -13,4 +13,10 @@
           $('#sidebar').toggleClass('active');
       });
   });
+
+  function closeSidebar() {
+    if (!$('#sidebar').hasClass('active')) {
+      $('#sidebarCollapse').click();
+    }
+  }
 </script>
