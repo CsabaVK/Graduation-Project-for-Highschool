@@ -6,35 +6,37 @@
         <h3 class="pb-2">Advanced Filter</h3>
       </div>
 
-          <hr class="maintitle mt-0">
-          <form class="form-inline mb-2">
-            <h6 class="pr-2 text-center m-0">Make</h6>
-              <select class="custom-select short-select">
-                <option selected disabled>--Select--</option>
-                <option value="1">Audi</option>
-                <option value="2">Tesla</option>
-                <option value="3">BMW</option>
-                <option value="4">Kia</option>
-                <option value="5">Opel</option>
-                <option value="6">Maserati</option>
-              </select>
-          </form>
+        <hr class="maintitle mt-0">
+        <form class="form-inline mb-2">
+          <h6 class="pr-2 text-center m-0">Make</h6>
+            <select class="custom-select short-select">
+              <option selected disabled>--Select--</option>
+              <option value="1">Audi</option>
+              <option value="2">Tesla</option>
+              <option value="3">BMW</option>
+              <option value="4">Kia</option>
+              <option value="5">Opel</option>
+              <option value="6">Maserati</option>
+            </select>
+        </form>
 
-          <form class="form-inline">
-            <h6 class="pr-2 text-center m-0">Model</h6>
-              <select class="custom-select short-select" disabled>
-                <option selected disabled>--Select--</option>
-                <option value="1">Astra</option>
-                <option value="2">TT</option>
-                <option value="3">TTS</option>
-                <option value="4">Model 3</option>
-                <option value="5">Superb</option>
-                <option value="6">I8</option>
-              </select>
-          </form>
+        <form class="form-inline">
+          <h6 class="pr-2 text-center m-0">Model</h6>
+            <select class="custom-select short-select" disabled>
+              <option selected disabled>--Select--</option>
+              <option value="1">Astra</option>
+              <option value="2">TT</option>
+              <option value="3">TTS</option>
+              <option value="4">Model 3</option>
+              <option value="5">Superb</option>
+              <option value="6">I8</option>
+            </select>
+        </form>
 
           <hr>
 
+          <!-- PRICE -->
+          <h4 class="pb-2 text-center align-content-center">Prices</h4>
           <div class="form-inline pb-2">
             <h6 class="pr-2 text-center m-0">Price Min</h6>
           </div>
@@ -56,9 +58,12 @@
               <span class="input-group-text" id="basic-addon2 ">$</span>
             </div>
           </div>
+          <!-- END PRICE -->
 
           <hr>
-
+          
+          <!-- MILEAGE -->
+          <h4 class="pb-2 text-center align-content-center">Mileages</h4>
           <div class="form-inline pb-2">
             <h6 class="pr-2 text-center m-0">Min Mileage</h6>
           </div>
@@ -80,28 +85,66 @@
               <span class="input-group-text" id="basic-addon2 ">km</span>
             </div>
           </div>
+          <!-- END MILEAGE -->
 
           <hr>
 
-          <div class="form-inline pb-2 pt-2">
+          <!-- YEARRS -->
+          <h4 class="pb-2 text-center align-content-center">Others</h4>
+          <div class="form-inline pb-2 pt-0">
             <h6 class="pr-2 text-center m-0">Year</h6>
           </div>
           <div class="form-inline">
             <input type="number" value="" min="1900" step="1" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency w-43-5" placeholder="Year">
             <span class="p-2"> - </span>
             <input type="number" value="" min="2021" step="1" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency w-43-5" placeholder="Year">
+          </div>
+          <!-- END YEARS -->
+
+          <!-- DOORS & SEATS -->
+          <div class="row">
+          <div class="col-6 pt-2 pb-2">
+            <h6 class=" m-0">Doors</h6>
+
+          </div>
+          <div class="col-6 pt-2 pb-2">
+            <h6 class=" m-0">Seats</h6>
+          </div>
+          </div>
+
+          <div class="form-inline">
+          </div>
+          <div class="form-inline">
+            <input type="number" value="" min="1900" step="1" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency w-43-5 pr-1" placeholder="Doors">
+            <span class="p-2"> & </span>
+            <input type="number" value="" min="2021" step="1" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency w-43-5" placeholder="Seats">
+          </div>
+          <!-- END D & S-->
+
+          <!-- CM3 -->
+          <div class="form-inline pb-2">
+            <h6 class="pr-2 text-center m-0">Min Cubic Capacity</h6>
+          </div>
+          <div class="form-inline input-group">
+            <input type="number" value="" min="0" step="1" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency w-25" placeholder="Ex: 1600 Cm3">
+            <!-- ADDON -->
+            <div class="input-group-append">
+              <span class="input-group-text" id="basic-addon2 ">Cm3</span>
             </div>
 
-            <div class="form-inline pb-2 pt-2">
-              <h6 class="pr-2 text-center m-0">Year</h6>
+          </div>
+          <div class="form-inline pb-2">
+            <h6 class="pr-2 text-center m-0 pt-2">Max Cubic Capacity</h6>
+          </div>
+          <div class="form-inline input-group">
+            <input type="number" value="" min="0" step="1" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency w-25" placeholder="Ex: 3200 Cm3">
+            <!-- ADDON -->
+            <div class="input-group-append">
+              <span class="input-group-text" id="basic-addon2 ">Cm3</span>
             </div>
-            <div class="form-inline">
-              <input type="number" value="" min="1900" step="1" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency w-43-5" placeholder="Year">
-              <span class="p-2"> - </span>
-              <input type="number" value="" min="2021" step="1" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency w-43-5" placeholder="Year">
-              </div>
+          </div>
+          <!-- END CM3 -->
 
-          
 
         <!-- !! -->
       </div>
