@@ -20,6 +20,7 @@ transition: all 0.3s;
 }
 /* ------------------------- */
 
+/* FOR MAIN BORDERS */
 .borderonmain {
   border-right: 6px solid #333;
   border-left: 6px solid #333;
