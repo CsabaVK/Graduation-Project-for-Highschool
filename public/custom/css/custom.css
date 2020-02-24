@@ -2,6 +2,12 @@
   overflow: hidden;
 } */
 
+/* Filterbar timer */
+#navbarSupportedContenFilter{
+transition: all 0.3s;
+}
+
+/* FOR STARS AND TAGS/BADGES */
 .checked {
   color: orange;
 }
@@ -12,6 +18,7 @@
   background-color: purple;
   color: white;
 }
+/* ------------------------- */
 
 .borderonmain {
   border-right: 6px solid #333;
