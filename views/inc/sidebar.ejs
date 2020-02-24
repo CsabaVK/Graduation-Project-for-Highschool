@@ -1,8 +1,12 @@
 <!-- Sidebar Holder -->
   <nav id="sidebar" class="active filterbarbg"> <!-- Delete "active" for dev mode -->
-      <div class="p-3">
-          <h3>Advanced Filter</h3>
-          
+    <div class="pt-0 pl-3 pr-3">
+      <!-- title with bg bar -->
+      <div class="row m-0">
+        <h3 class="pb-2">Advanced Filter</h3>
+      </div>
+
+          <hr class="maintitle mt-0">
           <form class="form-inline mb-2">
             <h6 class="pr-2 text-center m-0 ">Make</h6>
               <select class="custom-select short-select">
@@ -29,11 +33,15 @@
               </select>
           </form>
 
+          <hr>
+
           <div class="form-row">
-            <label for="c2">Currency w bootstrap</label>
-           <div class="input-group-addon"> 
-            <span class=" input-group">$</span>
-            <input type="number" value="" min="0" step="1" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" id="c2">
+            <label>Price Min</label>
+            <input type="number" value="" min="0" step="1" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" placeholder="Example: 10 000">
+
+            <div>Price Max</div>
+            <input type="number" value="" min="0" step="1" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" placeholder="Example: 30 000">
+
           </div>
 
         <!-- !! -->
