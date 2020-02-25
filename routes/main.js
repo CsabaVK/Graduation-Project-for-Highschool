@@ -3,7 +3,11 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('index');
+  const marketAds = require('../market.example.json');
+  // res.json(marketAds);
+  res.render('index', {
+    marketAds: marketAds,
+  });
   // res.sendFile(path.join(__dirname + '/views/index.html'));
   // res.send('Hello World!');
 });
