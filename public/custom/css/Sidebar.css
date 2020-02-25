@@ -69,3 +69,15 @@
         display: none;
     }
 }
+/* 
+@media (max-width: 1440px) {
+    #sidebar.active {
+        margin-left: -270px;
+    }
+}
+
+@media (max-width: 2560px) {
+    #sidebar.active {
+        margin-left: -477px;
+    }
+} */
