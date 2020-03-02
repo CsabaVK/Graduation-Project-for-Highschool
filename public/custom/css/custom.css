@@ -11,6 +11,9 @@ transition: all 0.3s;
 .fa-check-circle {
   color: greenyellow;
 }
+.fa-times-circle{
+  color: red;
+}
 
 /* FOR STARS AND TAGS/BADGES */
 .checked {
