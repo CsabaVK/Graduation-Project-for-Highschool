@@ -11,31 +11,6 @@
         <div class="modal-body">
             <form>
 
-            <div class="form-group row">
-                
-
-                <label class="col-sm-2 col-form-label">Name</label>
-
-                <div class="col-sm-10 ">
-                    <input type="text" class="form-control" placeholder="Your Username">
-                    <input type="text" class="form-control" placeholder="Your Username">
-                </div>
-            </div>
-
-            <div class="input-group">
-                <div class="col-sm-2">
-                    <span class="" id="">Name</span>
-
-                </div>
-                <div class="input-group-prepend">
-                </div>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control">
-                    
-                </div>
-                <input type="text" class="form-control">
-              </div>
-
             <!-- <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="">First and last name</span>
@@ -51,8 +26,6 @@
                 </div>
             </div>
     
-            <hr>
-    
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Re-Password</label>
                 <div class="col-sm-10">
@@ -60,6 +33,15 @@
                 </div>
             </div>
     
+            <hr>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Phone</label>
+                <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Phone number">
+                </div>
+            </div>
+
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">E-mail</label>
                 <div class="col-sm-10">
@@ -77,10 +59,19 @@
                     console.log(today);
                     document.write('<input type="date" name="bday" max="'+today+'" min="1900-01-01" class="form-control">');
                 </script> -->
-                <input type="date" name="bday" max="2030-12-31" min="1900-01-01" class="form-control">
+                <input type="date" name="bday" max="2030-12-31" min="1900-01-01" class="form-control" placeholder="YYYY.MM.DD">
                 </div>
             </div>
     
+            <hr>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Country</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="Your Country">
+                </div>
+            </div>
+
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Language</label>
                 <div class="col-sm-10">
@@ -94,8 +85,7 @@
         </div>
         <div class="modal-footer justify-content-center">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-warning">Register</button>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal" data-dismiss="modal">Back to Login</button>
+            <button type="button" class="btn btn-primary">Save Changes</button>
         </div>
         </div>
     </div>

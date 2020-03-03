@@ -7,6 +7,19 @@
 transition: all 0.3s;
 }
 
+/* profile bg static */
+.bgprof {
+  background-color: blanchedalmond;
+}
+
+/* FOR STATICS COLOR */
+.fa-check-circle {
+  color: greenyellow;
+}
+.fa-times-circle{
+  color: red;
+}
+
 /* FOR STARS AND TAGS/BADGES */
 .checked {
   color: orange;
