@@ -14,18 +14,35 @@
     margin: -90px 10px 0px 50px;
     z-index: 9;
     width: 20%;
+    max-width: 200px;
+    max-height: 200px;
 }
 
-@media (max-width:768px) {    
-.fb-profile-text>h1{
-    font-weight: 700;
-    font-size:16px;
+.geciquoutemar{
+    margin-top: 5px;
 }
 
-.fb-image-profile
-{
-    margin: -45px 10px 0px 25px;
-    z-index: 9;
-    width: 30%; 
+@media (max-width:1200px) {    
+    .fb-profile-text>h1{
+        font-weight: 700;
+        font-size:16px;
+    }
+
+    .fb-image-profile
+    {
+        margin: -45px 10px 0px 25px;
+        z-index: 9;
+        width: 30%; 
+        margin-bottom: 20px;
+        max-width: 175px;
+        max-height: 175px;
+        min-width: 125px;
+        min-height: 125px;
+    }
+
+    .geciquoutemar{
+        margin-top: 50px;
+    }
 }
-}
+
+
