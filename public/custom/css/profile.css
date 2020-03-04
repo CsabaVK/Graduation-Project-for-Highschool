@@ -51,3 +51,9 @@
     border: 1px solid #F2F2F2;
 }
 
+.avatarpic-comment{
+    width: 35px;
+    object-fit: cover;
+    height: 35px;
+  }
+
