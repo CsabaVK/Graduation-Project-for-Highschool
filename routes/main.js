@@ -16,5 +16,9 @@ router.get('/profile', (req, res) => {
   res.render('profile');
 });
 
+router.get('/hirdetes', (req, res) => {
+  res.render('hirdetesMegtekint');
+});
+
 
 module.exports = router;
