@@ -22,6 +22,10 @@
     margin-top: 5px;
 }
 
+.profpage {
+    min-height: 830px;
+}
+
 @media (max-width:1200px) {    
     .fb-profile-text>h1{
         font-weight: 700;
