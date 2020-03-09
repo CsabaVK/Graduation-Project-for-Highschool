@@ -19,9 +19,16 @@
         <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
 
           <!-- ROW 1 TAGS -->
-          <p class="card-text mb-1 badge badge-primary">Salon</p>
+          <!-- <p class="card-text mb-1 badge badge-primary">Salon</p>
           <p class="card-text mb-1 badge badge-success">Electric</p>
-          <p class="card-text mb-1 badge badge-secondary">AWD</p>
+          <p class="card-text mb-1 badge badge-secondary">AWD</p> -->
+          <p class="card-text mb-1 badge badge-primary"><%- marketAd.tags[0] -%></p>
+          <p class="card-text mb-1 badge badge-success"><%- marketAd.tags[1] -%></p>
+          <p class="card-text mb-1 badge badge-primary"><%- marketAd.tags[2] -%></p>
+          <p class="card-text mb-1 badge badge-primary"><%- marketAd.tags[3] -%></p>
+          <p class="card-text mb-1 badge badge-primary"><%- marketAd.tags[4] -%></p>
+          <p class="card-text mb-1 badge badge-primary"><%- marketAd.tags[5] -%></p>
+
 
           <!-- ROW 2 Fuel type, year, cubic cap, hp, km -->
           <p class="card-text mb-0"><%- marketAd.fuel -%>, <%- marketAd.year -%>, <%- marketAd.hp -%> HP, <%- marketAd.km -%> km</p>
