@@ -2,6 +2,7 @@
 <div class="modal fade bd-example-modal-lg" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalTitle" aria-hidden="true">
 <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
+        <form method="POST" action="/account/register"> <!-- POST to /account/register -->
     <div class="modal-header">
         <h5 class="modal-title" id="registerModalTitle">Login / Register</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -9,19 +10,18 @@
         </button>
     </div>
     <div class="modal-body">
-        <form>
         <div class="form-group row">
 
             <label class="col-sm-2 col-form-label">Username</label>
             <div class="col-sm-10">
-            <input type="text" class="form-control" placeholder="Your Username">
+            <input type="text" class="form-control" name="username" placeholder="Your Username">
             </div>
         </div>
 
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-10">
-            <input type="password" class="form-control" placeholder="Your Password">
+            <input type="password" class="form-control" name="password" placeholder="Your Password">
             </div>
         </div>
 
@@ -30,14 +30,14 @@
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Re-Password</label>
             <div class="col-sm-10">
-            <input type="password" class="form-control" placeholder="Password Again">
+            <input type="password" class="form-control" name="password2" placeholder="Password Again">
             </div>
         </div>
 
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">E-mail</label>
             <div class="col-sm-10">
-            <input type="email" class="form-control" placeholder="E-mail">
+            <input type="email" class="form-control" name="email" placeholder="E-mail">
             </div>
         </div>
 
@@ -51,26 +51,26 @@
                 console.log(today);
                 document.write('<input type="date" name="bday" max="'+today+'" min="1900-01-01" class="form-control">');
             </script> -->
-            <input type="date" name="bday" max="2030-12-31" min="1900-01-01" class="form-control">
+            <input type="date" name="birth_date" max="2030-12-31" min="1900-01-01" class="form-control">
             </div>
         </div>
 
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Language</label>
             <div class="col-sm-10">
-            <select class="form-control" disabled>
-                <option>English</option>
+            <select class="form-control" name="languageselector" disabled>
+                <option name="English">English</option>
             </select>
             </div>
         </div>
 
-        </form>
     </div>
     <div class="modal-footer justify-content-center">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-warning">Register</button>
+        <button type="submit" class="btn btn-warning">Register</button>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal" data-dismiss="modal">Back to Login</button>
     </div>
+</form>
     </div>
 </div>
 </div>

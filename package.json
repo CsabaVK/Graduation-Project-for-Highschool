@@ -10,9 +10,12 @@
     "url": "https://github.com/CsabaVK/okjproject.git"
   },
   "dependencies": {
+    "cookie-session": "^1.4.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "password-hash": "^1.2.2",
+    "sync-sql": "^1.0.2"
   },
   "devDependencies": {
     "eslint": "^6.8.0",

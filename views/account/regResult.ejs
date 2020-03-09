@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../inc/head'); -%>
+  <title>Car Clutch Club</title>
+</head>
+
+<body>
+  <%- include('../inc/navbarMainLogout'); -%>
+
+  <!-- MAIN -->
+  <div class="container-fluid">
+    <% if (errorMessage) { %>
+      <div class="alert alert-danger" role="alert">
+        <%= errorMessage %>
+      </div>
+    <% } else if (successMessage) { %>
+      <div class="alert alert-success" role="alert">
+        <%= successMessage %>
+      </div>
+    <% } else { %>
+      <div class="alert alert-danger" role="alert">
+        Something went wrong!
+      </div>
+    <% } %>
+  </div>
+
+  <%- include('../inc/scripts'); -%>
+
+</body>
+
+</html>

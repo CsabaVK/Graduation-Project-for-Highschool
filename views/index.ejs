@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <%- include('inc/head'); -%>
   <title>Car Clutch Club</title>
@@ -13,87 +14,92 @@
     }*/
   </style>
 </head>
+
 <body>
-  <%- include('inc/navbarMainLogin'); -%>
+  <%- include('inc/navbarMainLogout'); -%>
   <%- include('inc/filterbar'); -%>
 
   <!-- SIDEBAR -->
-<div class="wrapper">
-  <%- include('inc/sidebar'); -%>
-  <!-- SIDEBAR CONTENT -->
-  <div class="content">
+  <div class="wrapper">
+    <%- include('inc/sidebar'); -%>
+    <!-- SIDEBAR CONTENT -->
+    <div class="content">
 
-    <!-- MAIN -->
-    <div class="main">
-      <div class="row mr-0 ml-0">
-        <div class="col-md borderonmain p-0"> <!-- pre-scrollable -->
+      <!-- MAIN -->
+      <div class="main">
+        <div class="row mr-0 ml-0">
+          <div class="col-md borderonmain p-0">
+            <!-- pre-scrollable -->
 
-          <!-- TITLE XDDDD -->
-          <div class="row maintitle m-0">
-            <div class="col-3"></div>
-            <div class="col-6 text-white text-center m-0 p-2 maintitle">
-              <h3 class="m-0">Market site</h3>
-            </div>
-            <div class="col-3 p-0">
-              <div class="float-right pt-1 pb-1 pr-2 h-100">
-                <button class="btn btn-outline-success h-100"><span class="fas fa-hand-holding-usd"></span> Sell your car</button>
+            <!-- TITLE XDDDD -->
+            <div class="row maintitle m-0">
+              <div class="col-3"></div>
+              <div class="col-6 text-white text-center m-0 p-2 maintitle">
+                <h3 class="m-0">Market site</h3>
+              </div>
+              <div class="col-3 p-0">
+                <div class="float-right pt-1 pb-1 pr-2 h-100">
+                  <button class="btn btn-outline-success h-100"><span class="fas fa-hand-holding-usd"></span> Sell your
+                    car</button>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Market ads -->
-          <% marketAds.forEach(function(marketAd){ %>
+            <!-- Market ads -->
+            <% marketAds.forEach(function(marketAd){ %>
             <%- include('inc/marketAd', {marketAd: marketAd}); %>
-          <% }); %>
+            <% }); %>
 
-        </div>
-        <div class="col-md borderonmain p-0"> <!-- pre-scrollable -->
-
-          <!-- TITLE Forum-->
-          <div class="row maintitle m-0">
-            <div class="col-4 p-0">
-              <div class="float-left pt-1 pb-1 pl-2 h-100">
-                <button class="btn btn-outline-success h-100"><span class="fas fa-scroll"></span> Create a thread</button>
-              </div>
-            </div>
-            <div class="col-4 text-white text-center m-0 p-2 maintitle">
-              <h3 class="m-0">Forum Site</h3>
-            </div>
-            <div class="col-4"></div>
           </div>
+          <div class="col-md borderonmain p-0">
+            <!-- pre-scrollable -->
 
-          <!-- FIRST CAR -->
-          <div class="card mb-3 m-4 ml-4">
-            <div class="row no-gutters">
-
-              <div class="col-lg-4">
-                <img src="/public/img/M-F-pics/audi2.jfif" class="card-img rounded-lg custompic"  alt="...">
-              </div>
-
-              <div class="col-lg-8">
-                <div class="card-header pt-2 pb-2">
-                  <!-- Header -->
-                  <h5 class="m-0">Audi A7/S7/RS7
-                    <span class="text-success"></span>
-                    <!-- Positon to right!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-                    <span class="justify-content-end text-secondary"></span>
-                  </h5>
-                  <!-- <form class="text form-inline justify-content-end">asd</form> -->
-
+            <!-- TITLE Forum-->
+            <div class="row maintitle m-0">
+              <div class="col-4 p-0">
+                <div class="float-left pt-1 pb-1 pl-2 h-100">
+                  <button class="btn btn-outline-success h-100"><span class="fas fa-scroll"></span> Create a
+                    thread</button>
                 </div>
-                <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
+              </div>
+              <div class="col-4 text-white text-center m-0 p-2 maintitle">
+                <h3 class="m-0">Forum Site</h3>
+              </div>
+              <div class="col-4"></div>
+            </div>
 
-                  <!-- ROW 1 TAGS -->
-                  <p class="card-text mb-1 badge badge-primary">New</p>
+            <!-- FIRST CAR -->
+            <div class="card mb-3 m-4 ml-4">
+              <div class="row no-gutters">
 
-                  <!-- ROW 2 Fuel type, year, cubic cap, hp, km -->
-                  <p class="card-text mb-0">2009 - Present</p>
+                <div class="col-lg-4">
+                  <img src="/public/img/M-F-pics/audi2.jfif" class="card-img rounded-lg custompic" alt="...">
+                </div>
 
-                  <!--  -->
-                  <p class="card-text">
-                    <!-- ROW 3Likes,dislikes -->
-                    <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 12 </span>
-                    <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 4 </span>
+                <div class="col-lg-8">
+                  <div class="card-header pt-2 pb-2">
+                    <!-- Header -->
+                    <h5 class="m-0">Audi A7/S7/RS7
+                      <span class="text-success"></span>
+                      <!-- Positon to right!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+                      <span class="justify-content-end text-secondary"></span>
+                    </h5>
+                    <!-- <form class="text form-inline justify-content-end">asd</form> -->
+
+                  </div>
+                  <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
+
+                    <!-- ROW 1 TAGS -->
+                    <p class="card-text mb-1 badge badge-primary">New</p>
+
+                    <!-- ROW 2 Fuel type, year, cubic cap, hp, km -->
+                    <p class="card-text mb-0">2009 - Present</p>
+
+                    <!--  -->
+                    <p class="card-text">
+                      <!-- ROW 3Likes,dislikes -->
+                      <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 12 </span>
+                      <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 4 </span>
                       <span class="pl-2 pr-2">
                         <span class="fas fa-star checked"></span>
                         <span class="fas fa-star checked"></span>
@@ -102,45 +108,45 @@
                         <span class="far fa-star colored"></span>
                       </span>
 
-                  </p>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- SECOND CAR -->
-          <div class="card mb-3 m-4 ml-4">
-            <div class="row no-gutters">
+            <!-- SECOND CAR -->
+            <div class="card mb-3 m-4 ml-4">
+              <div class="row no-gutters">
 
-              <div class="col-lg-4">
-                <img src="/public/img/M-F-pics/audi3.jpg" class="card-img rounded-lg custompic"  alt="...">
-              </div>
-
-              <div class="col-lg-8">
-                <div class="card-header pt-2 pb-2">
-                  <!-- Header -->
-                  <h5 class="m-0">Audi TT/TTS/TTRS
-                    <span class="text-success"></span>
-                    <!-- Positon to right!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-                    <span class="justify-content-end text-secondary"></span>
-                  </h5>
-                  <!-- <form class="text form-inline justify-content-end">asd</form> -->
-
+                <div class="col-lg-4">
+                  <img src="/public/img/M-F-pics/audi3.jpg" class="card-img rounded-lg custompic" alt="...">
                 </div>
-                <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
 
-                  <!-- ROW 1 TAGS -->
-                  <p class="card-text mb-1 badge badge-primary">Popular</p>
-                  <p class="card-text mb-1 badge badge-success">Eco-Friendly</p>
+                <div class="col-lg-8">
+                  <div class="card-header pt-2 pb-2">
+                    <!-- Header -->
+                    <h5 class="m-0">Audi TT/TTS/TTRS
+                      <span class="text-success"></span>
+                      <!-- Positon to right!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+                      <span class="justify-content-end text-secondary"></span>
+                    </h5>
+                    <!-- <form class="text form-inline justify-content-end">asd</form> -->
 
-                  <!-- ROW 2 Fuel type, year, cubic cap, hp, km -->
-                  <p class="card-text mb-0">2006 - Present</p>
+                  </div>
+                  <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
 
-                  <!--  -->
-                  <p class="card-text">
-                    <!-- ROW 3Likes,dislikes -->
-                    <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 34 </span>
-                    <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 21 </span>
+                    <!-- ROW 1 TAGS -->
+                    <p class="card-text mb-1 badge badge-primary">Popular</p>
+                    <p class="card-text mb-1 badge badge-success">Eco-Friendly</p>
+
+                    <!-- ROW 2 Fuel type, year, cubic cap, hp, km -->
+                    <p class="card-text mb-0">2006 - Present</p>
+
+                    <!--  -->
+                    <p class="card-text">
+                      <!-- ROW 3Likes,dislikes -->
+                      <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 34 </span>
+                      <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 21 </span>
                       <span class="pl-2 pr-2">
                         <span class="fas fa-star checked"></span>
                         <span class="fas fa-star checked"></span>
@@ -149,47 +155,47 @@
                         <span class="far fa-star colored"></span>
                       </span>
 
-                  </p>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- THIRD CAR -->
-          <div class="card mb-3 m-4 ml-4">
-            <div class="row no-gutters">
+            <!-- THIRD CAR -->
+            <div class="card mb-3 m-4 ml-4">
+              <div class="row no-gutters">
 
-              <div class="col-lg-4">
-                <img src="/public/img/M-F-pics/bmw2.jpg" class="card-img rounded-lg custompic"  alt="...">
-              </div>
-
-              <div class="col-lg-8">
-                <div class="card-header pt-2 pb-2">
-                  <!-- Header -->
-                  <h5 class="m-0">BMW I8
-                    <span class="text-success"></span>
-                    <!-- Positon to right!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-                    <span class="justify-content-end text-secondary"></span>
-                  </h5>
-                  <!-- <form class="text form-inline justify-content-end">asd</form> -->
-
+                <div class="col-lg-4">
+                  <img src="/public/img/M-F-pics/bmw2.jpg" class="card-img rounded-lg custompic" alt="...">
                 </div>
-                <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
 
-                  <!-- ROW 1 TAGS -->
-                  <p class="card-text mb-1 badge badge-primary">Popular</p>
-                  <p class="card-text mb-1 badge badge-success">Electric</p>
-                  <p class="card-text mb-1 badge badge-success">Hybrid</p>
-                  <p class="card-text mb-1 badge badge-secondary">Cabrio</p>
+                <div class="col-lg-8">
+                  <div class="card-header pt-2 pb-2">
+                    <!-- Header -->
+                    <h5 class="m-0">BMW I8
+                      <span class="text-success"></span>
+                      <!-- Positon to right!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+                      <span class="justify-content-end text-secondary"></span>
+                    </h5>
+                    <!-- <form class="text form-inline justify-content-end">asd</form> -->
 
-                  <!-- ROW 2 Fuel type, year, cubic cap, hp, km -->
-                  <p class="card-text mb-0">2016 - Present</p>
+                  </div>
+                  <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
 
-                  <!--  -->
-                  <p class="card-text">
-                    <!-- ROW 3Likes,dislikes -->
-                    <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 63 </span>
-                    <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 30 </span>
+                    <!-- ROW 1 TAGS -->
+                    <p class="card-text mb-1 badge badge-primary">Popular</p>
+                    <p class="card-text mb-1 badge badge-success">Electric</p>
+                    <p class="card-text mb-1 badge badge-success">Hybrid</p>
+                    <p class="card-text mb-1 badge badge-secondary">Cabrio</p>
+
+                    <!-- ROW 2 Fuel type, year, cubic cap, hp, km -->
+                    <p class="card-text mb-0">2016 - Present</p>
+
+                    <!--  -->
+                    <p class="card-text">
+                      <!-- ROW 3Likes,dislikes -->
+                      <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 63 </span>
+                      <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 30 </span>
                       <span class="pl-2 pr-2">
                         <span class="fas fa-star checked"></span>
                         <span class="fas fa-star checked"></span>
@@ -198,46 +204,46 @@
                         <span class="fas fa-star-half-alt checked"></span>
                       </span>
 
-                  </p>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- FOURTH CAR -->
-          <div class="card mb-3 m-4 ml-4">
-            <div class="row no-gutters">
+            <!-- FOURTH CAR -->
+            <div class="card mb-3 m-4 ml-4">
+              <div class="row no-gutters">
 
-              <div class="col-lg-4">
-                <img src="/public/img/M-F-pics/kia1.jpg" class="card-img rounded-lg custompic"  alt="...">
-              </div>
-
-              <div class="col-lg-8">
-                <div class="card-header pt-2 pb-2">
-                  <!-- Header -->
-                  <h5 class="m-0">KIA Telluride
-                    <span class="text-success"></span>
-                    <!-- Positon to right!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-                    <span class="justify-content-end text-secondary"></span>
-                  </h5>
-                  <!-- <form class="text form-inline justify-content-end">asd</form> -->
-
+                <div class="col-lg-4">
+                  <img src="/public/img/M-F-pics/kia1.jpg" class="card-img rounded-lg custompic" alt="...">
                 </div>
-                <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
 
-                  <!-- ROW 1 TAGS -->
-                  <p class="card-text mb-1 badge badge-primary">New</p>
-                  <p class="card-text mb-1 badge badge-success">Eco-Friendly</p>
-                  <p class="card-text mb-1 badge badge-secondary">Crossover</p>
+                <div class="col-lg-8">
+                  <div class="card-header pt-2 pb-2">
+                    <!-- Header -->
+                    <h5 class="m-0">KIA Telluride
+                      <span class="text-success"></span>
+                      <!-- Positon to right!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+                      <span class="justify-content-end text-secondary"></span>
+                    </h5>
+                    <!-- <form class="text form-inline justify-content-end">asd</form> -->
 
-                  <!-- ROW 2 Fuel type, year, cubic cap, hp, km -->
-                  <p class="card-text mb-0">2020 - Present</p>
+                  </div>
+                  <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
 
-                  <!--  -->
-                  <p class="card-text">
-                    <!-- ROW 3Likes,dislikes -->
-                    <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 15 </span>
-                    <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 16 </span>
+                    <!-- ROW 1 TAGS -->
+                    <p class="card-text mb-1 badge badge-primary">New</p>
+                    <p class="card-text mb-1 badge badge-success">Eco-Friendly</p>
+                    <p class="card-text mb-1 badge badge-secondary">Crossover</p>
+
+                    <!-- ROW 2 Fuel type, year, cubic cap, hp, km -->
+                    <p class="card-text mb-0">2020 - Present</p>
+
+                    <!--  -->
+                    <p class="card-text">
+                      <!-- ROW 3Likes,dislikes -->
+                      <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 15 </span>
+                      <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 16 </span>
                       <span class="pl-2 pr-2">
                         <span class="fas fa-star checked"></span>
                         <span class="fas fa-star checked"></span>
@@ -246,45 +252,45 @@
                         <span class="far fa-star colored"></span>
                       </span>
 
-                  </p>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- FIFTH CAR -->
-          <div class="card mb-3 m-4 ml-4">
-            <div class="row no-gutters">
+            <!-- FIFTH CAR -->
+            <div class="card mb-3 m-4 ml-4">
+              <div class="row no-gutters">
 
-              <div class="col-lg-4">
-                <img src="/public/img/M-F-pics/lambo2.jpg" class="card-img rounded-lg custompic"  alt="...">
-              </div>
-
-              <div class="col-lg-8">
-                <div class="card-header pt-2 pb-2">
-                  <!-- Header -->
-                  <h5 class="m-0">Lamborghini Urus
-                    <span class="text-success"></span>
-                    <!-- Positon to right!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-                    <span class="justify-content-end text-secondary"></span>
-                  </h5>
-                  <!-- <form class="text form-inline justify-content-end">asd</form> -->
-
+                <div class="col-lg-4">
+                  <img src="/public/img/M-F-pics/lambo2.jpg" class="card-img rounded-lg custompic" alt="...">
                 </div>
-                <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
 
-                  <!-- ROW 1 TAGS -->
-                  <p class="card-text mb-1 badge badge-primary">New</p>
-                  <p class="card-text mb-1 badge badge-secondary">Crossover</p>
+                <div class="col-lg-8">
+                  <div class="card-header pt-2 pb-2">
+                    <!-- Header -->
+                    <h5 class="m-0">Lamborghini Urus
+                      <span class="text-success"></span>
+                      <!-- Positon to right!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+                      <span class="justify-content-end text-secondary"></span>
+                    </h5>
+                    <!-- <form class="text form-inline justify-content-end">asd</form> -->
 
-                  <!-- ROW 2 Fuel type, year, cubic cap, hp, km -->
-                  <p class="card-text mb-0">2018 - Present</p>
+                  </div>
+                  <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
 
-                  <!--  -->
-                  <p class="card-text">
-                    <!-- ROW 3Likes,dislikes -->
-                    <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 23 </span>
-                    <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 15 </span>
+                    <!-- ROW 1 TAGS -->
+                    <p class="card-text mb-1 badge badge-primary">New</p>
+                    <p class="card-text mb-1 badge badge-secondary">Crossover</p>
+
+                    <!-- ROW 2 Fuel type, year, cubic cap, hp, km -->
+                    <p class="card-text mb-0">2018 - Present</p>
+
+                    <!--  -->
+                    <p class="card-text">
+                      <!-- ROW 3Likes,dislikes -->
+                      <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 23 </span>
+                      <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 15 </span>
                       <span class="pl-2 pr-2">
                         <span class="fas fa-star checked"></span>
                         <span class="fas fa-star checked"></span>
@@ -293,45 +299,45 @@
                         <span class="far fa-star colored"></span>
                       </span>
 
-                  </p>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- SIXTH CAR -->
-          <div class="card mb-3 m-4 ml-4">
-            <div class="row no-gutters">
+            <!-- SIXTH CAR -->
+            <div class="card mb-3 m-4 ml-4">
+              <div class="row no-gutters">
 
-              <div class="col-lg-4">
-                <img src="/public/img/M-F-pics/skoda1.jfif" class="card-img rounded-lg custompic"  alt="...">
-              </div>
-
-              <div class="col-lg-8">
-                <div class="card-header pt-2 pb-2">
-                  <!-- Header -->
-                  <h5 class="m-0">Skoda Superb
-                    <span class="text-success"></span>
-                    <!-- Positon to right!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-                    <span class="justify-content-end text-secondary"></span>
-                  </h5>
-                  <!-- <form class="text form-inline justify-content-end">asd</form> -->
-
+                <div class="col-lg-4">
+                  <img src="/public/img/M-F-pics/skoda1.jfif" class="card-img rounded-lg custompic" alt="...">
                 </div>
-                <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
 
-                  <!-- ROW 1 TAGS -->
-                  <p class="card-text mb-1 badge badge-primary">Popular</p>
-                  <p class="card-text mb-1 badge badge-success">Eco-Friendly</p>
+                <div class="col-lg-8">
+                  <div class="card-header pt-2 pb-2">
+                    <!-- Header -->
+                    <h5 class="m-0">Skoda Superb
+                      <span class="text-success"></span>
+                      <!-- Positon to right!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+                      <span class="justify-content-end text-secondary"></span>
+                    </h5>
+                    <!-- <form class="text form-inline justify-content-end">asd</form> -->
 
-                  <!-- ROW 2 Fuel type, year, cubic cap, hp, km -->
-                  <p class="card-text mb-0">2001 - Present</p>
+                  </div>
+                  <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
 
-                  <!--  -->
-                  <p class="card-text">
-                    <!-- ROW 3Likes,dislikes -->
-                    <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 143 </span>
-                    <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 98 </span>
+                    <!-- ROW 1 TAGS -->
+                    <p class="card-text mb-1 badge badge-primary">Popular</p>
+                    <p class="card-text mb-1 badge badge-success">Eco-Friendly</p>
+
+                    <!-- ROW 2 Fuel type, year, cubic cap, hp, km -->
+                    <p class="card-text mb-0">2001 - Present</p>
+
+                    <!--  -->
+                    <p class="card-text">
+                      <!-- ROW 3Likes,dislikes -->
+                      <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 143 </span>
+                      <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 98 </span>
                       <span class="pl-2 pr-2">
                         <span class="fas fa-star checked"></span>
                         <span class="fas fa-star checked"></span>
@@ -340,19 +346,20 @@
                         <span class="far fa-star colored"></span>
                       </span>
 
-                  </p>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
   <%- include('inc/scripts'); -%>
 
 </body>
+
 </html>
