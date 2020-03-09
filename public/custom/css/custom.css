@@ -86,9 +86,12 @@ transition: all 0.3s;
   width: 43.5% !important;
 }
 
+/* -------------------------------------------------------------------------------- */
+
 /* FOR HIRDETES */
 /* 1130 810 */
 .hirdetes-big-pic {
   max-width: 50rem;
-  max-height: 50rem;
+  height: 20rem;
 }
+
