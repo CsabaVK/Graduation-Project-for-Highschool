@@ -64,7 +64,7 @@ router.post('/register', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-  res.render('hirdetesMegtekint');
+  res.render('adsView');
 });
 
 function checkIfUserExists(userEmail) {

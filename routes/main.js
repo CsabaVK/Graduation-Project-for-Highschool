@@ -16,8 +16,8 @@ router.get('/profile', (req, res) => {
   res.render('profile');
 });
 
-router.get('/hirdetes', (req, res) => {
-  res.render('hirdetesMegtekint');
+router.get('/ads', (req, res) => {
+  res.render('adsView');
 });
 
 
