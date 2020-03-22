@@ -7,23 +7,15 @@ router.get('/', (req, res) => {
   // res.sendFile(path.join(__dirname + '/views/index.html'));
   // res.send('Hello World!');
   // res.json(req.session);
-  
-  // Update views
-  req.session = {};
-  req.session.views = (req.session.views || 0) + 1;
-  // Write response
-  res.end(req.session.views + ' views');
-  
-  /*
+
   const marketAds = require('../market.example.json');
-  req.session.user = 1;
+  // req.session.user = 1;
   res.render('index', {
     url: req.url,
     session: req.session.user,
     marketAds: marketAds,
   });
-  console.log(req.session.user);
-  */
+  // console.log(req.session.user);
 });
 
 router.get('/test', (req, res) => {
