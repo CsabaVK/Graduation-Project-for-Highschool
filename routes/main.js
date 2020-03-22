@@ -24,14 +24,20 @@ router.get('/test', (req, res) => {
 });
 
 router.get('/profile', (req, res) => {
-  res.render('profile', {
-    url: req.url,
-  });
+  if (req.session.user) {
+    res.render('profile', {
+      url: req.url,
+      session: req.session.user,
+    });
+  } else {
+    res.redirect('/');
+  }
 });
 
 router.get('/ads', (req, res) => {
   res.render('adsView', {
     url: req.url,
+    session: req.session.user,
   });
 });
 
