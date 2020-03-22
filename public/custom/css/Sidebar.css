@@ -62,22 +62,27 @@
         color: #fff;
         transition: all 0.3s;
     }
-    #sidebar.active {
+    /* #sidebar.active {
         margin-left: -250px;
-    }
+    } */
     #sidebarCollapse span {
         display: none;
     }
 }
-/* 
-@media (max-width: 1440px) {
+@media (min-width: 1440px) {
     #sidebar.active {
-        margin-left: -270px;
+        margin-left: -250px;
     }
 }
 
-@media (max-width: 2560px) {
+@media (min-width: 1910px) {
     #sidebar.active {
-        margin-left: -477px;
+        margin-left: -269px;
     }
-} */
+}
+
+@media (min-width: 2560px) {
+    #sidebar.active {
+        margin-left: -360px;
+    }
+}
