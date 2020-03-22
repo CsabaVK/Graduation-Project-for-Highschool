@@ -2,108 +2,14 @@
 <html lang="en">
 <head>
   <%- include('inc/head'); -%>
+  <link rel="stylesheet" type="text/css" href="/public/custom/css/ads.css" media="all" />
   <title>Car Clutch Club</title>
   <style>
-    /* body {
-      overflow-y: hidden;
-    }
-
-    .pre-scrollable {
-      max-height: 2500px;
-    }*/
+    
   </style>
 </head>
 <body>
-  <%- include('inc/navbarMainLogin'); -%>
-
-<style>
-    * {
-  box-sizing: border-box;
-}
-
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
-}
-
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-}
-
-.active, .demo:hover {
-  opacity: 1;
-
-
-}
-</style>
+  <%- include('inc/navbar'); -%>
 
   <!-- MAIN -->
   <div class="main">
@@ -114,7 +20,7 @@
         <div class="row maintitle m-0">
           <div class="col-3"></div>
           <div class="col-6 text-white text-center m-0 p-2 maintitle">
-            <h3 class="m-0">Market site</h3>
+            <h3 class="m-0">Pictures</h3>
           </div>
           <div class="col-3 p-0">
             <!-- <div class="float-right pt-1 pb-1 pr-2 h-100">
@@ -210,13 +116,54 @@
             </div> -->
           </div>
           <div class="col-4 text-white text-center m-0 p-2 maintitle">
-            <h3 class="m-0">Forum Site</h3>
+            <h3 class="m-0">Details</h3>
           </div>
           <div class="col-4"></div>
         </div>
+        
+        <!-- actual cucc -->
+        <div class="bg-light mt-4 ml-4 mr-4 mb-2">
+          <h3 class="rounded-lg pt-2 pl-2 pr-2">Price: 20 000€</h3>
 
+          <!-- Badges -->
+          <div class="pl-2 pr-2 pb-2">
+            <p class="card-text m-0 badge badge-primary">Popular</p>
+            <p class="card-text m-0 badge badge-success">Eco-Friendly</p>
+          </div>
+
+        </div>
+
+        <div class="bg-light mt-2 ml-4 mr-4 mb-2">
+          <div class="row no-gutters">
+            <!-- Column 1 -->
+            <div class="col-lg-6">
+              <h5 class="m-2"><span class="text-gray"> Make: </span> Tesla </h5>
+              <h5 class="m-2"><span class="text-gray"> Model: </span> Model 3 </h5>
+              <br>
+              <h5 class="m-2"><span class="text-gray"> Vehicle Shape: </span> Coupe </h5>
+              <h5 class="m-2"><span class="text-gray"> Fuel Type: </span> Electric </h5>
+              <h5 class="m-2"><span class="text-gray"> Cubic Capacity: </span> --- </h5>
+            </div>
+            <!-- TODO: -->
+            <!-- ITT HAGYTAM ABBA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+            <!-- Column 2 -->
+            <div class="col-lg-6">
+              <!-- border and margin -->
+              <div class="ad-mini-border">
+                <h5 class="m-2"><span class="text-gray"> Milage: </span> 23 000 km </h5>
+                <h5 class="m-2"><span class="text-gray"> Year: </span> 2016 </h5>
+                <br>
+                <h5 class="m-2"><span class="text-gray"> Doors: </span> 4 </h5>
+                <h5 class="m-2"><span class="text-gray"> Seats: </span> 5 </h5>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        
         <!-- FIRST CAR -->
-        <div class="card mb-3 m-4 ml-4">
+        <!-- <div class="card mb-3 m-4 ml-4">
           <div class="row no-gutters">
 
             <div class="col-lg-4">
@@ -225,26 +172,26 @@
 
             <div class="col-lg-8">
               <div class="card-header pt-2 pb-2">
-                <!-- Header -->
+                
                 <h5 class="m-0">Audi A7/S7/RS7
                   <span class="text-success"></span>
-                  <!-- Positon to right!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+                  
                   <span class="justify-content-end text-secondary"></span>
                 </h5>
-                <!-- <form class="text form-inline justify-content-end">asd</form> -->
+                
 
               </div>
               <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
 
-                <!-- ROW 1 TAGS -->
+                
                 <p class="card-text mb-1 badge badge-primary">New</p>
 
-                <!-- ROW 2 Fuel type, year, cubic cap, hp, km -->
+                
                 <p class="card-text mb-0">2009 - Present</p>
 
-                <!--  -->
+                
                 <p class="card-text">
-                  <!-- ROW 3Likes,dislikes -->
+                  
                   <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 12 </span>
                   <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 4 </span>
                     <span class="pl-2 pr-2">
@@ -259,7 +206,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div>

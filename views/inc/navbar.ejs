@@ -1,6 +1,6 @@
-<%- include('NavbarItems/location'); -%>
-<%- include('NavbarItems/login'); -%>
-<%- include('NavbarItems/register'); -%>
+<%- include('NavbarItems/locationModal'); -%>
+<%- include('NavbarItems/loginModal'); -%>
+<%- include('NavbarItems/registerModal'); -%>
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-xl navbar-light bg-dark mb-0">
@@ -16,13 +16,15 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-
-      <!-- FILTER BTN -->
-      <li class="nav-item mr-sm-3 my-2"> 
-        <span class="btn btn-outline-info my-2 btn-lg dropdown-toggle" onclick="closeSidebar()" data-toggle="collapse" data-target="#navbarSupportedContenFilter">
-          <span class="fas fa-filter"></span> Filters <span class="sr-only">(current)</span></span>
-      </li>
-      <!-- END FILTER BTN -->
+    
+      <% if (url == "/") { %>
+        <!-- FILTER BTN -->
+        <li class="nav-item mr-sm-3 my-2"> 
+          <span class="btn btn-outline-info my-2 btn-lg dropdown-toggle" onclick="closeSidebar()" data-toggle="collapse" data-target="#navbarSupportedContenFilter">
+            <span class="fas fa-filter"></span> Filters <span class="sr-only">(current)</span></span>
+          </li>
+          <!-- END FILTER BTN -->
+      <% } %>
 
       <!-- location BUTTON !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
       <li class="nav-item mr-sm-3 my-2">
@@ -61,24 +63,25 @@
       <span class="btn btn-outline-secondary btn-lg m-3"><span class="fas fa-adjust"></span></span>
       <!-- END dark mode btn -->
 
-
-      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-      <!-- LOGIN BUTTONN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-
-      <div class="dropdown">
-        <button class="btn btn-lg btn-outline-secondary pt-0 pb-0 pl-0 pr-2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="/public/img/avatars/boy1.png" alt="" class="img-responsive avatarpic">
-        </button>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="/profile">Profile</a>
-          <a class="dropdown-item" href="#">Settings</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/logout">Sign Out</a>
+      <% if (session) { %>
+        <!-- LOGGED IN -->
+        <div class="dropdown">
+          <button class="btn btn-lg btn-outline-secondary pt-0 pb-0 pl-0 pr-2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="/public/img/avatars/boy1.png" alt="" class="img-responsive avatarpic">
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/profile">Profile</a>
+            <a class="dropdown-item" href="#">Settings</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/logout">Sign Out</a>
+          </div>
         </div>
-      </div>
-
-      <!-- <span class="btn btn-primary btn-lg" data-toggle="modal" data-target="#loginModal">Login</span> -->
-      <!-- END LOGIN BTN -->
+        <!-- END LOGGED IN -->
+      <% } else { %>
+        <!-- LOGGED OUT -->
+        <span class="btn btn-primary btn-lg" data-toggle="modal" data-target="#loginModal">Login</span>
+        <!-- END LOGGED OUT -->
+      <% } %>
 
     </form>
 

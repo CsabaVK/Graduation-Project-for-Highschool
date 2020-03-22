@@ -15,6 +15,7 @@ const sqlData = {
 router.get('/', (req, res) => {
   const marketAds = require('../market.example.json');
   res.render('index', {
+    url: req.url,
     marketAds: marketAds,
   });
 });
@@ -61,10 +62,6 @@ router.post('/register', (req, res) => {
     errorMessage: errorMessage,
   });
   return;
-});
-
-router.get('/', (req, res) => {
-  res.render('adsView');
 });
 
 function checkIfUserExists(userEmail) {

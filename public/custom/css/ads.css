@@ -10,8 +10,6 @@ position: relative;
 /* Hide the images by default */
 .mySlides {
 display: none;
-height: 50px;
-width: 50px;
 }
 
 /* Add a pointer when hovering over the thumbnail images */
@@ -74,21 +72,21 @@ clear: both;
 .column {
 float: left;
 width: 16.66%;
-/* height: 50px; */
 }
 
 /* Add a transparency effect for thumnbail images */
 .demo {
 opacity: 0.6;
-/* height: 50px; */
 }
 
-.active,
-.demo:hover {
+.active, .demo:hover {
 opacity: 1;
 }
 
-.rem-50{
-    height: 50rem;
-    width: 50rem;
+.ad-mini-border{
+    border-left: 3px solid #333;
+}
+
+.text-gray{
+color: gray;
 }
