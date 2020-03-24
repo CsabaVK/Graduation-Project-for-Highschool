@@ -21,6 +21,14 @@
   <%- include('inc/navbar'); -%>
   <%- include('inc/filterbar'); -%>
 
+  <!-- IF -->
+
+  <% if (typeof alert != "undefined") { %>
+    <div class="alert alert-<%= alert.type %> m-0 h4 text-center" role="alert">
+      <%= alert.message %>
+    </div>
+  <% } %>
+
   <!-- SIDEBAR -->
   <div class="wrapper">
     <%- include('inc/sidebar'); -%>
