@@ -20,7 +20,33 @@ router.get('/', (req, res) => {
   });
 });
 
+router.post('/login', (req, res) => {
+  if (req.session.user) {
+    return res.redirect('/');
+  }
+  const username = req.body.username;
+  const password = req.body.password;
+  const getUserDetails = syncSql.mysql(sqlData, `SELECT id, username, password FROM users WHERE username='${username}'`);
+  if (getUserDetails.success) {
+    if (getUserDetails.data.rows.length > 0) {
+      if (pwHash.verify(password, getUserDetails.data.rows[0].password)) {
+        req.session.user = getUserDetails.data.rows[0].id;
+        res.redirect('/');
+      } else {
+        renderPage(req, res, 'index', 'danger', 'Wrong password');
+      }
+    } else {
+      renderPage(req, res, 'index', 'danger', 'User does not exist');
+    }
+  } else {
+    renderPage(req, res, 'index', 'danger', 'Database error');
+  }
+});
+
 router.post('/register', (req, res) => {
+  if (req.session.user) {
+    return res.redirect('/');
+  }
   const username = req.body.username;
   const password = req.body.password;
   const password2 = req.body.password;
@@ -58,6 +84,16 @@ router.post('/register', (req, res) => {
   return;
 });
 
+function checkIfUserExists(userEmail) {
+  const exists = syncSql.mysql(sqlData, 'SELECT email FROM users WHERE email=\'' + userEmail + '\'');
+  if (exists && exists.data && exists.data.rows && exists.data.rows[0] && exists.data.rows[0].email) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// it renders a page :)
 function renderPage(req, res, pageURI, type, message) {
   res.render(pageURI, {
     marketAds: require('../market.example.json'),
@@ -68,15 +104,6 @@ function renderPage(req, res, pageURI, type, message) {
       message: message,
     },
   });
-}
-
-function checkIfUserExists(userEmail) {
-  const exists = syncSql.mysql(sqlData, 'SELECT email FROM users WHERE email=\'' + userEmail + '\'');
-  if (exists && exists.data && exists.data.rows && exists.data.rows[0] && exists.data.rows[0].email) {
-    return true;
-  } else {
-    return false;
-  }
 }
 
 router.get('/logout', (req, res) => {
