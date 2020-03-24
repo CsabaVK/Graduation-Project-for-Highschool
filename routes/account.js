@@ -20,6 +20,19 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/profile', (req, res) => {
+  if (req.session.user) {
+    const getProfileDetails = syncSql.mysql(sqlData, `SELECT * FROM users WHERE id=${req.session.user}`);
+    res.render('profile', {
+      url: req.url,
+      session: req.session.user,
+      userdata: getProfileDetails.data.rows[0],
+    });
+  } else {
+    res.redirect('/');
+  }
+});
+
 router.post('/login', (req, res) => {
   if (req.session.user) {
     return res.redirect('/');
@@ -85,7 +98,7 @@ router.post('/register', (req, res) => {
 });
 
 function checkIfUserExists(userEmail) {
-  const exists = syncSql.mysql(sqlData, 'SELECT email FROM users WHERE email=\'' + userEmail + '\'');
+  const exists = syncSql.mysql(sqlData, `SELECT email FROM users WHERE email='${userEmail}'`);
   if (exists && exists.data && exists.data.rows && exists.data.rows[0] && exists.data.rows[0].email) {
     return true;
   } else {

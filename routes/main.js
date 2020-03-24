@@ -23,17 +23,6 @@ router.get('/test', (req, res) => {
   res.end(req.session.views + ' views');
 });
 
-router.get('/profile', (req, res) => {
-  if (req.session.user) {
-    res.render('profile', {
-      url: req.url,
-      session: req.session.user,
-    });
-  } else {
-    res.redirect('/');
-  }
-});
-
 router.get('/ads', (req, res) => {
   res.render('adsView', {
     url: req.url,
