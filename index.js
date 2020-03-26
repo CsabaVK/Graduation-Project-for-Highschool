@@ -27,9 +27,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // set and use routes
-const mainRoutes = require('./routes/main');
-app.use('/', mainRoutes);
-const accountRoutes = require('./routes/account');
-app.use('/account', accountRoutes);
+app.use('/', require('./routes/main'));
+app.use('/account', require('./routes/account'));
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
