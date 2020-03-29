@@ -1,7 +1,7 @@
 <div class="card mb-3 m-4 ml-4">
     <div class="row no-gutters">
       <div class="col-lg-4 ">
-        <a href="http://localhost:3000/ads">
+        <a href="http://localhost:3000/ads/<%- marketAd.id -%>">
           <img src="<%- marketAd.imgURI -%>" class="card-img rounded-lg custompic" alt="...">
         </a>
         </div>
@@ -24,12 +24,6 @@
           <!-- <p class="card-text mb-1 badge badge-primary">Salon</p>
           <p class="card-text mb-1 badge badge-success">Electric</p>
           <p class="card-text mb-1 badge badge-secondary">AWD</p> -->
-          <p class="card-text mb-1 badge badge-primary"><%- marketAd.tags[0] -%></p>
-          <p class="card-text mb-1 badge badge-success"><%- marketAd.tags[1] -%></p>
-          <p class="card-text mb-1 badge badge-primary"><%- marketAd.tags[2] -%></p>
-          <p class="card-text mb-1 badge badge-primary"><%- marketAd.tags[3] -%></p>
-          <p class="card-text mb-1 badge badge-primary"><%- marketAd.tags[4] -%></p>
-          <p class="card-text mb-1 badge badge-primary"><%- marketAd.tags[5] -%></p>
 
 
           <!-- ROW 2 Fuel type, year, cubic cap, hp, km -->
@@ -46,7 +40,7 @@
                 <span class="fas fa-star-half-alt checked"></span>
                 <span class="far fa-star colored"></span>
               </span>
-            <span class="card-text text-secondary"><%- marketAd.seller -%></span>
+            <span class="card-text text-secondary"><%- marketAd.username -%></span>
 
           </p>
         </div>

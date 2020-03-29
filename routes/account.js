@@ -5,12 +5,7 @@ const router = express.Router();
 const pwHash = require('password-hash');
 const syncSql = require('sync-sql');
 
-const sqlData = {
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'okjproject',
-};
+const sqlData = require('../sqldata.json');
 
 router.get('/', (req, res) => {
   const marketAds = require('../market.example.json');
@@ -42,6 +37,7 @@ router.post('/login', (req, res) => {
   const getUserDetails = syncSql.mysql(sqlData, `SELECT id, username, password FROM users WHERE username='${username}'`);
   if (getUserDetails.success) {
     if (getUserDetails.data.rows.length > 0) {
+      // if (password == getUserDetails.data.rows[0].password) {
       if (pwHash.verify(password, getUserDetails.data.rows[0].password)) {
         req.session.user = getUserDetails.data.rows[0].id;
         res.redirect('/');
@@ -75,6 +71,7 @@ router.post('/register', (req, res) => {
       // https://regexr.com/
       if ((/^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/.test(username)) && (/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/g.test(email)) && (/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{3,20}$/g.test(password))) {
         if (password == password2) {
+          // const inserted = syncSql.mysql(sqlData, `INSERT INTO users (username, password, email, birth_date, lang) VALUES('${username}', '${password}', '${email}', '${birthdate}', '${languageselector}')`);
           const inserted = syncSql.mysql(sqlData, `INSERT INTO users (username, password, email, birth_date, lang) VALUES('${username}', '${pwHash.generate(password)}', '${email}', '${birthdate}', '${languageselector}')`);
           // res.json(inserted);
           if (inserted.success == 'false') {

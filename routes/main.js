@@ -1,6 +1,10 @@
+/* eslint-disable max-len */
 /* eslint-disable new-cap */
 const express = require('express');
 const router = express.Router();
+const syncSql = require('sync-sql');
+
+const sqlData = require('../sqldata.json');
 
 router.get('/', (req, res) => {
   // res.json(marketAds);
@@ -8,13 +12,21 @@ router.get('/', (req, res) => {
   // res.send('Hello World!');
   // res.json(req.session);
 
-  const marketAds = require('../market.example.json');
+  // const marketAds = require('../market.example.json');
+  // TODO: marketads
+  // make, model, price, fuel_type, year, milage
+  // TODO: add HP
+  const marketAds = syncSql.mysql(sqlData, `SELECT id, users.username, make, model, price, fuel_type, year, milage FROM market INNER JOIN users ON users.id=market.owner_id;`);
+  // res.json(marketAds);
+
   // req.session.user = 1;
+
   res.render('index', {
     url: req.url,
     session: req.session.user,
-    marketAds: marketAds,
+    marketAds: marketAds.data.rows,
   });
+
   // console.log(req.session.user);
 });
 
@@ -23,10 +35,12 @@ router.get('/test', (req, res) => {
   res.end(req.session.views + ' views');
 });
 
-router.get('/ads', (req, res) => {
+router.get('/ads/:id', (req, res) => {
+  // const markateAad = sznqsl.mzsql)sqlData,"select from $Őrequest.idÚ"
   res.render('adsView', {
     url: req.url,
     session: req.session.user,
+    // marketAd: marketAd.data.rows(0)
   });
 });
 
