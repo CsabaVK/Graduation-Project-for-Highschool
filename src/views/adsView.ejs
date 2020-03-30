@@ -95,7 +95,7 @@
           <div class="col-4"></div>
         </div>
         <div class="bg-light mt-4 ml-4 mr-4 mb-2">
-          <h3 class="rounded-lg pt-2 pl-2 pr-2">Price: 20 000€</h3>
+          <h3 class="rounded-lg pt-2 pl-2 pr-2">Price: <%- marketAd.price %>€</h3>
           <div class="pl-2 pr-2 pb-2">
             <p class="card-text m-0 badge badge-primary">Popular</p>
             <p class="card-text m-0 badge badge-success">Eco-Friendly</p>
@@ -104,20 +104,20 @@
         <div class="bg-light mt-2 ml-4 mr-4 mb-2">
           <div class="row no-gutters">
             <div class="col-lg-6">
-              <h5 class="m-2"><span class="text-gray"> Make: </span> Tesla </h5>
-              <h5 class="m-2"><span class="text-gray"> Model: </span> Model 3 </h5>
+              <h5 class="m-2"><span class="text-gray"> Make: </span> <%- marketAd.make %> </h5>
+              <h5 class="m-2"><span class="text-gray"> Model: </span> <%- marketAd.model %>  </h5>
               <br>
-              <h5 class="m-2"><span class="text-gray"> Vehicle Shape: </span> Coupe </h5>
-              <h5 class="m-2"><span class="text-gray"> Fuel Type: </span> Electric </h5>
-              <h5 class="m-2"><span class="text-gray"> Cubic Capacity: </span> --- </h5>
+              <h5 class="m-2"><span class="text-gray"> Vehicle Shape: </span> <%- marketAd.shape %>  </h5>
+              <h5 class="m-2"><span class="text-gray"> Fuel Type: </span> <%- marketAd.fuel_type %> </h5>
+              <h5 class="m-2"><span class="text-gray"> Cubic Capacity: </span> <%- marketAd.cubic_capacity %> </h5>
             </div>
             <div class="col-lg-6">
               <div class="ad-mini-border">
-                <h5 class="m-2"><span class="text-gray"> Milage: </span> 23 000 km </h5>
-                <h5 class="m-2"><span class="text-gray"> Year: </span> 2016 </h5>
+                <h5 class="m-2"><span class="text-gray"> Milage: </span> <%- marketAd.milage %> km </h5>
+                <h5 class="m-2"><span class="text-gray"> Year: </span> <%- marketAd.year %> </h5>
                 <br>
-                <h5 class="m-2"><span class="text-gray"> Doors: </span> 4 </h5>
-                <h5 class="m-2"><span class="text-gray"> Seats: </span> 5 </h5>
+                <h5 class="m-2"><span class="text-gray"> Doors: </span> <%- marketAd.doors %> </h5>
+                <h5 class="m-2"><span class="text-gray"> Seats: </span> <%- marketAd.seats %> </h5>
               </div>
             </div>
           </div>

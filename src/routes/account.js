@@ -51,6 +51,16 @@ router.post('/login', (req, res) => {
   }
 });
 
+function getCurrentDate() {
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+
+  today = yyyy + '-' + mm + '-' + dd;
+  return today;
+}
+
 router.post('/register', (req, res) => {
   if (req.session.user) {
     return res.redirect('/');
@@ -68,8 +78,8 @@ router.post('/register', (req, res) => {
     if (email && password && password2) {
       if ((/^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/.test(username)) && (/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/g.test(email)) && (/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{3,20}$/g.test(password))) {
         if (password == password2) {
-          const inserted = syncSql.mysql(sqlData, `INSERT INTO users (username, password, email, birth_date, lang) VALUES('${username}', '${pwHash.generate(password)}', '${email}', '${birthdate}', '${languageselector}')`);
-          if (inserted.success == 'false') {
+          const inserted = syncSql.mysql(sqlData, `INSERT INTO users (username, password, email, birth_date, language, register_date) VALUES('${username}', '${pwHash.generate(password)}', '${email}', '${birthdate}', '${languageselector}', '${getCurrentDate()}')`);
+          if (inserted.success == false) {
             renderPage(req, res, 'index', 'danger', 'Database error!');
           } else {
             renderPage(req, res, 'index', 'success', 'Registration success!');

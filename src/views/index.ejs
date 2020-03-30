@@ -15,235 +15,26 @@
     <%= alert.message %>
   </div>
   <% } %>
-  <div class="wrapper">
-    <%- include('inc/sidebar'); -%>
-    <div class="content">
-      <div class="main">
-        <div class="row mr-0 ml-0">
-          <!-- MARKET SITE -->
-          <div class="col-md borderonmain p-0">
-            <div class="row maintitle m-0">
-              <div class="col-3"></div>
-              <div class="col-6 text-white text-center m-0 p-2 maintitle">
-                <h3 class="m-0">Market site</h3>
-              </div>
-              <div class="col-3 p-0">
-                <div class="float-right pt-1 pb-1 pr-2 h-100">
-                  <button class="btn btn-outline-success h-100"><span class="fas fa-hand-holding-usd"></span> Sell your
-                    car</button>
-                </div>
-              </div>
-            </div>
-            <% marketAds.forEach(function(marketAd){ %>
-            <%- include('inc/marketAd', {marketAd: marketAd}); %>
-            <% }); %>
+  <%- // include('inc/sidebar'); -%>
+  <div class="content container-fluid">
+    <div class="row">
+        <button class="btn btn-block btn-success btn-lg m-3 h-100"><span class="fas fa-hand-holding-usd"></span>
+          Sell your car
+        </button>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <% if (marketAds.length == 0) { %>
+          <div class="alert alert-primary m-4 p-3 text-center" role="alert">
+            Currently there are no ads.
+            <br />
+            Check back later!
           </div>
-          <!-- MARKET SITE END -->
-          <!-- FORUM SITE -->
-          <div class="col-md borderonmain p-0">
-            <div class="row maintitle m-0">
-              <div class="col-4 p-0">
-                <div class="float-left pt-1 pb-1 pl-2 h-100">
-                  <button class="btn btn-outline-success h-100"><span class="fas fa-scroll"></span> Create a
-                    thread</button>
-                </div>
-              </div>
-              <div class="col-4 text-white text-center m-0 p-2 maintitle">
-                <h3 class="m-0">Forum Site</h3>
-              </div>
-              <div class="col-4"></div>
-            </div>
-            <div class="card mb-3 m-4 ml-4">
-              <div class="row no-gutters">
-                <div class="col-lg-4">
-                  <img src="/public/img/M-F-pics/audi2.jfif" class="card-img rounded-lg custompic" alt="...">
-                </div>
-                <div class="col-lg-8">
-                  <div class="card-header pt-2 pb-2">
-                    <h5 class="m-0">Audi A7/S7/RS7
-                      <span class="text-success"></span>
-                      <span class="justify-content-end text-secondary"></span>
-                    </h5>
-                  </div>
-                  <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
-                    <p class="card-text mb-1 badge badge-primary">New</p>
-                    <p class="card-text mb-0">2009 - Present</p>
-                    <p class="card-text">
-                      <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 12 </span>
-                      <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 4 </span>
-                      <span class="pl-2 pr-2">
-                        <span class="fas fa-star checked"></span>
-                        <span class="fas fa-star checked"></span>
-                        <span class="fas fa-star checked"></span>
-                        <span class="fas fa-star checked"></span>
-                        <span class="far fa-star colored"></span>
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card mb-3 m-4 ml-4">
-              <div class="row no-gutters">
-                <div class="col-lg-4">
-                  <img src="/public/img/M-F-pics/audi3.jpg" class="card-img rounded-lg custompic" alt="...">
-                </div>
-                <div class="col-lg-8">
-                  <div class="card-header pt-2 pb-2">
-                    <h5 class="m-0">Audi TT/TTS/TTRS
-                      <span class="text-success"></span>
-                      <span class="justify-content-end text-secondary"></span>
-                    </h5>
-                  </div>
-                  <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
-                    <p class="card-text mb-1 badge badge-primary">Popular</p>
-                    <p class="card-text mb-1 badge badge-success">Eco-Friendly</p>
-                    <p class="card-text mb-0">2006 - Present</p>
-                    <p class="card-text">
-                      <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 34 </span>
-                      <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 21 </span>
-                      <span class="pl-2 pr-2">
-                        <span class="fas fa-star checked"></span>
-                        <span class="fas fa-star checked"></span>
-                        <span class="fas fa-star checked"></span>
-                        <span class="fas fa-star-half-alt checked"></span>
-                        <span class="far fa-star colored"></span>
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card mb-3 m-4 ml-4">
-              <div class="row no-gutters">
-                <div class="col-lg-4">
-                  <img src="/public/img/M-F-pics/bmw2.jpg" class="card-img rounded-lg custompic" alt="...">
-                </div>
-                <div class="col-lg-8">
-                  <div class="card-header pt-2 pb-2">
-                    <h5 class="m-0">BMW I8
-                      <span class="text-success"></span>
-                      <span class="justify-content-end text-secondary"></span>
-                    </h5>
-                  </div>
-                  <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
-                    <p class="card-text mb-1 badge badge-primary">Popular</p>
-                    <p class="card-text mb-1 badge badge-success">Electric</p>
-                    <p class="card-text mb-1 badge badge-success">Hybrid</p>
-                    <p class="card-text mb-1 badge badge-secondary">Cabrio</p>
-                    <p class="card-text mb-0">2016 - Present</p>
-                    <p class="card-text">
-                      <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 63 </span>
-                      <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 30 </span>
-                      <span class="pl-2 pr-2">
-                        <span class="fas fa-star checked"></span>
-                        <span class="fas fa-star checked"></span>
-                        <span class="fas fa-star checked"></span>
-                        <span class="fas fa-star checked"></span>
-                        <span class="fas fa-star-half-alt checked"></span>
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card mb-3 m-4 ml-4">
-              <div class="row no-gutters">
-                <div class="col-lg-4">
-                  <img src="/public/img/M-F-pics/kia1.jpg" class="card-img rounded-lg custompic" alt="...">
-                </div>
-                <div class="col-lg-8">
-                  <div class="card-header pt-2 pb-2">
-                    <h5 class="m-0">KIA Telluride
-                      <span class="text-success"></span>
-                      <span class="justify-content-end text-secondary"></span>
-                    </h5>
-                  </div>
-                  <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
-                    <p class="card-text mb-1 badge badge-primary">New</p>
-                    <p class="card-text mb-1 badge badge-success">Eco-Friendly</p>
-                    <p class="card-text mb-1 badge badge-secondary">Crossover</p>
-                    <p class="card-text mb-0">2020 - Present</p>
-                    <p class="card-text">
-                      <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 15 </span>
-                      <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 16 </span>
-                      <span class="pl-2 pr-2">
-                        <span class="fas fa-star checked"></span>
-                        <span class="fas fa-star checked"></span>
-                        <span class="fas fa-star-half-alt checked"></span>
-                        <span class="far fa-star colored"></span>
-                        <span class="far fa-star colored"></span>
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card mb-3 m-4 ml-4">
-              <div class="row no-gutters">
-                <div class="col-lg-4">
-                  <img src="/public/img/M-F-pics/lambo2.jpg" class="card-img rounded-lg custompic" alt="...">
-                </div>
-                <div class="col-lg-8">
-                  <div class="card-header pt-2 pb-2">
-                    <h5 class="m-0">Lamborghini Urus
-                      <span class="text-success"></span>
-                      <span class="justify-content-end text-secondary"></span>
-                    </h5>
-                  </div>
-                  <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
-                    <p class="card-text mb-1 badge badge-primary">New</p>
-                    <p class="card-text mb-1 badge badge-secondary">Crossover</p>
-                    <p class="card-text mb-0">2018 - Present</p>
-                    <p class="card-text">
-                      <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 23 </span>
-                      <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 15 </span>
-                      <span class="pl-2 pr-2">
-                        <span class="fas fa-star checked"></span>
-                        <span class="fas fa-star checked"></span>
-                        <span class="fas fa-star checked"></span>
-                        <span class="far fa-star colored"></span>
-                        <span class="far fa-star colored"></span>
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card mb-3 m-4 ml-4">
-              <div class="row no-gutters">
-                <div class="col-lg-4">
-                  <img src="/public/img/M-F-pics/skoda1.jfif" class="card-img rounded-lg custompic" alt="...">
-                </div>
-                <div class="col-lg-8">
-                  <div class="card-header pt-2 pb-2">
-                    <h5 class="m-0">Skoda Superb
-                      <span class="text-success"></span>
-                      <span class="justify-content-end text-secondary"></span>
-                    </h5>
-                  </div>
-                  <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
-                    <p class="card-text mb-1 badge badge-primary">Popular</p>
-                    <p class="card-text mb-1 badge badge-success">Eco-Friendly</p>
-                    <p class="card-text mb-0">2001 - Present</p>
-                    <p class="card-text">
-                      <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 143 </span>
-                      <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 98 </span>
-                      <span class="pl-2 pr-2">
-                        <span class="fas fa-star checked"></span>
-                        <span class="fas fa-star checked"></span>
-                        <span class="fas fa-star checked"></span>
-                        <span class="far fa-star colored"></span>
-                        <span class="far fa-star colored"></span>
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- FORUM SITE END -->
-        </div>
+        <% } else { %>
+          <% marketAds.forEach((marketAd) =>{ %>
+            <%- include('inc/marketAd', {marketAd: marketAd}); -%>
+          <% }); %>
+        <% } %>
       </div>
     </div>
   </div>
@@ -251,10 +42,11 @@
   <script type="text/javascript">
     $("[data-toggle=\"tooltip\"]").tooltip();
     $(document).ready(function () {
-        $('#sidebarCollapse').on('click', function () {
-            $('#sidebar').toggleClass('active');
-        });
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+      });
     });
+
     function closeSidebar() {
       if (!$('#sidebar').hasClass('active')) {
         $('#sidebarCollapse').click();

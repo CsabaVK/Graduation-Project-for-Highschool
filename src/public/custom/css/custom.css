@@ -3,8 +3,8 @@
 } */
 
 /* Filterbar timer */
-#navbarSupportedContenFilter{
-transition: all 0.3s;
+#navbarSupportedContenFilter {
+  transition: all 0.3s;
 }
 
 /* profile bg static */
@@ -16,7 +16,8 @@ transition: all 0.3s;
 .fa-check-circle {
   color: greenyellow;
 }
-.fa-times-circle{
+
+.fa-times-circle {
   color: red;
 }
 
@@ -24,13 +25,16 @@ transition: all 0.3s;
 .checked {
   color: orange;
 }
-.colored{
+
+.colored {
   color: orange;
 }
-.badge-rare{
+
+.badge-rare {
   background-color: purple;
   color: white;
 }
+
 /* ------------------------- */
 
 /* FOR MAIN BORDERS */
@@ -42,47 +46,48 @@ transition: all 0.3s;
   overflow-y: scroll; */
 }
 
-.filterbarbg{
+.filterbarbg {
   background-color: #2f5975;
 }
 
-#navMaxHeight{
+#navMaxHeight {
   max-height: 65px;
 }
 
-.custompic{
+.custompic {
   /* height: 100%; */
   height: 100%;
   width: 100%;
 }
 
-.short-select{
+.short-select {
   max-width: 170px;
 }
 
-.maintitle{
+.maintitle {
   background-color: #333;
 }
 
-.maintitle:hover{
+.maintitle:hover {
   background-color: #333;
 }
+
 /* 
 .scrollbarfix {
   overflow: auto;
 } */
 
-.avatarpic{
+.avatarpic {
   width: 48px;
   object-fit: cover;
   height: 48px;
 }
 
-  /* @media{
+/* @media{
 
   } */
 
-.w-43-5{
+.w-43-5 {
   width: 43.5% !important;
 }
 
@@ -94,4 +99,3 @@ transition: all 0.3s;
   max-width: 50rem;
   height: 20rem;
 }
-

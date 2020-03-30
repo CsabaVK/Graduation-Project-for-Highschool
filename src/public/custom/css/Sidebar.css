@@ -33,12 +33,14 @@
     font-size: 1.1em;
     display: block;
 }
+
 #sidebar ul li a:hover {
     color: #7386D5;
     background: #fff;
 }
 
-#sidebar ul li.active > a, a[aria-expanded="true"] {
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
     color: #fff;
     background: #6d7fcc;
 }
@@ -62,6 +64,7 @@
         color: #fff;
         transition: all 0.3s;
     }
+
     /* #sidebar.active {
         margin-left: -250px;
     } */
@@ -69,6 +72,7 @@
         display: none;
     }
 }
+
 @media (min-width: 1440px) {
     #sidebar.active {
         margin-left: -250px;

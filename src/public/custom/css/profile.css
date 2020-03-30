@@ -4,12 +4,13 @@
 } */
 
 /* Bootsnippete */
-.fb-profile img.fb-image-lg{
+.fb-profile img.fb-image-lg {
     z-index: 0;
     width: 100%;
     margin-bottom: 10px;
     max-height: 12rem;
 }
+
 .fb-image-profile {
     margin: -90px 10px 0px 50px;
     z-index: 9;
@@ -18,7 +19,7 @@
     max-height: 200px;
 }
 
-.geciquoutemar{
+.geciquoutemar {
     margin-top: 5px;
 }
 
@@ -26,17 +27,16 @@
     min-height: 830px;
 }
 
-@media (max-width:1200px) {    
-    .fb-profile-text>h1{
+@media (max-width:1200px) {
+    .fb-profile-text>h1 {
         font-weight: 700;
-        font-size:16px;
+        font-size: 16px;
     }
 
-    .fb-image-profile
-    {
+    .fb-image-profile {
         margin: -45px 10px 0px 25px;
         z-index: 9;
-        width: 30%; 
+        width: 30%;
         margin-bottom: 20px;
         max-width: 175px;
         max-height: 175px;
@@ -44,7 +44,7 @@
         min-height: 125px;
     }
 
-    .geciquoutemar{
+    .geciquoutemar {
         margin-top: 50px;
     }
 }
@@ -55,9 +55,8 @@
     border: 1px solid #F2F2F2;
 }
 
-.avatarpic-comment{
+.avatarpic-comment {
     width: 35px;
     object-fit: cover;
     height: 35px;
-  }
-
+}
