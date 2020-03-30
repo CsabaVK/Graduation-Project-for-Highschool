@@ -1,93 +1,73 @@
-<!-- REGISTER SIGN UP POPUP -->
-<div class="modal fade bd-example-modal-lg" id="profileeditModal" tabindex="-1" role="dialog" aria-labelledby="profileeditModalTitle" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" id="profileeditModal" tabindex="-1" role="dialog"
+    aria-labelledby="profileeditModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="profileeditModalTitle">Edit your profile</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <form>
+            <div class="modal-header">
+                <h5 class="modal-title" id="profileeditModalTitle">Edit your profile</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" placeholder="Your Password">
+                        </div>
+                    </div>
 
-            <!-- <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="">First and last name</span>
-                </div>
-                <input type="text" class="form-control">
-                <input type="text" class="form-control">
-              </div>
-     -->
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Password</label>
-                <div class="col-sm-10">
-                <input type="password" class="form-control" placeholder="Your Password">
-                </div>
-            </div>
-    
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Re-Password</label>
-                <div class="col-sm-10">
-                <input type="password" class="form-control" placeholder="Password Again">
-                </div>
-            </div>
-    
-            <hr>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Re-Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" placeholder="Password Again">
+                        </div>
+                    </div>
 
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Phone</label>
-                <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="Phone number">
-                </div>
-            </div>
+                    <hr>
 
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">E-mail</label>
-                <div class="col-sm-10">
-                <input type="email" class="form-control" placeholder="E-mail">
-                </div>
-            </div>
-    
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Birth Date</label>
-                <div class="col-sm-10">
-                <!-- <script> CURRENT DATEE
-                    //January is 0!
-                    var today = new Date();
-                    var date = String(today.getFullYear() + '-' + today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
-                    console.log(today);
-                    document.write('<input type="date" name="bday" max="'+today+'" min="1900-01-01" class="form-control">');
-                </script> -->
-                <input type="date" name="bday" max="2030-12-31" min="1900-01-01" class="form-control" placeholder="YYYY.MM.DD">
-                </div>
-            </div>
-    
-            <hr>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Phone</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Phone number">
+                        </div>
+                    </div>
 
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Country</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" placeholder="Your Country">
-                </div>
-            </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">E-mail</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" placeholder="E-mail">
+                        </div>
+                    </div>
 
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Language</label>
-                <div class="col-sm-10">
-                <select class="form-control" disabled>
-                    <option>English</option>
-                </select>
-                </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Birth Date</label>
+                        <div class="col-sm-10">
+                            <input type="date" name="bday" max="2030-12-31" min="1900-01-01" class="form-control"
+                                placeholder="YYYY.MM.DD">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Country</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Your Country">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Language</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" disabled>
+                                <option>English</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
             </div>
-    
-            </form>
-        </div>
-        <div class="modal-footer justify-content-center">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save Changes</button>
-        </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save Changes</button>
+            </div>
         </div>
     </div>
-    </div>
-    <!-- END REGISTER SIGN UP -->
+</div>

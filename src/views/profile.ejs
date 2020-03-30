@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <%- include('inc/head'); -%>
   <link rel="stylesheet" href="/public/custom/css/profile.css">
   <title>Car Clutch Club - Profile</title>
-  <style>
-  
-  </style>
 </head>
+
 <body>
   <%- include('inc/NavbarItems/profileEditModal'); -%>
   <%- include('inc/navbar'); -%>
-
-  <!-- MAIN -->
   <div class="main">
     <div class="row mr-0 ml-0">
       <div class="col-9 borderonmain p-0 profpage">
-
-        <!-- TITLE -->
         <div class="row maintitle m-0">
           <div class="col-3"></div>
           <div class="col-6 text-white text-center m-0 p-2 maintitle">
@@ -25,145 +20,100 @@
           </div>
           <div class="col-3 p-0">
             <div class="float-right pt-1 pb-1 pr-2 h-100">
-              <!-- btn -->
-              <span class="btn btn-outline-primary h-100" data-toggle="modal" data-target="#profileeditModal">Edit</span>
-                <!--<span class="fa fa-map-marker-alt"></span> Location <span class="sr-only">(current)</span></span> -->
+              <span class="btn btn-outline-primary h-100" data-toggle="modal"
+                data-target="#profileeditModal">Edit</span>
             </div>
           </div>
         </div>
-
-        <!-- <img src="/public/img/prof_bg.png" class="img-fluid bgsize"> -->
         <div class="bootstrap snippet p-0">
           <div class="p-0">
-
-              <div class="fb-profile">
-                <img align="left" class="fb-image-lg" src="/public/img/prof_bg.png"/>
-                <img align="left" class="fb-image-profile" src="/public/img/avatars/boy1.png"/>
-                <div class="fb-profile-text">
-                  <h1 class=" "><%= userdata.username %></h1>
-                  <span class="pl-2">
-                    <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 34 </span>
-                    <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 21 </span>
-                      <span class="pl-2 pr-2">
-                        <span class="fas fa-star checked"></span>
-                        <span class="fas fa-star checked"></span>
-                        <span class="fas fa-star checked"></span>
-                        <span class="fas fa-star-half-alt checked"></span>
-                        <span class="far fa-star colored"></span>
-                      </span>
-
+            <div class="fb-profile">
+              <img align="left" class="fb-image-lg" src="/public/img/prof_bg.png" />
+              <img align="left" class="fb-image-profile" src="/public/img/avatars/boy1.png" />
+              <div class="fb-profile-text">
+                <h1 class=" "><%= userdata.username %></h1>
+                <span class="pl-2">
+                  <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> 34 </span>
+                  <span class="badge badge-danger"><span class="far fa-thumbs-down"></span> 21 </span>
+                  <span class="pl-2 pr-2">
+                    <span class="fas fa-star checked"></span>
+                    <span class="fas fa-star checked"></span>
+                    <span class="fas fa-star checked"></span>
+                    <span class="fas fa-star-half-alt checked"></span>
+                    <span class="far fa-star colored"></span>
                   </span>
-                  <p class="pl-2 pt-2">Some description here</p>
-                </div>
-
-                <!-- coainter -->
-                <div class="ml-5 mr-5 pt-1">
-
-                  <!-- COMMENTER SECTION -->
-                  <div class="geciquoutemar">
-                    <div class="card card-info">
-                        <div class="card-block">
-                            <textarea placeholder="Write your comment here!" class="pb-cmnt-textarea"></textarea>
-                            <form class="form-inline float-lg-right pb-2 pl-2 pr-2">
-                                <div class="btn-group">
-                                    <button class="btn" type="button"><span class="fa fa-align-left fa-lg"></span></button>
-                                    <button class="btn" type="button"><span class="fa fa-images fa-lg"></span></button>
-                                </div>
-                                <div class="float-right">
-                                  <button class="btn btn-primary" type="button">Add a comment</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                  </div>
-
-                  <!-- FIRSt TRY COMMENT BOX -->
-                  <!-- <div class="card geciquoutemar">
-                    <div class="card-header">
-                      Add a comment
-                    </div>
-                    <div class="card-body">
-                      <input type="text" placeholder="Say Somthing" class="blockquote mb-0 w-100">
-                      asd
-                      <div class="pt-3 float-right">
-                        <button type="button" class="btn btn-primary">Add the comment</button>
-
-                      </div>
-                    </div>
-                  </div> -->
-
-                  <div class="card geciquoutemar mt-4">
-                    <div class="card-header pt-1 pb-1 pl-1 pr-2 form-inline">
-                      <img src="/public/img/avatars/boy1.png" class="img-responsive avatarpic-comment rounded-bottom">
-
-                      <!-- ABSOLUTELY NO FCKIN LOGIC HERE, BUT ITS CENTERED -->
-                      <div class=""><span class="text-center pl-2 h4">Deycknston Mackency</span></div>
-
-                    </div>
-                    <div class="card-body">
-                      <blockquote class="blockquote mb-0">
-                        <p>This is my comment here, it can be very very very very long</p>
-                        <footer class="blockquote-footer"><cite title="Source Title">2020-03-04 22:15</cite></footer>
-                      </blockquote>
-                    </div>
-                  </div>
-
-                  <!-- END PROF -->
-                </div>
-
+                </span>
+                <p class="pl-2 pt-2">Some description here</p>
               </div>
+              <div class="ml-5 mr-5 pt-1">
+                <div class="geciquoutemar">
+                  <div class="card card-info">
+                    <div class="card-block">
+                      <textarea placeholder="Write your comment here!" class="pb-cmnt-textarea"></textarea>
+                      <form class="form-inline float-lg-right pb-2 pl-2 pr-2">
+                        <div class="btn-group">
+                          <button class="btn" type="button"><span class="fa fa-align-left fa-lg"></span></button>
+                          <button class="btn" type="button"><span class="fa fa-images fa-lg"></span></button>
+                        </div>
+                        <div class="float-right">
+                          <button class="btn btn-primary" type="button">Add a comment</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="card geciquoutemar mt-4">
+                  <div class="card-header pt-1 pb-1 pl-1 pr-2 form-inline">
+                    <img src="/public/img/avatars/boy1.png" class="img-responsive avatarpic-comment rounded-bottom">
+                    <div class=""><span class="text-center pl-2 h4">Deycknston Mackency</span></div>
+                  </div>
+                  <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                      <p>This is my comment here, it can be very very very very long</p>
+                      <footer class="blockquote-footer"><cite title="Source Title">2020-03-04 22:15</cite></footer>
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-      </div> 
-
+        </div>
       </div>
       <div class="col-3 borderonmain p-0 bgprof">
-
-        <!-- TITLE 2-->
         <div class="row maintitle m-0">
           <div class="col text-white text-center m-0 p-2 maintitle">
             <h3 class="m-0">Statics</h3>
           </div>
         </div>
-
-          <div class="row pt-4">
-            <div class="col-9">
-
-              <div class="text-left pb-3 pl-4">
-                <span class="far fa-check-circle fa-2x"></span>
-                <span class="h3 pl-2">Sold Cars:</span>
-              </div>
-
-              <div class="text-left pl-4 pb-3">
-                <span class="far fa-times-circle fa-2x"></span>
-                <span class="h3 pl-2">Deleted ADs:</span>
-              </div>
-
-              <div class="text-left pl-4">
-                <span class="fas fa-dot-circle fa-2x"></span>
-                <span class="h3 pl-2">Current ADs:</span>
-              </div>
+        <div class="row pt-4">
+          <div class="col-9">
+            <div class="text-left pb-3 pl-4">
+              <span class="far fa-check-circle fa-2x"></span>
+              <span class="h3 pl-2">Sold Cars:</span>
             </div>
-
-          
-          <!-- new div -->
-            <div class="col-3 pr-0">
-              <h3 class="text-left pb-2">24</h3>
-              <h3 class="text-left pb-2">3</h3>
-              <h3 class="text-left">2</h3>
+            <div class="text-left pl-4 pb-3">
+              <span class="far fa-times-circle fa-2x"></span>
+              <span class="h3 pl-2">Deleted ADs:</span>
+            </div>
+            <div class="text-left pl-4">
+              <span class="fas fa-dot-circle fa-2x"></span>
+              <span class="h3 pl-2">Current ADs:</span>
+            </div>
           </div>
-      </div>
-        
-
+          <div class="col-3 pr-0">
+            <h3 class="text-left pb-2">24</h3>
+            <h3 class="text-left pb-2">3</h3>
+            <h3 class="text-left">2</h3>
+          </div>
+        </div>
         <hr>
-
-        
-          <div class="col">
-            <span class="ml-1 h3"><span class="far fa-envelope"></span> E-mail:</span>
-            <br>
-            <i class="pl-1 h5"><%= userdata.email %></i>
-            <br>
-            <br>
-            <span class="ml-1 mt-2 h3"><span class="fas fa-phone"></span> Phone:</s>
+        <div class="col">
+          <span class="ml-1 h3"><span class="far fa-envelope"></span> E-mail:</span>
+          <br>
+          <i class="pl-1 h5"><%= userdata.email %></i>
+          <br>
+          <br>
+          <span class="ml-1 mt-2 h3"><span class="fas fa-phone"></span> Phone:</s>
             <br>
             <i class="pl-1 h5">+401 48 342 4532</i>
             <br>
@@ -171,18 +121,14 @@
             <span class="ml-1 mt-2 h3"><span class="fas fa-globe-europe"></span> Country:</span>
             <br>
             <i class="pl-1 h5">Germany</i>
-          </div>
-
         </div>
-
-        <br>
-        <br><br>
       </div>
+      <br><br><br>
     </div>
   </div>
-</div>
-
-
+  </div>
+  </div>
   <%- include('inc/scripts'); -%>
 </body>
+
 </html>

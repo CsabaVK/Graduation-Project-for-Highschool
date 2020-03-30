@@ -1,49 +1,34 @@
 <div class="card mb-3 m-4 ml-4">
-    <div class="row no-gutters">
-      <div class="col-lg-4 ">
-        <a href="http://localhost:3000/ads/<%- marketAd.id -%>">
-          <img src="<%- marketAd.imgURI -%>" class="card-img rounded-lg custompic" alt="...">
+  <div class="row no-gutters">
+    <div class="col-lg-4 ">
+      <a href="http://localhost:3000/ads/<%- marketAd.id -%>">
+        <img src="<%- marketAd.imgURI -%>" class="card-img rounded-lg custompic" alt="...">
+      </a>
+    </div>
+    <div class="col-lg-8">
+      <div class="card-header pt-2 pb-2">
+        <a href="http://localhost:3000/ads">
+          <h5 class="m-0"><%- marketAd.title -%>
+            <span class="text-success">(<%- marketAd.price -%>€)</span>
+            <span class="justify-content-end text-secondary float-right"><%- marketAd.howFarAway -%> km</span>
+          </h5>
         </a>
-        </div>
-      <div class="col-lg-8">
-        <div class="card-header pt-2 pb-2">
-          <a href="http://localhost:3000/ads">
-            <!-- Header -->
-            <h5 class="m-0"><%- marketAd.title -%>
-              <span class="text-success">(<%- marketAd.price -%>€)</span>
-              <!-- Positon to right!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-              <span class="justify-content-end text-secondary float-right"><%- marketAd.howFarAway -%> km</span>
-            </h5>
-          </a>
-          <!-- <form class="text form-inline justify-content-end">asd</form> -->
-
-        </div>
-        <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
-
-          <!-- ROW 1 TAGS -->
-          <!-- <p class="card-text mb-1 badge badge-primary">Salon</p>
-          <p class="card-text mb-1 badge badge-success">Electric</p>
-          <p class="card-text mb-1 badge badge-secondary">AWD</p> -->
-
-
-          <!-- ROW 2 Fuel type, year, cubic cap, hp, km -->
-          <p class="card-text mb-0"><%- marketAd.fuel -%>, <%- marketAd.year -%>, <%- marketAd.hp -%> HP, <%- marketAd.km -%> km</p>
-
-          <!--  -->
-          <p class="card-text">
-            <!-- ROW 3Likes,dislikes -->
-            <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> <%- marketAd.likes -%> </span>
-              <span class="pl-2 pr-2">
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star-half-alt checked"></span>
-                <span class="far fa-star colored"></span>
-              </span>
-            <span class="card-text text-secondary"><%- marketAd.username -%></span>
-
-          </p>
-        </div>
+      </div>
+      <div class="card-body pt-0 pl-2 pr-2 pb-0 ">
+        <p class="card-text mb-0"><%- marketAd.fuel -%>, <%- marketAd.year -%>, <%- marketAd.hp -%> HP,
+          <%- marketAd.km -%> km</p>
+        <p class="card-text">
+          <span class="badge badge-danger"><span class="far fa-thumbs-up"></span> <%- marketAd.likes -%> </span>
+          <span class="pl-2 pr-2">
+            <span class="fas fa-star checked"></span>
+            <span class="fas fa-star checked"></span>
+            <span class="fas fa-star checked"></span>
+            <span class="fas fa-star-half-alt checked"></span>
+            <span class="far fa-star colored"></span>
+          </span>
+          <span class="card-text text-secondary"><%- marketAd.username -%></span>
+        </p>
       </div>
     </div>
   </div>
+</div>

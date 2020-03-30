@@ -2,22 +2,3 @@
 <script src="/public/bootstrap/js/popper.min.js"></script>
 <script src="/public/bootstrap/js/bootstrap.min.js"></script>
 <script src="/public/fontawesome-5.12.1/js/all.min.js"></script>
-
-<script type="text/javascript">
-  // this is required for tooltips (used in filterbar)
-  $("[data-toggle=\"tooltip\"]").tooltip();
-
-  //SIDEBAR TOGGLE
-  $(document).ready(function () {
-      $('#sidebarCollapse').on('click', function () {
-          $('#sidebar').toggleClass('active');
-      });
-  });
-
-  //FILTER BTN AUTO-CLOSE ADVANCED FILTERS
-  function closeSidebar() {
-    if (!$('#sidebar').hasClass('active')) {
-      $('#sidebarCollapse').click();
-    }
-  }
-</script>

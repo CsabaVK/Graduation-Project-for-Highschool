@@ -37,7 +37,6 @@ router.post('/login', (req, res) => {
   const getUserDetails = syncSql.mysql(sqlData, `SELECT id, username, password FROM users WHERE username='${username}'`);
   if (getUserDetails.success) {
     if (getUserDetails.data.rows.length > 0) {
-      // if (password == getUserDetails.data.rows[0].password) {
       if (pwHash.verify(password, getUserDetails.data.rows[0].password)) {
         req.session.user = getUserDetails.data.rows[0].id;
         res.redirect('/');
@@ -62,18 +61,14 @@ router.post('/register', (req, res) => {
   const email = req.body.email;
   const birthdate = req.body.birth_date;
   const languageselector = 'English';
-  // res.json(req.body);
   let errorMessage = '';
   if (checkIfUserExists(email)) {
     errorMessage += 'The user already exists!';
   } else {
     if (email && password && password2) {
-      // https://regexr.com/
       if ((/^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/.test(username)) && (/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/g.test(email)) && (/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{3,20}$/g.test(password))) {
         if (password == password2) {
-          // const inserted = syncSql.mysql(sqlData, `INSERT INTO users (username, password, email, birth_date, lang) VALUES('${username}', '${password}', '${email}', '${birthdate}', '${languageselector}')`);
           const inserted = syncSql.mysql(sqlData, `INSERT INTO users (username, password, email, birth_date, lang) VALUES('${username}', '${pwHash.generate(password)}', '${email}', '${birthdate}', '${languageselector}')`);
-          // res.json(inserted);
           if (inserted.success == 'false') {
             renderPage(req, res, 'index', 'danger', 'Database error!');
           } else {
@@ -103,7 +98,6 @@ function checkIfUserExists(userEmail) {
   }
 }
 
-// it renders a page :)
 function renderPage(req, res, pageURI, type, message) {
   res.render(pageURI, {
     marketAds: require('../market.example.json'),
