@@ -17,11 +17,13 @@ router.get('/', (req, res) => {
 
 router.get('/profile', (req, res) => {
   if (req.session.user) {
-    const getProfileDetails = syncSql.mysql(sqlData, `SELECT * FROM users WHERE id=${req.session.user}`);
+    const getProfileDetails = syncSql.mysql(sqlData, `SELECT * FROM users WHERE id='${req.session.user}'`);
+    const marketAds = syncSql.mysql(sqlData, `SELECT market.id, users.username, title, price, fuel_type, year, cubic_capacity, horsepower, milage FROM market INNER JOIN users ON users.id=market.ownerid WHERE ownerid='${req.session.user}'`);
     res.render('profile', {
       url: req.url,
       session: req.session.user,
       userdata: getProfileDetails.data.rows[0],
+      marketAds: marketAds.data.rows,
     });
   } else {
     res.redirect('/');
@@ -122,12 +124,6 @@ function renderPage(req, res, pageURI, type, message) {
 
 router.get('/logout', (req, res) => {
   req.session.user = undefined;
-  res.redirect('/');
-});
-
-
-router.get('/testlogin', (req, res) => {
-  req.session.user = 1;
   res.redirect('/');
 });
 
