@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-  <%- include('inc/head'); -%>
+  <%- include('inc/basic/head'); -%>
   <link rel="stylesheet" href="/public/custom/css/Sidebar.css">
   <title>Car Clutch Club</title>
 </head>
 
 <body>
-  <%- include('inc/navbar'); -%>
-  <%- include('inc/filterbar'); -%>
+  <%- include('inc/basic/navbar'); -%>
+  <%- include('inc/main/filterbar'); -%>
   <% if (typeof alert != "undefined") { %>
   <div class="alert alert-<%= alert.type %> m-0 h4 text-center" role="alert">
     <%= alert.message %>
@@ -38,7 +38,7 @@
       </div>
     </div>
   </div>
-  <%- include('inc/scripts'); -%>
+  <%- include('inc/basic/scripts'); -%>
   <script type="text/javascript">
     $("[data-toggle=\"tooltip\"]").tooltip();
     $(document).ready(function () {
