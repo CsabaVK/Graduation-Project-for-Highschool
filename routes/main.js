@@ -36,7 +36,7 @@ router.get('/test', (req, res) => {
 });
 
 router.get('/ads/:id', (req, res) => {
-  // const markateAad = sznqsl.mzsql)sqlData,"select from $Őrequest.idÚ"
+  // const markateAad = synqsl.mzsql)sqlData,"select from $Őrequest.idÚ"
   res.render('adsView', {
     url: req.url,
     session: req.session.user,

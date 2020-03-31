@@ -90,3 +90,12 @@ opacity: 1;
 .text-gray{
 color: gray;
 }
+
+.border-dc{
+    border-top: 3px solid #333;
+}
+
+.ads-profilepic{
+    width: 100px;
+    height: 100px;
+}
