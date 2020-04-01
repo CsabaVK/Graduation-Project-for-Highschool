@@ -32,7 +32,7 @@ router.get('/profile', (req, res) => {
 
 router.get('/profile/:id', (req, res) => {
   if (req.session.user == req.params.id) {
-    return res.redirect('/profile');
+    return res.redirect('/account/profile');
   }
   const getProfileDetails = syncSql.mysql(sqlData, `SELECT * FROM users WHERE id='${req.params.id}'`);
   if (getProfileDetails.data.rows.length == 0) {
