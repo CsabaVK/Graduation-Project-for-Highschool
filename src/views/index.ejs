@@ -14,28 +14,31 @@
   </div>
   <% } %>
   <%- // include('inc/sidebar'); -%>
+  <%- include('inc/basic/navbar'); -%>
   <div class="content container">
-    <%- include('inc/basic/navbar'); -%>
     <div class="row">
-        <button class="btn btn-block btn-success btn-lg m-3 h-100"><span class="fas fa-hand-holding-usd"></span>
-          Sell your car
-        </button>
+      <button class="btn btn-block btn-success btn-lg m-3 h-100"><span class="fas fa-hand-holding-usd"></span>
+        Sell your car
+      </button>
     </div>
+    <% if (marketAds.length == 0) { %>
     <div class="row">
-      <div class="col-md">
-        <% if (marketAds.length == 0) { %>
-          <div class="alert alert-primary m-4 p-3 text-center" role="alert">
-            Currently there are no ads.
-            <br />
-            Check back later!
-          </div>
-        <% } else { %>
-          <% marketAds.forEach((marketAd) =>{ %>
-            <%- include('inc/marketAd', {marketAd: marketAd}); -%>
-          <% }); %>
-        <% } %>
+
+      <div class="alert alert-primary m-4 p-3 text-center" role="alert">
+        Currently there are no ads.
+        <br />
+        Check back later!
       </div>
     </div>
+    <% } else { %>
+    <div class="row">
+      <div class="col">
+        <% marketAds.forEach((marketAd) =>{ %>
+        <%- include('inc/marketAd', {marketAd: marketAd}); -%>
+        <% }); %>
+      </div>
+    </div>
+    <% } %>
   </div>
   <%- include('inc/basic/scripts'); -%>
   <script type="text/javascript">

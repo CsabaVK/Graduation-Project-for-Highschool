@@ -65,38 +65,35 @@
 </nav> -->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">CCC</a>
+  <!-- <a class="navbar-brand" href="/">CCC</a> -->
+  <a class="navbar-brand mr-2" href="/">
+    <img src="/public/img/CCCLogo.png" width="100" height="30" alt="">
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="/">Market <!-- <span class="sr-only">(current)</span> --></a>
       </li>
     </ul>
-    <span class="navbar-text">
+    <span class="navbar-text p-0">
       <ul class="navbar-nav mr-auto">
       <% if (session) { %>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            My profile
+          <a class="nav-link dropdown-toggle p-0" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="/public/img/avatars/boy1.png" alt="" class="img-responsive" style="max-height: 40px;" class="">
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Profile</a>
+            <a class="dropdown-item" href="/account/profile">Profile</a>
             <a class="dropdown-item" href="#">Settings</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Sign out</a>
+            <a class="dropdown-item" href="/account/logout">Sign out</a>
           </div>
         </li>
         <% } else { %>
-          <span class="nav-link btn btn-primary btn-lg" data-toggle="modal" data-target="#loginModal">Login</span>
+          <span class="btn btn-primary m-1" data-toggle="modal" data-target="#loginModal">Login</span>
         <% } %>
       </ul>
     </span>

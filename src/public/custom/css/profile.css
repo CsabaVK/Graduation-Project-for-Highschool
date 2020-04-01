@@ -113,11 +113,3 @@ body {
     font-weight: 600;
     color: #0062cc;
 }
-
-.dropdown-menu {
-    background-color: #212529;
-}
-
-.dropdown-menu a:hover {
-    background-color: #333;
-}

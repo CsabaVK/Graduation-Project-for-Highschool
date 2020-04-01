@@ -1,4 +1,4 @@
-<div class="card mb-3" style="max-width: 540px;">
+<div class="card mb-3 text-center">
   <a href="/marketad/<%- marketAd.id %> ">
     <div class="row no-gutters">
       <div class="col-md-4">
@@ -9,14 +9,18 @@
         <div class="card-body">
           <div class="row">
             <div class="col">
-              <h5 class="card-title"><%- marketAd.title %></h5>
+              <h5 class="card-title float-left"><%- marketAd.title %></h5>
             </div>
             <div class="col">
               <div class="card-text float-right"><%- marketAd.price %>$</div>
             </div>
           </div>
-          <p class="card-text text-muted"><%- marketAd.fuel_type %>, <%- marketAd.year %>,
-            <%- marketAd.cubic_capacity %> cm<sup>3</sup>, <%- marketAd.horsepower %> HP, <%- marketAd.milage %> km</p>
+          <div class="row">
+            <div class="col">
+              <div class="card-text text-muted float-left"><%- marketAd.fuel_type %>, <%- marketAd.year %>,
+                <%- marketAd.cubic_capacity %> cm<sup>3</sup>, <%- marketAd.horsepower %> HP, <%- marketAd.milage %> km</div>
+              </div>
+          </div>
         </div>
       </div>
     </div>
