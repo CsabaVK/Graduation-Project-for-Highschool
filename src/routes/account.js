@@ -30,6 +30,23 @@ router.get('/profile', (req, res) => {
   }
 });
 
+router.get('/profile/:id', (req, res) => {
+  if (req.session.user == req.params.id) {
+    return res.redirect('/profile');
+  }
+  const getProfileDetails = syncSql.mysql(sqlData, `SELECT * FROM users WHERE id='${req.params.id}'`);
+  if (getProfileDetails.data.rows.length == 0) {
+    return res.redirect('/');
+  }
+  const marketAds = syncSql.mysql(sqlData, `SELECT market.id, users.username, title, price, fuel_type, year, cubic_capacity, horsepower, milage FROM market INNER JOIN users ON users.id=market.ownerid WHERE ownerid='${req.params.id}'`);
+  res.render('profile', {
+    url: req.url,
+    session: req.session.user,
+    userdata: getProfileDetails.data.rows[0],
+    marketAds: marketAds.data.rows,
+  });
+});
+
 router.post('/editprofile', (req, res) => {
   // TODO: after pressing confirm on editing your profile
 });

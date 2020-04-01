@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <%- include('inc/popups/profileEditModal') %> 
+  <%- include('inc/popups/profileEditModal') %>
   <%- include('inc/basic/navbar'); -%>
   <div class="container emp-profile">
     <form method="post">
@@ -17,9 +17,11 @@
           <div class="profile-img">
             <img src="/public/img/avatars/boy1.png" alt="" />
           </div>
+          <% if (session == userdata.id) { %>
           <div class="text-center pt-4">
             <input type="button" class="profile-edit-btn" name="btnAddMore" data-toggle="modal" data-target="#profileeditModal" value="Edit Profile" />
           </div>
+          <% } %>
         </div>
         <div class="col-md-8">
           <div class="profile-head">
