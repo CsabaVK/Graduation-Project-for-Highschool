@@ -30,6 +30,10 @@ router.get('/profile', (req, res) => {
   }
 });
 
+router.post('/editprofile', (req, res) => {
+  // TODO: after pressing confirm on editing your profile
+});
+
 router.post('/login', (req, res) => {
   if (req.session.user) {
     return res.redirect('/');

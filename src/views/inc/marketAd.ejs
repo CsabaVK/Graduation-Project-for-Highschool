@@ -1,17 +1,24 @@
-<div class="card mb-3">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="../../public/img/Red-Tesla/TR1.jpg" class="card-img mx-auto d-block" alt="Picture of the car">
-    </div>
-    <div class="col-md-8">
-      <a href="/ads/<%- marketAd.id %>">
+<div class="card mb-3" style="max-width: 540px;">
+  <a href="/marketad/<%- marketAd.id %> ">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="/public/img/Red-Tesla/TR1.jpg" alt="" class="card-img mx-auto"
+          style="height: 100%;">
+      </div>
+      <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title"><%- marketAd.title %> (<%- marketAd.price %> $)</h5>
-          <p class="card-text"><%- marketAd.fuel_type %>, year: <%- marketAd.year %>, cc:
-            <%- marketAd.cubic_capacity %>, HP: <%- marketAd.horsepower %>, <%- marketAd.milage %> km</p>
-          <p class="card-text"><small class="text-muted">Uploaded by <%- marketAd.username %></small></p>
+          <div class="row">
+            <div class="col">
+              <h5 class="card-title"><%- marketAd.title %></h5>
+            </div>
+            <div class="col">
+              <div class="card-text float-right"><%- marketAd.price %>$</div>
+            </div>
+          </div>
+          <p class="card-text text-muted"><%- marketAd.fuel_type %>, <%- marketAd.year %>,
+            <%- marketAd.cubic_capacity %> cm<sup>3</sup>, <%- marketAd.horsepower %> HP, <%- marketAd.milage %> km</p>
         </div>
-      </a>
+      </div>
     </div>
-  </div>
+  </a>
 </div>

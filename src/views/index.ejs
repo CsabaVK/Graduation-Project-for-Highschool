@@ -8,15 +8,14 @@
 </head>
 
 <body>
-  <%- include('inc/basic/navbar'); -%>
-  <%- include('inc/main/filterbar'); -%>
   <% if (typeof alert != "undefined") { %>
   <div class="alert alert-<%= alert.type %> m-0 h4 text-center" role="alert">
     <%= alert.message %>
   </div>
   <% } %>
   <%- // include('inc/sidebar'); -%>
-  <div class="content container-fluid">
+  <div class="content container">
+    <%- include('inc/basic/navbar'); -%>
     <div class="row">
         <button class="btn btn-block btn-success btn-lg m-3 h-100"><span class="fas fa-hand-holding-usd"></span>
           Sell your car
