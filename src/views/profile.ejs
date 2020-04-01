@@ -8,7 +8,9 @@
 </head>
 
 <body>
-  <%- include('inc/popups/profileEditModal') %>
+  <% if (session == userdata.id) { %>
+    <%- include('inc/popups/profileEditModal') %>
+  <% } %>
   <%- include('inc/basic/navbar'); -%>
   <div class="container emp-profile">
     <form method="post">
