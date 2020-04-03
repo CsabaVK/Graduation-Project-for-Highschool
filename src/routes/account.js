@@ -134,9 +134,9 @@ function checkIfUserExists(userEmail) {
 function renderPage(req, res, pageURI, type, message) {
   const marketAds = syncSql.mysql(sqlData, `SELECT market.id, users.username, title, price, fuel_type, year, cubic_capacity, horsepower, milage FROM market INNER JOIN users ON users.id=market.ownerid;`);
   res.render(pageURI, {
-    marketAds: marketAds.data.rows,
     url: req.url,
     session: req.session.user,
+    marketAds: marketAds.data.rows,
     alert: {
       type: type,
       message: message,
