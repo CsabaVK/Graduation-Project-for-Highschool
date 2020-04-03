@@ -8,13 +8,13 @@
 </head>
 
 <body>
-  <% if (typeof alert != "undefined") { %>
-  <div class="alert alert-<%= alert.type %> m-0 h4 text-center" role="alert">
-    <%= alert.message %>
-  </div>
-  <% } %>
-  <%- // include('inc/sidebar'); -%>
   <%- include('inc/basic/navbar'); -%>
+
+  <% if (typeof alert != "undefined") { %>
+    <div class="alert alert-<%= alert.type %> m-0 h4 text-center" role="alert">
+      <strong><%= alert.message %></strong>
+    </div>
+    <% } %>
 
   <!-- Modal include -->
   <%- include('inc/popups/sellCarModal') %>
@@ -26,7 +26,7 @@
         Sell your car
       </button>
     </div>
-    <% if (marketAds.length == 0) { %>
+    <% if (typeof marketAds == "undefined" || marketAds.length == 0) { %>
     <div class="row justify-content-center">
 
       <div class="alert alert-primary m-4 p-3 text-center" role="alert">
