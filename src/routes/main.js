@@ -7,7 +7,7 @@ const syncSql = require('sync-sql');
 const sqlData = require('../sqldata.json');
 
 router.get('/', (req, res) => {
-  const marketAds = syncSql.mysql(sqlData, `SELECT market.id, users.username, title, price, fuel_type, year, cubic_capacity, horsepower, milage FROM market INNER JOIN users ON users.id=market.ownerid;`);
+  const marketAds = syncSql.mysql(sqlData, `SELECT market.id, users.username, make, model, price, fuel_type, year, cubic_capacity, horsepower, milage, description FROM market INNER JOIN users ON users.id=market.ownerid;`);
   // res.json(marketAds);
   res.render('index', {
     url: req.url,
@@ -21,7 +21,7 @@ router.get('/test', (req, res) => {
   res.end(req.session.views + ' views');
 });
 
-router.get('/ads/:id', (req, res) => {
+router.get('/marketad/:id', (req, res) => {
   const marketAd = syncSql.mysql(sqlData, `SELECT * FROM market WHERE id=${req.params.id}`)
   // res.json(marketAd);
   res.render('adsView', {
