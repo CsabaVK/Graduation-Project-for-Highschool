@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 router.get('/profile', (req, res) => {
   if (req.session.user) {
     const getProfileDetails = syncSql.mysql(sqlData, `SELECT * FROM users WHERE id='${req.session.user}'`);
-    const marketAds = syncSql.mysql(sqlData, `SELECT market.id, users.username, title, price, fuel_type, year, cubic_capacity, horsepower, milage FROM market INNER JOIN users ON users.id=market.ownerid WHERE ownerid='${req.session.user}'`);
+    const marketAds = syncSql.mysql(sqlData, `SELECT market.*, users.username FROM market INNER JOIN users ON users.id=market.ownerid WHERE ownerid='${req.session.user}'`);
     res.render('profile', {
       url: req.url,
       session: req.session.user,
@@ -38,7 +38,7 @@ router.get('/profile/:id', (req, res) => {
   if (getProfileDetails.data.rows.length == 0) {
     return res.redirect('/');
   }
-  const marketAds = syncSql.mysql(sqlData, `SELECT market.id, users.username, title, price, fuel_type, year, cubic_capacity, horsepower, milage FROM market INNER JOIN users ON users.id=market.ownerid WHERE ownerid='${req.params.id}'`);
+  const marketAds = syncSql.mysql(sqlData, `SELECT market.*, users.username FROM market INNER JOIN users ON users.id=market.ownerid WHERE ownerid='${req.params.id}'`);
   res.render('profile', {
     url: req.url,
     session: req.session.user,
@@ -132,7 +132,7 @@ function checkIfUserExists(userEmail) {
 }
 
 function renderPage(req, res, pageURI, type, message) {
-  const marketAds = syncSql.mysql(sqlData, `SELECT market.id, users.username, title, price, fuel_type, year, cubic_capacity, horsepower, milage FROM market INNER JOIN users ON users.id=market.ownerid;`);
+  const marketAds = syncSql.mysql(sqlData, `SELECT market.*, users.username FROM market INNER JOIN users ON users.id=market.ownerid;`);
   res.render(pageURI, {
     url: req.url,
     session: req.session.user,

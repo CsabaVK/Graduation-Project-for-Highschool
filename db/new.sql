@@ -33,6 +33,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `username` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `password` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `email` varchar(254) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `phone` varchar(30) COLLATE utf8mb4_unicode_ci NULL DEFAULT '',
+  `country` varchar(60) COLLATE utf8mb4_unicode_ci NULL DEFAULT '',
   `birth_date` date NOT NULL,
   `language` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `register_date` date NOT NULL,
