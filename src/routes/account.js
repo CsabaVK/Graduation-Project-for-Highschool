@@ -49,6 +49,18 @@ router.get('/profile/:id', (req, res) => {
 
 router.post('/editprofile', (req, res) => {
   // TODO: after pressing confirm on editing your profile
+  /*
+  if (password) {
+    const userDetails = syncSql.mysql(sqlData, `SELECT password FROM users WHERE id='` + req.session.user + `'`);
+    const password = req.body.password;
+    const password2 = req.body.password2;
+    const phone = req.body.phone;
+    const email = req.body.email;
+    const birth_date = req.body.birth_date;
+  } else {
+
+  }
+  */
 });
 
 router.post('/login', (req, res) => {
