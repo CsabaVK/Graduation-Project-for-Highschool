@@ -14,14 +14,14 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Title</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="Car's Title">
+                            <input name="title" type="text" class="form-control" placeholder="Car's Title">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Price</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" placeholder="Price in €">
+                            <input name="price" type="number" class="form-control" placeholder="Price in €">
                         </div>
                     </div>
 
@@ -30,76 +30,76 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Make</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="Make">
+                            <input name="make" type="text" class="form-control" placeholder="Make">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Model</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="Model">
+                            <input name="model" type="text" class="form-control" placeholder="Model">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Shape</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="Shape">
+                            <input name="shape" type="text" class="form-control" placeholder="Shape">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Fuel Type</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="Fuel Type">
+                            <input name="fuel_type" type="text" class="form-control" placeholder="Fuel Type">
                         </div>
                     </div>
                     
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Horsepower</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" min="10" step="10" placeholder="Horsepower">
+                            <input name="horsepower" type="number" class="form-control" min="10" step="10" placeholder="Horsepower">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">CM<sup>3</sup></label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" min="100" step="100" placeholder="Cubic Capacity">
+                            <input name="cubic_capacity" type="number" class="form-control" min="100" step="100" placeholder="Cubic Capacity">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Milage</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" placeholder="Milage in km">
+                            <input name="milage" type="number" class="form-control" placeholder="Milage in km">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Year</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" min="1800" value="2000" placeholder="Year">
+                            <input name="year" type="number" class="form-control" min="1800" value="2000" placeholder="Year">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Doors</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" min="0" max="30" placeholder="Number of Doors">
+                            <input name="doors" type="number" class="form-control" min="0" max="30" placeholder="Number of Doors">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Seats</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" min="1" max="200" placeholder="Number of Seats">
+                            <input name="seats" type="number" class="form-control" min="1" max="200" placeholder="Number of Seats">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Description</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" placeholder="Your detailed description" cols="30" rows="5"></textarea>
+                            <textarea name="description" class="form-control" placeholder="Your detailed description" cols="30" rows="5"></textarea>
                         </div>
                     </div>
 
@@ -114,11 +114,11 @@
                         </div>
                     </div> -->
 
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Create ad</button>
+                    </div>
                 </form>
-            </div>
-            <div class="modal-footer justify-content-center">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save Changes</button>
             </div>
         </div>
     </div>

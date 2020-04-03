@@ -32,7 +32,39 @@ router.get('/ads/:id', (req, res) => {
 });
 
 router.post('/newmarketad', (req, res) => {
-// TODO: Upload
+  // TODO: Upload
+  // return res.json(req.body);
+  const title = req.body.title;
+  const price = req.body.price;
+  const make = req.body.make;
+  const model = req.body.model;
+  const shape = req.body.shape;
+  const fuel_type = req.body.fuel_type;
+  const horsepower = req.body.horsepower;
+  const cubic_capacity = req.body.cubic_capacity;
+  const milage = req.body.milage;
+  const year = req.body.year;
+  const doors = req.body.doors;
+  const seats = req.body.seats;
+  const description = req.body.description;
+
+  const result = syncSql.mysql(sqlData, 
+    `INSERT INTO market (ownerid, created_at, title, price, make, model, shape, fuel_type, horsepower, cubic_capacity, milage, year, doors, seats, description) VALUES ('` 
+    + req.session.user + `', '` + getCurrentDate() + `', '` + title + `', '` + price + `', '` + make + `', '` + model + `', '` + shape + `', '` + fuel_type + `', '` + horsepower + `', '` + cubic_capacity + `', '` +
+    milage + `', '` + year +  `', '` + doors + `', '` + seats + `', '` + description + `')`);
+
+  // res.json(result);
+  res.redirect('/');
 });
+
+function getCurrentDate() {
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+
+  today = yyyy + '-' + mm + '-' + dd;
+  return today;
+}
 
 module.exports = router;
