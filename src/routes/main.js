@@ -23,12 +23,16 @@ router.get('/test', (req, res) => {
 
 router.get('/ads/:id', (req, res) => {
   const marketAd = syncSql.mysql(sqlData, `SELECT * FROM market WHERE id=${req.params.id}`)
-  //res.json(marketAd);
+  // res.json(marketAd);
   res.render('adsView', {
     url: req.url,
     session: req.session.user,
     marketAd: marketAd.data.rows[0],
   });
+});
+
+router.post('/newmarketad', (req, res) => {
+// TODO: Upload
 });
 
 module.exports = router;

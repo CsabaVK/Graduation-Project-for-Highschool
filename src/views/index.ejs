@@ -15,9 +15,14 @@
   <% } %>
   <%- // include('inc/sidebar'); -%>
   <%- include('inc/basic/navbar'); -%>
+
+  <!-- Modal include -->
+  <%- include('inc/popups/sellCarModal') %>
+  
   <div class="content container">
     <div class="row">
-      <button class="btn btn-block btn-success btn-lg m-3 h-100"><span class="fas fa-hand-holding-usd"></span>
+      <!-- <input name="btnAddMore" data-toggle="modal" data-target="#profileeditModal" value="Edit Profile" /> -->
+      <button type="button" class="btn btn-block btn-success btn-lg m-3 h-100" data-toggle="modal" data-target="#sellCarModal"><span class="fas fa-hand-holding-usd"></span>
         Sell your car
       </button>
     </div>
