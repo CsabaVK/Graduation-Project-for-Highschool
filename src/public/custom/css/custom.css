@@ -11,3 +11,7 @@
   color: grey !important;
 }
 /* NAVBAR END */
+
+.whiteBorder {
+  border: 1px solid white;
+}
