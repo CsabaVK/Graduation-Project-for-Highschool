@@ -30,6 +30,16 @@ router.get('/marketad/:id', (req, res) => {
   });
 });
 
+router.post('/deletead/:id', (req, res) => {
+  const getAd = syncSql.mysql(sqlData, `SELECT ownerid FROM market WHERE id='` + req.params.id + `'`);
+  if (getAd.data.rows[0].ownerid == req.session.user) {
+    syncSql.mysql(sqlData, `DELETE FROM market WHERE id='` + req.params.id + `'`);
+    res.redirect('/account/profile');
+  } else {
+    res.redirect('/');
+  }
+});
+
 router.post('/newmarketad', upload.array('photos', 6), (req, res) => {
   const title = req.body.title;
   const price = req.body.price;
