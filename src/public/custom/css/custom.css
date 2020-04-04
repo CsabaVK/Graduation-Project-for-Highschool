@@ -6,4 +6,8 @@
 .dropdown-menu a:hover {
   background-color: #333;
 }
+
+.dropdown-item.disabled {
+  color: grey !important;
+}
 /* NAVBAR END */
