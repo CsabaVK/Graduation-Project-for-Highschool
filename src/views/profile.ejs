@@ -17,7 +17,7 @@
       <div class="row">
         <div class="col-md-4">
           <div class="profile-img">
-            <img src="/public/img/avatars/boy1.png" alt="" />
+            <img class="rounded-pill" src="/public/img/avatars/boy1.png" alt="" />
           </div>
           <% if (session == userdata.id) { %>
           <div class="text-center pt-4">
@@ -51,7 +51,9 @@
                       <p><%- userdata.email %></p>
                     </div>
                   </div>
+
                   <div class="row">
+
                     <div class="col-md-6">
                       <label>Birth date</label>
                     </div>
@@ -59,6 +61,7 @@
                       <p><%- userdata.birth_date.split('T')[0] %></p>
                     </div>
                   </div>
+
                   <div class="row">
                     <div class="col-md-6">
                       <label>Active ads</label>
@@ -67,6 +70,29 @@
                       <p><%- marketAds.length %></p>
                     </div>
                   </div>
+
+                  <% if (userdata.phone) { %>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Phone</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p><%- userdata.phone %></p>
+                    </div>
+                  </div>
+                  <% } %>
+
+                  <% if (userdata.country) { %>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Country</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p><%- userdata.country %></p>
+                    </div>
+                  </div>
+                  <% } %>
+
                 </div>
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                   <div class="row">
