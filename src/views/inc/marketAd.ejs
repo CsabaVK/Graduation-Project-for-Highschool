@@ -2,35 +2,53 @@
   <a href="/marketad/<%- marketAd.id %> ">
     <div class="row no-gutters">
       <div class="col-md-4">
-        <img src="/public/img/Red-Tesla/TR1.jpg" alt="" class="card-img mx-auto"
-          style="height: 100%;">
+        <img src="/public/img/Red-Tesla/TR1.jpg" alt="" class="card-img mx-auto" style="height: 100%;">
       </div>
       <div class="col-md-8">
         <div class="card-body">
           <div class="row">
             <div class="col">
-
               <h5 class="card-title float-left"><%- marketAd.make %> <%- marketAd.model %></h5>
             </div>
             <div class="col">
-              <div class="card-text float-right h3"><%- marketAd.price %>€</div>
+              <div class="card-text float-right h3 text-success"><%- marketAd.price %>€</div>
             </div>
           </div>
-          <div class="row">
-            <div class="col">
-              <div class="card-text text-muted float-left"><%- marketAd.fuel_type %>, <%- marketAd.year %>,
-                <%- marketAd.cubic_capacity %> cm<sup>3</sup>, <%- marketAd.horsepower %> HP, <%- marketAd.milage %> km</div>
-              </div>
-          </div>
-          <div class="row pt-2">
-            <div class="col text-left">
-              <div class="float-left text-muted ">
-                <%- marketAd.description %>
+          <div class="row pl-3">
+
+            <!-- 1 -->
+            <div class="col-5">
+              <div class="card-text float-left">
+                <div class="row text-muted text-left pl-1">
+                  <i class="fas fa-gas-pump mt-1"></i><div class="pl-2"><%- marketAd.fuel_type %></div>
+                </div>
+                <div class="row text-muted text-left pl-1">
+                  <i class="far fa-calendar-alt mt-1"></i><div class="pl-2"><%- marketAd.year %></div>
+                </div>
+                <div class="row text-muted text-left pl-1">
+                  <i class="fas fa-road mt-1"></i><div class="pl-2"><%- marketAd.milage %> KM</div>
+                </div>
+
+                <div class="row float-left">
+                  <span class="text-muted">Seller: </span><strong class="text-warning">&nbsp;<%- marketAd.username %></strong>
+                </div>
 
               </div>
             </div>
-          </div>
 
+            <!-- 2 -->
+            <div class="col-4">
+              <div class="card-text float-left">
+                <div class="row text-muted text-left">
+                  <i class="fas fa-volume-up mt-1"></i><div class="pl-2"><%- marketAd.cubic_capacity %> cm<sup>3</sup></div>
+                </div>
+                <div class="row text-muted text-left">
+                  <i class="fas fa-tachometer-alt mt-1"></i><div class="pl-2"><%- marketAd.horsepower %> HP</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
