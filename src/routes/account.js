@@ -56,19 +56,20 @@ router.get('/profile/:id', (req, res) => {
 });
 
 router.post('/editprofile', (req, res) => {
-  // TODO: after pressing confirm on editing your profile
-  /*
-  if (password) {
-    const userDetails = syncSql.mysql(sqlData, `SELECT password FROM users WHERE id='` + req.session.user + `'`);
-    const password = req.body.password;
-    const password2 = req.body.password2;
+  const userDetails = syncSql.mysql(sqlData, `SELECT password FROM users WHERE id='` + req.session.user + `'`);
+  const password = req.body.password;
+  if (pwHash.verify(password, userDetails.data.rows[0].password)) {
     const phone = req.body.phone;
     const email = req.body.email;
     const birth_date = req.body.birth_date;
+    const country = req.body.country;
+    syncSql.mysql(sqlData, `UPDATE users SET phone='` + phone + `', email='` + email + `', birth_date='` + birth_date + `', country='` + country + `' WHERE id='` + req.session.user + `'`);
+    res.redirect('/account/profile');
   } else {
-
+    // TODO: alert should popup
+    console.log('Password does not match');
+    res.redirect('/account/profile');
   }
-  */
 });
 
 router.post('/login', (req, res) => {

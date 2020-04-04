@@ -13,20 +13,14 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
-                            <input name="password" type="password" class="form-control" placeholder="Your Password">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Re-Password</label>
-                        <div class="col-sm-10">
-                            <input name="password2" type="password" class="form-control" placeholder="Password Again">
+                            <input name="password" type="password" class="form-control" placeholder="Your Password" required>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Phone</label>
                         <div class="col-sm-10">
-                            <input name="phone" type="text" class="form-control" placeholder="Phone number">
+                            <input name="phone" type="number" class="form-control" placeholder="Phone number" value="<%- userdata.phone %>">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -38,15 +32,15 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Birth Date</label>
                         <div class="col-sm-10">
-                            <input name="birth_date" type="date" name="bday" max="2030-12-31" min="1900-01-01" class="form-control"
-                                placeholder="YYYY.MM.DD" value="">
+                            <input name="birth_date" type="date" max="2030-12-31" min="1900-01-01" class="form-control"
+                                placeholder="YYYY.MM.DD">
                         </div>
                     </div>
                     <hr>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Country</label>
                         <div class="col-sm-10">
-                            <input name="country" type="text" class="form-control" placeholder="Your Country">
+                            <input name="country" type="text" class="form-control" placeholder="Your Country" value="<%- userdata.country %>">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -63,7 +57,6 @@
                     </div>
                 </form>
             </div>
-            
         </div>
     </div>
 </div>
