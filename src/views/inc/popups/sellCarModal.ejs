@@ -10,89 +10,115 @@
             </div>
             <div class="modal-body">
                 <form method="POST" action="/newmarketad">
-                    
+
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Title</label>
+                        <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Price</label>
                         <div class="col-sm-10">
-                            <input name="title" type="text" class="form-control" placeholder="Car's Title">
+                            <input name="price" type="number" class="form-control" placeholder="Price in €" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Price</label>
+                        <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Make</label>
                         <div class="col-sm-10">
-                            <input name="price" type="number" class="form-control" placeholder="Price in €">
+                            <input name="make" type="text" class="form-control" placeholder="Make" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Model</label>
+                        <div class="col-sm-10">
+                            <input name="model" type="text" class="form-control" placeholder="Model" required>
+                        </div>
+                    </div>
+
+                    <!-- TODO: Adatbázisban javítani, lehet NULL -->
+                    <!-- TITLE -->
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Extra Title</label>
+                        <div class="col-sm-10">
+                            <input name="title" type="text" class="form-control" placeholder="Extra text after make and model">
                         </div>
                     </div>
 
                     <hr>
 
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Make</label>
+                    <!-- <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Language</label>
                         <div class="col-sm-10">
-                            <input name="make" type="text" class="form-control" placeholder="Make">
+                            <select class="form-control" disabled>
+                                <option>English</option>
+                            </select>
+                        </div>
+                    </div> -->
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Shape</label>
+                        <div class="col-sm-10">
+                            <select name="shape" class="form-control" required>
+                                <option style="display: none;" value="">Choose one...</option>
+                                <option value="Sedan">Sedan</option>
+                                <option value="Estate">Estate</option>
+                                <option value="Carbrio">Cabrio</option>
+                                <option value="Coupe">Coupe</option>
+                                <option value="SUV">SUV</option>
+                                <option value="Hatchback">Hatchback</option>
+                            </select>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Model</label>
+                        <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Fuel Type</label>
                         <div class="col-sm-10">
-                            <input name="model" type="text" class="form-control" placeholder="Model">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Shape</label>
-                        <div class="col-sm-10">
-                            <input name="shape" type="text" class="form-control" placeholder="Shape">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Fuel Type</label>
-                        <div class="col-sm-10">
-                            <input name="fuel_type" type="text" class="form-control" placeholder="Fuel Type">
+                            <select name="fuel_type" class="form-control" required>
+                                <option style="display: none;" value="">Choose one...</option>
+                                <option value="Petrol">Petrol</option>
+                                <option value="Diesel">Diesel</option>
+                                <option value="Gas / LPG">Gas / LPG</option>
+                                <option value="Hybrid">Hybrid</option>
+                                <option value="Electric">Electric</option>
+                            </select>
                         </div>
                     </div>
                     
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Horsepower</label>
+                        <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Horsepower</label>
                         <div class="col-sm-10">
-                            <input name="horsepower" type="number" class="form-control" min="10" step="10" placeholder="Horsepower">
+                            <input name="horsepower" type="number" class="form-control" min="10" max="2500" placeholder="Horsepower" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">CM<sup>3</sup></label>
+                        <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>CM<sup>3</sup></label>
                         <div class="col-sm-10">
-                            <input name="cubic_capacity" type="number" class="form-control" min="100" step="100" placeholder="Cubic Capacity">
+                            <input name="cubic_capacity" type="number" class="form-control" min="600" step="100" max="14000" placeholder="Cubic Capacity" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Milage</label>
+                        <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Milage</label>
                         <div class="col-sm-10">
-                            <input name="milage" type="number" class="form-control" placeholder="Milage in km">
+                            <input name="milage" type="number" class="form-control" placeholder="Milage in km" required>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Year</label>
+                        <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Year</label>
                         <div class="col-sm-10">
-                            <input name="year" type="number" class="form-control" min="1800" value="2000" placeholder="Year">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Doors</label>
-                        <div class="col-sm-10">
-                            <input name="doors" type="number" class="form-control" min="0" max="30" placeholder="Number of Doors">
+                            <input name="year" type="number" class="form-control" min="1800" value="2000" placeholder="Year" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Seats</label>
+                        <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Doors</label>
                         <div class="col-sm-10">
-                            <input name="seats" type="number" class="form-control" min="1" max="200" placeholder="Number of Seats">
+                            <input name="doors" type="number" class="form-control" min="0" max="30" placeholder="Number of Doors" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Seats</label>
+                        <div class="col-sm-10">
+                            <input name="seats" type="number" class="form-control" min="1" max="200" placeholder="Number of Seats" required>
                         </div>
                     </div>
 
@@ -104,15 +130,6 @@
                     </div>
 
 
-
-                    <!-- <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Language</label>
-                        <div class="col-sm-10">
-                            <select class="form-control" disabled>
-                                <option>English</option>
-                            </select>
-                        </div>
-                    </div> -->
 
                     <div class="modal-footer justify-content-center">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
