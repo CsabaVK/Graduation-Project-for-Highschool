@@ -4,6 +4,10 @@ const express = require('express');
 const router = express.Router();
 const syncSql = require('sync-sql');
 
+// these are needed for file upload
+const multer = require('multer');
+const upload = multer({dest: '/uploads'});
+
 const sqlData = require('../sqldata.json');
 
 router.get('/', (req, res) => {
@@ -16,13 +20,8 @@ router.get('/', (req, res) => {
   });
 });
 
-router.get('/test', (req, res) => {
-  req.session.views = (req.session.views || 0) + 1;
-  res.end(req.session.views + ' views');
-});
-
 router.get('/marketad/:id', (req, res) => {
-  const marketAd = syncSql.mysql(sqlData, `SELECT * FROM market WHERE id=${req.params.id}`)
+  const marketAd = syncSql.mysql(sqlData, `SELECT * FROM market WHERE id=${req.params.id}`);
   // res.json(marketAd);
   res.render('adsView', {
     url: req.url,
@@ -31,9 +30,7 @@ router.get('/marketad/:id', (req, res) => {
   });
 });
 
-router.post('/newmarketad', (req, res) => {
-  // TODO: Upload
-  // return res.json(req.body);
+router.post('/newmarketad', upload.array('photos', 6), (req, res) => {
   const title = req.body.title;
   const price = req.body.price;
   const make = req.body.make;
@@ -48,20 +45,44 @@ router.post('/newmarketad', (req, res) => {
   const seats = req.body.seats;
   const description = req.body.description;
 
-  const result = syncSql.mysql(sqlData, 
-    `INSERT INTO market (ownerid, created_at, title, price, make, model, shape, fuel_type, horsepower, cubic_capacity, milage, year, doors, seats, description) VALUES ('` 
-    + req.session.user + `', '` + getCurrentDate() + `', '` + title + `', '` + price + `', '` + make + `', '` + model + `', '` + shape + `', '` + fuel_type + `', '` + horsepower + `', '` + cubic_capacity + `', '` +
-    milage + `', '` + year +  `', '` + doors + `', '` + seats + `', '` + description + `')`);
+  // upload to database without checking the uploaded photos
+  const result = syncSql.mysql(sqlData,
+      `INSERT INTO market (ownerid, created_at, title, price, make, model, shape, fuel_type, horsepower, cubic_capacity, milage, year, doors, seats, description) VALUES ('` +
+    req.session.user + `', '` + getCurrentDate() + `', '` + title + `', '` + price + `', '` + make + `', '` + model + `', '` + shape + `', '` + fuel_type + `', '` + horsepower + `', '` + cubic_capacity + `', '` +
+    milage + `', '` + year + `', '` + doors + `', '` + seats + `', '` + description + `')`);
 
-  // res.json(result);
-  res.redirect('/');
+  // upload pictures
+  const fs = require('fs');
+  const path = require('path');
+  const dir = path.join(__dirname, '../public/img/uploads/market/' + result.data.rows.insertId);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
+  }
+  // iterate over each uploaded file
+  for (let i = 0; i < req.files.length; i++) {
+    const tempPath = req.files[i].path;
+    const originalName = req.files[i].originalname;
+    const extension = path.extname(originalName).toLowerCase();
+
+    if (extension === '.png' || extension === '.jpg') {
+      const targetPath = path.join(__dirname, '../public/img/uploads/market/' + result.data.rows.insertId + '/' + i + '.png');
+      fs.rename(tempPath, targetPath, (err) => {
+        console.log('File uploaded: ' + targetPath);
+      });
+    } else {
+      fs.unlink(tempPath, (err) => {
+        console.log('Only .png files are allowed!');
+      });
+    }
+  }
+  res.redirect('/marketad/' + result.data.rows.insertId);
 });
 
 function getCurrentDate() {
-  var today = new Date();
-  var dd = String(today.getDate()).padStart(2, '0');
-  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-  var yyyy = today.getFullYear();
+  let today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+  const yyyy = today.getFullYear();
 
   today = yyyy + '-' + mm + '-' + dd;
   return today;

@@ -4,3 +4,5 @@ node_modules
 
 # it stores information about the database
 sqldata.json
+
+*.png
