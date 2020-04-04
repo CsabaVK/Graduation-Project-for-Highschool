@@ -52,8 +52,8 @@
                     </div>
                   </div>
 
+                  <% if (userdata.birth_date) { %>
                   <div class="row">
-
                     <div class="col-md-6">
                       <label>Birth date</label>
                     </div>
@@ -61,6 +61,7 @@
                       <p><%- userdata.birth_date.split('T')[0] %></p>
                     </div>
                   </div>
+                  <% } %>
 
                   <div class="row">
                     <div class="col-md-6">
