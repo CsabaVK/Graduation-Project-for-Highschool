@@ -119,7 +119,7 @@ router.post('/register', (req, res) => {
     errorMessage += 'The user already exists!';
   } else {
     if (email && password && password2) {
-      if ((/^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/.test(username)) && (/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/g.test(email)) && (/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{3,20}$/g.test(password))) {
+      if ((/^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/.test(username)) && (/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/g.test(email)) && (/^(?=.*[a-z])(?=.*\d).{3,20}$/g.test(password))) {
         if (password == password2) {
           const inserted = syncSql.mysql(sqlData, `INSERT INTO users (username, password, email, birth_date, language, register_date) VALUES('${username}', '${pwHash.generate(password)}', '${email}', '${birthdate}', '${languageselector}', '${getCurrentDate()}')`);
           if (inserted.success == false) {
@@ -132,7 +132,7 @@ router.post('/register', (req, res) => {
           errorMessage += 'The passwords are not the same!';
         }
       } else {
-        errorMessage += 'Username/email or password is wrong! Password needs to be between 3 and 20 characters and must contain atleast an uppercase letter and a number.';
+        errorMessage += 'Username/email or password is wrong! Password needs to be between 3 and 20 characters and must contain a number.';
       }
     } else {
       errorMessage += 'You can\'t leave anything empty!';
