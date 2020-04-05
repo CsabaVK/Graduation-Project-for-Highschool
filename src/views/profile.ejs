@@ -137,12 +137,14 @@
   </div>
   <%- include('inc/basic/scripts'); -%>
   <script>
+    <% if (userdata.birth_date) { %>
     window.onload = () => {
       const getInput = "<%- userdata.birth_date.split('T')[0] %>";
       const today = new Date(getInput);
       document.getElementsByName('birth_date')[0].defaultValue = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + (today.getDate()+1)).slice(-2);
       document.getElementById('printdate').innerHTML = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + (today.getDate()+1)).slice(-2);
     }
+    <% } %>
     function passId(element) {
       const myID = element.getAttribute('data-id');
       document.getElementById('deleteAdLink').href = '/deletead/' + myID;
