@@ -38,3 +38,8 @@
   height:100%;
   border-left:1px solid gray;
  }
+
+ /* FOR MARKEDAD 16:9 */
+ .embed-responsive .card-img{
+  object-fit: cover;
+}

@@ -21,6 +21,7 @@ router.get('/profile', (req, res) => {
     const getProfileDetails = syncSql.mysql(sqlData, `SELECT * FROM users WHERE id='${req.session.user}'`);
     const marketAds = syncSql.mysql(sqlData, `SELECT market.*, users.username FROM market INNER JOIN users ON users.id=market.ownerid WHERE ownerid='${req.session.user}'`);
 
+    console.log(getProfileDetails);
     if (getProfileDetails.data.rows[0].birth_date == '0000-00-00') {
       getProfileDetails.data.rows[0].birth_date = undefined;
     }
