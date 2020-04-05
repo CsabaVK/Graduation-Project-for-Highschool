@@ -15,3 +15,26 @@
 .whiteBorder {
   border: 1px solid white;
 }
+
+/* UPLOAD BTN */
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+/* sellCarModal POPUP */
+.v-divider{
+  margin-left:5px;
+  margin-right:5px;
+  width:1px;
+  height:100%;
+  border-left:1px solid gray;
+ }

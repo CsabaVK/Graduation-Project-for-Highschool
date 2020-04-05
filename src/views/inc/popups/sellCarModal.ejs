@@ -9,10 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="/newmarketad" enctype="multipart/form-data">
-                    <div class="form-group row">
-                        <input type="file" name="photos" multiple>
-                    </div>
+                
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Price</label>
@@ -132,9 +129,29 @@
                         </div>
                     </div>
 
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Pictures</label>
+                        <div class="col-sm-10">
+                            <form method="POST" action="/newmarketad" enctype="multipart/form-data">
+                                <div class="form-group row btn form-control btn-outline-secondary upload-btn-wrapper m-0">
+                                    <button class="btn p-0">Upload pictures</button>
+                                    <input type="file" name="photos" multiple>
+                                </div>
+                        </div>
+                    </div>
+
+                    <!-- pic upload -->
+                    <!-- <form method="POST" action="/newmarketad" enctype="multipart/form-data">
+                        <div class="form-group row btn btn-outline-danger upload-btn-wrapper">
+                            <button class="btn">Upload a file</button>
+                            <input type="file" name="photos" multiple class="btn btn btn-outline-primary p-0">
+                        </div> -->
+
 
 
                     <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <div class=" v-divider"></div>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Create ad</button>
                     </div>
