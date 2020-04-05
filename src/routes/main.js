@@ -23,11 +23,17 @@ router.get('/', (req, res) => {
 
 router.get('/marketad/:id', (req, res) => {
   const marketAd = syncSql.mysql(sqlData, `SELECT market.*, users.id AS "userid", users.username, users.email, users.birth_date, users.language, users.phone, users.country FROM market INNER JOIN users ON users.id=market.ownerid WHERE market.id=${req.params.id}`);
-  // res.json(marketAd);
+
+  // get number of pictures connected to this ad
+  const dir = './public/img/uploads/market/' + req.params.id + '/';
+  const fs = require('fs');
+  const photoNumber = fs.readdirSync(dir).length;
+
   res.render('adsView', {
     url: req.url,
     session: req.session.user,
     marketAd: marketAd.data.rows[0],
+    photos: photoNumber,
   });
 });
 
