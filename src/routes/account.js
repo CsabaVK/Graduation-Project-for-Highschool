@@ -21,7 +21,7 @@ router.get('/profile', (req, res) => {
     const getProfileDetails = syncSql.mysql(sqlData, `SELECT * FROM users WHERE id='${req.session.user}'`);
     const marketAds = syncSql.mysql(sqlData, `SELECT market.*, users.username FROM market INNER JOIN users ON users.id=market.ownerid WHERE ownerid='${req.session.user}'`);
 
-    console.log(getProfileDetails);
+    // console.log(getProfileDetails);
     if (getProfileDetails.data.rows[0].birth_date == '0000-00-00') {
       getProfileDetails.data.rows[0].birth_date = undefined;
     }
@@ -69,7 +69,7 @@ router.post('/editprofile', (req, res) => {
     res.redirect('/account/profile');
   } else {
     // TODO: alert should popup
-    console.log('Password does not match');
+    // console.log('Password does not match');
     res.redirect('/account/profile');
   }
 });

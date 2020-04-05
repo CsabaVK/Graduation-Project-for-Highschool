@@ -74,7 +74,7 @@ router.post('/newmarketad', upload.array('photos', 6), (req, res) => {
     req.session.user + `', '` + getCurrentDate() + `', '` + title + `', '` + price + `', '` + make + `', '` + model + `', '` + shape + `', '` + fuel_type + `', '` + horsepower + `', '` + cubic_capacity + `', '` +
     milage + `', '` + year + `', '` + doors + `', '` + seats + `', '` + description + `')`);
 
-  console.log(result);
+  // console.log(result);
   // upload pictures
   const fs = require('fs');
   const path = require('path');
@@ -88,15 +88,15 @@ router.post('/newmarketad', upload.array('photos', 6), (req, res) => {
     const originalName = req.files[i].originalname;
     const extension = path.extname(originalName).toLowerCase();
 
-    console.log(extension);
+    // console.log(extension);
     if (extension === '.png' || extension === '.jpg' || extension === '.jpeg') {
       const targetPath = path.join(__dirname, '../public/img/uploads/market/' + result.data.rows.insertId + '/' + i + '.png');
       fs.rename(tempPath, targetPath, (err) => {
-        console.log('File uploaded: ' + targetPath);
+        // console.log('File uploaded: ' + targetPath);
       });
     } else {
       fs.unlink(tempPath, (err) => {
-        console.log('Only .png files are allowed!');
+        // console.log('Only .png files are allowed!');
       });
     }
   }

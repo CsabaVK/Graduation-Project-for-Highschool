@@ -31,7 +31,7 @@ function changePagesBackgrounds() {
 
 function changeAdBackground() {
   const ads = document.getElementsByClassName('marketAdTheme');
-  console.log(ads);
+  // console.log(ads);
   if (theme == 0) {
     for (let index = 0; index < ads.length; index++) {
       ads[index].style.backgroundColor = darkBackground;
