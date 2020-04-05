@@ -24,6 +24,9 @@ router.get('/', (req, res) => {
 router.get('/marketad/:id', (req, res) => {
   const marketAd = syncSql.mysql(sqlData, `SELECT market.*, users.id AS "userid", users.username, users.email, users.birth_date, users.language, users.phone, users.country FROM market INNER JOIN users ON users.id=market.ownerid WHERE market.id=${req.params.id}`);
 
+  if (marketAd.data.rows.length == 0) {
+    return res.redirect('/');
+  }
   // get number of pictures connected to this ad
   const dir = './public/img/uploads/market/' + req.params.id + '/';
   const fs = require('fs');
@@ -37,9 +40,12 @@ router.get('/marketad/:id', (req, res) => {
   });
 });
 
-router.post('/deletead/:id', (req, res) => {
+router.get('/deletead/:id', (req, res) => {
   const getAd = syncSql.mysql(sqlData, `SELECT ownerid FROM market WHERE id='` + req.params.id + `'`);
   if (getAd.data.rows[0].ownerid == req.session.user) {
+    // delete the photos connected to this ad
+    const fs = require('fs-extra');
+    fs.removeSync('./public/img/uploads/market/' + req.params.id);
     syncSql.mysql(sqlData, `DELETE FROM market WHERE id='` + req.params.id + `'`);
     res.redirect('/account/profile');
   } else {
