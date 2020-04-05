@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/marketad/:id', (req, res) => {
-  const marketAd = syncSql.mysql(sqlData, `SELECT * FROM market WHERE id=${req.params.id}`);
+  const marketAd = syncSql.mysql(sqlData, `SELECT market.*, users.id AS "userid", users.username, users.email, users.birth_date, users.language, users.phone, users.country FROM market INNER JOIN users ON users.id=market.ownerid WHERE market.id=${req.params.id}`);
   // res.json(marketAd);
   res.render('adsView', {
     url: req.url,
