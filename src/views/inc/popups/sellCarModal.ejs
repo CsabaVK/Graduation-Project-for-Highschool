@@ -20,41 +20,21 @@
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Make</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-4 pr-0">
                             <input name="make" type="text" class="form-control" placeholder="Make" required>
                         </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Model</label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-1 col-form-label"><span class="text-danger">*</span>Model</label>
+                        <div class="col-sm-5">
                             <input name="model" type="text" class="form-control" placeholder="Model" required>
-                        </div>
-                    </div>
-
-                    <!-- TODO: Adatbázisban javítani, lehet NULL -->
-                    <!-- TITLE -->
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Extra Title</label>
-                        <div class="col-sm-10">
-                            <input name="title" type="text" class="form-control" placeholder="Extra text after make and model">
                         </div>
                     </div>
 
                     <hr>
 
-                    <!-- <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Language</label>
-                        <div class="col-sm-10">
-                            <select class="form-control" disabled>
-                                <option>English</option>
-                            </select>
-                        </div>
-                    </div> -->
-
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Shape</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-4 pr-0">
                             <select name="shape" class="form-control" required>
                                 <option style="display: none;" value="">Choose one...</option>
                                 <option value="Sedan">Sedan</option>
@@ -65,11 +45,9 @@
                                 <option value="Hatchback">Hatchback</option>
                             </select>
                         </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Fuel Type</label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-1 col-form-label"><span class="text-danger">*</span>Fuel</label>
+                        <div class="col-sm-5">
                             <select name="fuel_type" class="form-control" required>
                                 <option style="display: none;" value="">Choose one...</option>
                                 <option value="Petrol">Petrol</option>
@@ -83,45 +61,49 @@
                     
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Horsepower</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-4 pr-0">
                             <input name="horsepower" type="number" class="form-control" min="10" max="2500" placeholder="Horsepower" required>
                         </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>CM<sup>3</sup></label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-1 col-form-label"><span class="text-danger">*</span>CM<sup>3</sup></label>
+                        <div class="col-sm-5">
                             <input name="cubic_capacity" type="number" class="form-control" min="600" step="100" max="14000" placeholder="Cubic Capacity" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Milage</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-4 pr-0">
                             <input name="milage" type="number" class="form-control" placeholder="Milage in km" required>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Year</label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-1 col-form-label"><span class="text-danger">*</span>Year</label>
+                        <div class="col-sm-5">
                             <input name="year" type="number" class="form-control" min="1800" value="2000" placeholder="Year" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
+
                         <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Doors</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-4 pr-0">
                             <input name="doors" type="number" class="form-control" min="0" max="30" placeholder="Number of Doors" required>
                         </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Seats</label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-1 col-form-label"><span class="text-danger">*</span>Seats</label>
+                        <div class="col-sm-5">
                             <input name="seats" type="number" class="form-control" min="1" max="200" placeholder="Number of Seats" required>
                         </div>
+
                     </div>
 
+                    <!-- TITLE -->
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Extra Title</label>
+                        <div class="col-sm-10">
+                            <input name="title" type="text" class="form-control" placeholder="Extra text after make and model">
+                        </div>
+                    </div>
+                    
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Description</label>
                         <div class="col-sm-10">
@@ -133,8 +115,8 @@
                         <label class="col-sm-2 col-form-label">Pictures</label>
                         <div class="col-sm-10">
                             <form method="POST" action="/newmarketad" enctype="multipart/form-data">
-                                <div class="form-group row btn form-control btn-outline-secondary upload-btn-wrapper m-0">
-                                    <button class="btn p-0">Upload pictures</button>
+                                <div class="form-group row btn form-control text-muted btn-outline-success upload-btn-wrapper m-0">
+                                    <button class="btn p-0 text-muted">Upload pictures</button>
                                     <input type="file" name="photos" multiple>
                                 </div>
                         </div>
@@ -150,8 +132,6 @@
 
 
                     <div class="modal-footer justify-content-center">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <div class=" v-divider"></div>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Create ad</button>
                     </div>
