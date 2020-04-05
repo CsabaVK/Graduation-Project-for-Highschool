@@ -12,6 +12,7 @@
     <%- include('inc/popups/profileEditModal') %>
   <% } %>
   <%- include('inc/basic/navbar'); -%>
+  <%- include('inc/popups/deleteAreyousure') %>
   <div class="container emp-profile" id="profileTheme">
     <form method="post">
       <div class="row">
@@ -113,9 +114,7 @@
                               </div>
                               <div class="col-1 align-self-center p-0">
                                 <div class="pt-2">
-                                  <a href="/deletead/<%- marketAd.id %>">
-                                    <i class="far fa-times-circle fa-2x text-danger"></i>
-                                  </a>
+                                    <i class="far fa-times-circle fa-2x text-danger" data-id="<%- marketAd.id %>" data-toggle="modal" data-target="#deleteAreyousureModal" onclick="passId(this)"></i>
                                 </div>
                               </div>
                             </div>
@@ -143,6 +142,10 @@
       const today = new Date(getInput);
       document.getElementsByName('birth_date')[0].defaultValue = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + (today.getDate()+1)).slice(-2);
       document.getElementById('printdate').innerHTML = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + (today.getDate()+1)).slice(-2);
+    }
+    function passId(element) {
+      const myID = element.getAttribute('data-id');
+      document.getElementById('deleteAdLink').href = '/deletead/' + myID;
     }
   </script>
 </body>
