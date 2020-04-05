@@ -10,9 +10,10 @@
 <body>
   <% if (session == userdata.id) { %>
     <%- include('inc/popups/profileEditModal') %>
+    <%- include('inc/popups/deleteAreyousure') %>
+    <%- include('inc/popups/profileChangePicture') %>
   <% } %>
   <%- include('inc/basic/navbar'); -%>
-  <%- include('inc/popups/deleteAreyousure') %>
   <div class="container emp-profile" id="profileTheme">
     <form method="post">
       <div class="row mr-0">
@@ -22,7 +23,8 @@
           </div>
           <% if (session == userdata.id) { %>
           <div class="text-center pt-4">
-            <input type="button" class="profile-edit-btn" name="btnAddMore" data-toggle="modal" data-target="#profileeditModal" value="Edit Profile" />
+            <input type="button" class="profile-edit-btn my-1 btn btn-info" name="btnAddMore" data-toggle="modal" data-target="#profileChangePicture" value="Change Picture" />
+            <input type="button" class="profile-edit-btn my-1 btn btn-secondary" name="btnAddMore" data-toggle="modal" data-target="#profileeditModal" value="Edit Details" />
           </div>
           <% } %>
         </div>
