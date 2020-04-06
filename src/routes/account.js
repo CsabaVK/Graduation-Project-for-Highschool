@@ -71,7 +71,7 @@ router.post('/changepicture', upload.single('photos'), (req, res) => {
     const targetPath = path.join(__dirname, '../public/img/uploads/users/' + req.session.user + '.png');
     fs.rename(tempPath, targetPath, (err) => {
       if (err) {
-        renderProfilePage(req, res, 'warning', 'Something is wrong, try again later.');
+        renderProfilePage(req, res, 'warning', 'Something went wrong. Try again later.');
       } else {
         res.redirect('/account/profile');
       }
