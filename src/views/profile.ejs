@@ -14,6 +14,7 @@
     <%- include('inc/popups/profileChangePicture') %>
     <%- include('inc/popups/changepassword') %>
     <%- include('inc/popups/profiletitleedit') %>
+    <!-- TODO: %- include('inc/popups/profileAdModify', {marketAd: marketAd}) % -->
     <%- include('inc/popups/profileAdModify') %>
   <% } %>
   <%- include('inc/basic/navbar'); -%>
@@ -129,7 +130,7 @@
                                 <div class="row">
                                   <div class="col">
                                     <div class="pt-2 text-center">
-                                      <i class="fas fa-info-circle fa-2x text-info" data-id="<%- marketAd.id %>" data-toggle="modal" data-target="#profileAdModify"></i>
+                                      <i class="fas fa-info-circle fa-2x text-info" data-id="<%- marketAd.id %>" data-toggle="modal" data-target="#profileAdModify" onclick="passId(this)"></i>
                                    </div>
                                   </div>
                                   <div class="col">
@@ -176,6 +177,7 @@
     function passId(element) {
       const myID = element.getAttribute('data-id');
       document.getElementById('deleteAdLink').href = '/deletead/' + myID;
+      document.getElementById('editaction').action = '/account/marketAdModify/' + myID;
     }
   </script>
 </body>
