@@ -126,6 +126,62 @@ router.post('/changepassword', (req, res) => {
   }
 });
 
+router.post('/marketadmodify/:id', upload.array('photos', 6), (req, res) => {
+  const title = req.body.title;
+  const price = req.body.price;
+  const make = req.body.make;
+  const model = req.body.model;
+  const shape = req.body.shape;
+  const fuel_type = req.body.fuel_type;
+  const horsepower = req.body.horsepower;
+  const cubic_capacity = req.body.cubic_capacity;
+  const milage = req.body.milage;
+  const year = req.body.year;
+  const doors = req.body.doors;
+  const seats = req.body.seats;
+  const description = req.body.description;
+
+  // update the database without checking the uploaded photos yet
+  const result = syncSql.mysql(sqlData, `UPDATE market SET title='${title}', price='${price}', make='${make}', model='${model}', shape='${shape}', fuel_type='${fuel_type}', horsepower='${horsepower}', cubic_capacity='${cubic_capacity}', milage='${milage}', year='${year}', doors='${doors}', seats='${seats}', description='${description}'`);
+  if (req.files.length != 0) {
+    // delete picture if the edited form contains new images
+    const fse = require('fs-extra');
+    fse.removeSync('./public/img/uploads/market/' + req.params.id);
+
+    // upload the new files to the filesystem
+    const fs = require('fs');
+    const path = require('path');
+    const dir = path.join(__dirname, '../public/img/uploads/market/' + result.data.rows.insertId);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir);
+    }
+    // iterate over each uploaded file
+    for (let i = 0; i < req.files.length; i++) {
+      const tempPath = req.files[i].path;
+      const originalName = req.files[i].originalname;
+      const extension = path.extname(originalName).toLowerCase();
+
+      if (extension === '.png' || extension === '.jpg' || extension === '.jpeg') {
+        const targetPath = path.join(__dirname, '../public/img/uploads/market/' + result.data.rows.insertId + '/' + i + '.png');
+        fs.rename(tempPath, targetPath, (err) => {
+          if (err) {
+            renderProfilePage(req, res, 'warning', 'Something went wrong. Try again later.');
+          } else {
+            res.redirect('/marketad/' + req.params.id);
+          }
+        });
+      } else {
+        fs.unlink(tempPath, (err) => {
+          renderProfilePage(req, res, 'danger', 'Wrong extension! Only png, jpg and jpeg are allowed.');
+        });
+      }
+    }
+  } else {
+    // if the edit does not contain pictures then just simply redirect him to the updated ad
+    res.redirect('/marketad/' + req.params.id);
+  }
+});
+
 router.post('/login', (req, res) => {
   if (req.session.user) {
     return res.redirect('/');
