@@ -12,6 +12,7 @@
     <%- include('inc/popups/profileEditModal') %>
     <%- include('inc/popups/deleteAreyousure') %>
     <%- include('inc/popups/profileChangePicture') %>
+    <%- include('inc/popups/changepassword') %>
   <% } %>
   <%- include('inc/basic/navbar'); -%>
   <div class="container emp-profile" id="profileTheme">
@@ -24,6 +25,7 @@
           <% if (session == userdata.id) { %>
           <div class="text-center pt-4">
             <input type="button" class="profile-edit-btn my-1 btn btn-info" name="btnAddMore" data-toggle="modal" data-target="#profileChangePicture" value="Change Picture" />
+            <input type="button" class="profile-edit-btn my-1 btn btn-warning" name="btnAddMore" data-toggle="modal" data-target="#changepassword" value="Change Password" />
             <input type="button" class="profile-edit-btn my-1 btn btn-secondary" name="btnAddMore" data-toggle="modal" data-target="#profileeditModal" value="Edit Details" />
           </div>
           <% } %>
