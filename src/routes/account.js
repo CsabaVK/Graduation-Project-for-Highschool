@@ -76,13 +76,13 @@ router.post('/editprofile', (req, res) => {
 
 router.post('/changepassword', (req, res) => {
   const oldPw = req.body.password;
-  const newPw = req.body.password1;
-  const newPwAgain = req.body.password2;
+  const newPw = req.body.newpassword1;
+  const newPwAgain = req.body.newpassword2;
   if (oldPw && newPw && newPwAgain) {
     if (newPw == newPwAgain) {
       const getPassword = syncSql.mysql(sqlData, `SELECT password FROM users WHERE id='` + req.session.user + `'`);
       if (pwHash.verify(oldPw, getPassword.data.rows[0].password)) {
-        syncSql.mysql(sqlData, `UPDATE password='` + pwHash.generate(newPw) + `' WHERE id='` + req.session.user + `'`);
+        syncSql.mysql(sqlData, `UPDATE users SET password='` + pwHash.generate(newPw) + `' WHERE id='` + req.session.user + `'`);
         res.redirect('/account/logout');
       } else {
         // the old password doesnt match your current password, whats wrong with you?
