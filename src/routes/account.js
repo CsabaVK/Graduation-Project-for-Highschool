@@ -74,6 +74,30 @@ router.post('/editprofile', (req, res) => {
   }
 });
 
+router.post('/changepassword', (req, res) => {
+  const oldPw = req.body.password;
+  const newPw = req.body.password1;
+  const newPwAgain = req.body.password2;
+  if (oldPw && newPw && newPwAgain) {
+    if (newPw == newPwAgain) {
+      const getPassword = syncSql.mysql(sqlData, `SELECT password FROM users WHERE id='` + req.session.user + `'`);
+      if (pwHash.verify(oldPw, getPassword.data.rows[0].password)) {
+        syncSql.mysql(sqlData, `UPDATE password='` + pwHash.generate(newPw) + `' WHERE id='` + req.session.user + `'`);
+        res.redirect('/account/logout');
+      } else {
+        // the old password doesnt match your current password, whats wrong with you?
+        console.log('Old password is going insane bruh.');
+      }
+    } else {
+      // the new passwords must match
+      console.log('New passwords are not matching bruv.');
+    }
+  } else {
+    // you must tell everything about the passwords
+    console.log('Something is missing... What happened??');
+  }
+});
+
 router.post('/login', (req, res) => {
   if (req.session.user) {
     return res.redirect('/');
