@@ -88,7 +88,6 @@ router.post('/newmarketad', upload.array('photos', 6), (req, res) => {
     const originalName = req.files[i].originalname;
     const extension = path.extname(originalName).toLowerCase();
 
-    // console.log(extension);
     if (extension === '.png' || extension === '.jpg' || extension === '.jpeg') {
       const targetPath = path.join(__dirname, '../public/img/uploads/market/' + result.data.rows.insertId + '/' + i + '.png');
       fs.rename(tempPath, targetPath, (err) => {

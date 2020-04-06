@@ -6,6 +6,10 @@ const router = express.Router();
 const pwHash = require('password-hash');
 const syncSql = require('sync-sql');
 
+// these are needed for file upload
+const multer = require('multer');
+const upload = multer({dest: '/uploads'});
+
 const sqlData = require('../sqldata.json');
 
 router.get('/', (req, res) => {
@@ -55,6 +59,28 @@ router.get('/profile/:id', (req, res) => {
     userdata: getProfileDetails.data.rows[0],
     marketAds: marketAds.data.rows,
   });
+});
+
+router.post('/changepicture', upload.single('photos'), (req, res) => {
+  const fs = require('fs');
+  const path = require('path');
+  const tempPath = req.file.path;
+  const originalName = req.file.originalname;
+  const extension = path.extname(originalName).toLowerCase();
+  if (extension === '.png' || extension === '.jpg' || extension === '.jpeg') {
+    const targetPath = path.join(__dirname, '../public/img/uploads/users/' + req.session.user + '.png');
+    fs.rename(tempPath, targetPath, (err) => {
+      if (err) {
+        renderProfilePage(req, res, 'warning', 'Something is wrong, try again later.');
+      } else {
+        res.redirect('/account/profile');
+      }
+    });
+  } else {
+    fs.unlink(tempPath, (err) => {
+      renderProfilePage(req, res, 'danger', 'Wrong extension! Only png, jpg and jpeg are allowed.');
+    });
+  }
 });
 
 router.post('/editprofile', (req, res) => {
