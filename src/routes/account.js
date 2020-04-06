@@ -68,9 +68,7 @@ router.post('/editprofile', (req, res) => {
     syncSql.mysql(sqlData, `UPDATE users SET phone='` + phone + `', email='` + email + `', birth_date='` + birth_date + `', country='` + country + `' WHERE id='` + req.session.user + `'`);
     res.redirect('/account/profile');
   } else {
-    // TODO: alert should popup
-    // console.log('Password does not match');
-    res.redirect('/account/profile');
+    renderProfilePage(req, res, 'danger', 'Your current password is wrong!');
   }
 });
 
@@ -80,21 +78,25 @@ router.post('/changepassword', (req, res) => {
   const newPwAgain = req.body.newpassword2;
   if (oldPw && newPw && newPwAgain) {
     if (newPw == newPwAgain) {
-      const getPassword = syncSql.mysql(sqlData, `SELECT password FROM users WHERE id='` + req.session.user + `'`);
-      if (pwHash.verify(oldPw, getPassword.data.rows[0].password)) {
-        syncSql.mysql(sqlData, `UPDATE users SET password='` + pwHash.generate(newPw) + `' WHERE id='` + req.session.user + `'`);
-        res.redirect('/account/logout');
+      if ((/^(?=.*[a-z])(?=.*\d).{3,20}$/g.test(newPw))) {
+        const getPassword = syncSql.mysql(sqlData, `SELECT password FROM users WHERE id='` + req.session.user + `'`);
+        if (pwHash.verify(oldPw, getPassword.data.rows[0].password)) {
+          syncSql.mysql(sqlData, `UPDATE users SET password='` + pwHash.generate(newPw) + `' WHERE id='` + req.session.user + `'`);
+          res.redirect('/account/logout');
+        } else {
+          // the old password doesnt match your current password, whats wrong with you?
+          renderProfilePage(req, res, 'danger', 'Old password is wrong!');
+        }
       } else {
-        // the old password doesnt match your current password, whats wrong with you?
-        console.log('Old password is going insane bruh.');
+        renderProfilePage(req, res, 'danger', 'New password requirements are not fulfilled.');
       }
     } else {
       // the new passwords must match
-      console.log('New passwords are not matching bruv.');
+      renderProfilePage(req, res, 'danger', 'New passwords are not matching.');
     }
   } else {
     // you must tell everything about the passwords
-    console.log('Something is missing... What happened??');
+    renderProfilePage(req, res, 'danger', 'Something is missing!');
   }
 });
 
@@ -111,13 +113,13 @@ router.post('/login', (req, res) => {
         req.session.user = getUserDetails.data.rows[0].id;
         res.redirect('/');
       } else {
-        renderPage(req, res, 'index', 'danger', 'Wrong password');
+        renderMainPage(req, res, 'danger', 'Wrong password');
       }
     } else {
-      renderPage(req, res, 'index', 'danger', 'User does not exist');
+      renderMainPage(req, res, 'danger', 'User does not exist');
     }
   } else {
-    renderPage(req, res, 'index', 'danger', 'Database error');
+    renderMainPage(req, res, 'danger', 'Database error');
   }
 });
 
@@ -150,9 +152,9 @@ router.post('/register', (req, res) => {
         if (password == password2) {
           const inserted = syncSql.mysql(sqlData, `INSERT INTO users (username, password, email, birth_date, language, register_date) VALUES('${username}', '${pwHash.generate(password)}', '${email}', '${birthdate}', '${languageselector}', '${getCurrentDate()}')`);
           if (inserted.success == false) {
-            renderPage(req, res, 'index', 'warning', 'Database error!');
+            renderMainPage(req, res, 'warning', 'Database error!');
           } else {
-            renderPage(req, res, 'index', 'success', 'Registration success!');
+            renderMainPage(req, res, 'success', 'Registration success!');
           }
           return;
         } else {
@@ -165,7 +167,7 @@ router.post('/register', (req, res) => {
       errorMessage += 'You can\'t leave anything empty!';
     }
   }
-  renderPage(req, res, 'index', 'danger', errorMessage);
+  renderMainPage(req, res, 'danger', errorMessage);
   return;
 });
 
@@ -178,11 +180,29 @@ function checkIfUserExists(userEmail) {
   }
 }
 
-function renderPage(req, res, pageURI, type, message) {
+function renderMainPage(req, res, type, message) {
   const marketAds = syncSql.mysql(sqlData, `SELECT market.*, users.username FROM market INNER JOIN users ON users.id=market.ownerid;`);
-  res.render(pageURI, {
+  res.render('index', {
     url: req.url,
     session: req.session.user,
+    marketAds: marketAds.data.rows,
+    alert: {
+      type: type,
+      message: message,
+    },
+  });
+}
+
+function renderProfilePage(req, res, type, message) {
+  const getProfileDetails = syncSql.mysql(sqlData, `SELECT * FROM users WHERE id='${req.session.user}'`);
+  const marketAds = syncSql.mysql(sqlData, `SELECT market.*, users.username FROM market INNER JOIN users ON users.id=market.ownerid WHERE ownerid='${req.session.user}'`);
+  if (getProfileDetails.data.rows[0].birth_date == '0000-00-00') {
+    getProfileDetails.data.rows[0].birth_date = undefined;
+  }
+  res.render('profile', {
+    url: req.url,
+    session: req.session.user,
+    userdata: getProfileDetails.data.rows[0],
     marketAds: marketAds.data.rows,
     alert: {
       type: type,
