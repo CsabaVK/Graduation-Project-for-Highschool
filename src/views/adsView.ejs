@@ -11,9 +11,13 @@
   <!-- Page Content -->
   <div class="container">
     <!-- Portfolio Item Heading -->
-    <h1 class="my-4 text-info"><%- marketAd.make %> <%- marketAd.model %>
-      <small class="text-info"><%- marketAd.title %></small>
-    </h1>
+    <div class="row">
+      <div class="col">
+        <h1 class="my-4 text-info"><%- marketAd.make %> <%- marketAd.model %>
+          <small class="text-info"><%- marketAd.title %></small> <span class=" text-success float-right"><%- marketAd.price %>€</span>
+        </h1>
+      </div>
+    </div>
 
     <!-- Portfolio Item Row -->
     <div class="row">
