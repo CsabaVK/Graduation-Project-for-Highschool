@@ -167,8 +167,18 @@ router.post('/register', (req, res) => {
   const password = req.body.password;
   const password2 = req.body.password;
   const email = req.body.email;
-  const birthdate = req.body.birth_date;
   const languageselector = 'English';
+
+  /* OPTIONAL PARAMETERS */
+  const birthdate = req.body.birth_date == '' ? '' : `'${req.body.birth_date}', `;
+  const phone = req.body.phone == '' ? '' :  `'${req.body.phone}', `;
+  const country = req.body.country == '' ? '' : `'${req.body.country}', `;
+
+  const birthdateSql = birthdate == '' ? '' : ', birth_date';
+  const phoneSql = phone == '' ? '' : ', phone';
+  const countrySql = country == '' ? '' : ', country';
+  /* OPTIONAL PARAMETERS END */
+
   let errorMessage = '';
   if (checkIfUserExists(email)) {
     errorMessage += 'The user already exists!';
@@ -176,7 +186,7 @@ router.post('/register', (req, res) => {
     if (email && password && password2) {
       if ((/^[a-zA-Z0-9]+([a-zA-Z0-9](_|-|.| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/.test(username)) && (/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/g.test(email)) && (/^(?=.*[a-z])(?=.*\d).{3,20}$/g.test(password))) {
         if (password == password2) {
-          const sqlQuery = birthdate == '' ? `INSERT INTO users (username, password, email, language, register_date) VALUES('${username}', '${pwHash.generate(password)}', '${email}', '${languageselector}', '${getCurrentDate()}')` : `INSERT INTO users (username, password, email, birth_date, language, register_date) VALUES('${username}', '${pwHash.generate(password)}', '${email}', '${birthdate}', '${languageselector}', '${getCurrentDate()}')`;
+          const sqlQuery = `INSERT INTO users (username, password, email, language${birthdateSql}${phoneSql}${countrySql}, register_date) VALUES('${username}', '${pwHash.generate(password)}', '${email}', '${languageselector}',${birthdate}${phone}${country} '${getCurrentDate()}')`;
           const inserted = syncSql.mysql(sqlData, sqlQuery);
           if (inserted.success == false) {
             renderMainPage(req, res, 'warning', 'Database error!');
