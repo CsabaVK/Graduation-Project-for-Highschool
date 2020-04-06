@@ -7,21 +7,24 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      
       <form method="POST" action="/account/changepicture" enctype="multipart/form-data">
+        
         <div class="modal-body text-center">
-          <strong class="mb-1">Only upload 1 picture!</strong>
+          <strong class="mb-1">Only upload 1 picture!</strong> <br>
+          <div class="btn btn-success upload-btn-wrapper mt-2">
+            <button class="btn p-0 border-0 text-white">Choose avatar</button>
+            <input type="file" name="photos">
+          </div>
         </div>
+
         <div class="modal-footer justify-content-center">
-          <!-- <a id="deleteAdLink"></a> -->
-          <!-- TODO: Upload btn -->
-            <div class="btn btn-success upload-btn-wrapper">
-              <button class="btn p-0 border-0">Upload pictures</button>
-              <input type="file" name="photos" multiple>
-            </div>
-            <!-- <button type="button" class="btn btn-primary">Upload</button> -->
+          <button type="submit" class="btn btn-primary">Upload</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </div>
+
       </form>
+
     </div>
   </div>
 </div>
