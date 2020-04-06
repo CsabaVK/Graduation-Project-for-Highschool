@@ -130,7 +130,9 @@
                               </div>
 
                           <% } else { %>
-                            <%- include('inc/marketAd', {marketAd: marketAd}); -%>
+                            <div class="col">
+                              <%- include('inc/marketAd', {marketAd: marketAd}); -%>
+                            </div>
                           <% } %>
                         <% }); %>
                       <% } %>
