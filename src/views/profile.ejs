@@ -15,6 +15,14 @@
     <%- include('inc/popups/changepassword') %>
   <% } %>
   <%- include('inc/basic/navbar'); -%>
+
+  <!-- ALERT -->
+  <% if (typeof alert != "undefined") { %>
+    <div class="alert alert-<%= alert.type %> m-0 h4 text-center" role="alert">
+      <strong><%= alert.message %></strong>
+    </div>
+  <% } %>
+
   <div class="container emp-profile" id="profileTheme">
     <form method="post">
       <div class="row mr-0">

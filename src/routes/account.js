@@ -150,7 +150,7 @@ router.post('/register', (req, res) => {
         if (password == password2) {
           const inserted = syncSql.mysql(sqlData, `INSERT INTO users (username, password, email, birth_date, language, register_date) VALUES('${username}', '${pwHash.generate(password)}', '${email}', '${birthdate}', '${languageselector}', '${getCurrentDate()}')`);
           if (inserted.success == false) {
-            renderPage(req, res, 'index', 'danger', 'Database error!');
+            renderPage(req, res, 'index', 'warning', 'Database error!');
           } else {
             renderPage(req, res, 'index', 'success', 'Registration success!');
           }
