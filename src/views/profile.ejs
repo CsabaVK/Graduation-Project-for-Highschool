@@ -2,22 +2,22 @@
 <html lang="en">
 
 <head>
-  <%- include('inc/basic/head'); -%>
+  <%- include('inc/all/head'); -%>
   <link rel="stylesheet" href="/public/custom/css/profile.css">
   <title>Car Clutch Club - Profile</title>
 </head>
 
 <body>
   <% if (session == userdata.id) { %>
-    <%- include('inc/popups/profileEditModal') %>
-    <%- include('inc/popups/deleteAreyousure') %>
-    <%- include('inc/popups/profileChangePicture') %>
-    <%- include('inc/popups/changepassword') %>
-    <%- include('inc/popups/profiletitleedit') %>
-    <!-- TODO: %- include('inc/popups/profileAdModify', {marketAd: marketAd}) % -->
-    <%- include('inc/popups/profileAdModify') %>
+    <%- include('inc/popups/account/editProfileModal') %>
+    <%- include('inc/popups/account/deleteAreYouSureModal') %>
+    <%- include('inc/popups/account/changePictureModal') %>
+    <%- include('inc/popups/account/changePasswordModal') %>
+    <%- include('inc/popups/account/openEditTilesModal') %>
+    <%- include('inc/popups/account/modifyAdModal') %>
   <% } %>
-  <%- include('inc/basic/navbar'); -%>
+  
+  <%- include('inc/all/navbar'); -%>
 
   <!-- ALERT -->
   <% if (typeof alert != "undefined") { %>
@@ -31,7 +31,7 @@
       <div class="row mr-0">
         <div class="col-md-4">
           <div class="profile-img">
-            <img class="rounded-pill" src="/public/img/uploads/users/<%- userdata.id %>.png" onerror="this.onerror=null;this.src='/public/img/uploads/avatars/erroravatar.png';" />
+            <img class="rounded-pill" src="/public/img/uploads/users/<%- userdata.id %>.png" onerror="this.onerror=null;this.src='/public/img/erroravatar.png';" />
           </div>
           <% if (session == userdata.id) { %>
           <div class="text-center pt-4">
@@ -123,7 +123,7 @@
                           <% if (session == marketAd.ownerid) { %>
 
                               <div class="col-11">
-                                  <%- include('inc/marketAd', {marketAd: marketAd}); -%>
+                                  <%- include('inc/marketAdCard', {marketAd: marketAd}); -%>
                               </div>
                               <div class="col-1 align-self-center p-0">
                                 
@@ -144,7 +144,7 @@
 
                           <% } else { %>
                             <div class="col">
-                              <%- include('inc/marketAd', {marketAd: marketAd}); -%>
+                              <%- include('inc/marketAdCard', {marketAd: marketAd}); -%>
                             </div>
                           <% } %>
                         <% }); %>
@@ -161,7 +161,7 @@
   </div>
   </form>
   </div>
-  <%- include('inc/basic/scripts'); -%>
+  <%- include('inc/all/scripts'); -%>
   <% if (userdata.birth_date) { %>
     <script>
       // script tag becuz of eslint error

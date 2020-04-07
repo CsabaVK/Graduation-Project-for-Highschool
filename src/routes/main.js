@@ -32,7 +32,7 @@ router.get('/marketad/:id', (req, res) => {
   const fs = require('fs');
   const photoNumber = fs.readdirSync(dir).length;
 
-  res.render('adsView', {
+  res.render('viewCurrentAd', {
     url: req.url,
     session: req.session.user,
     marketAd: marketAd.data.rows[0],

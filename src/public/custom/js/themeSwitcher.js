@@ -20,7 +20,7 @@ function switchTheme() {
 }
 
 function changePagesBackgrounds() {
-  if (window.location.pathname == '/') {
+  if (window.location.pathname == '/' || window.location.pathname == '/account/login' || window.location.pathname == '/account/register') {
     changeAdBackground();
   }
   if (document.URL.includes('profile')) {

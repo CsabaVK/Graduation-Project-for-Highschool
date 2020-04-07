@@ -2,13 +2,12 @@
 <html lang="en">
 
 <head>
-  <%- include('inc/basic/head'); -%>
-  <link rel="stylesheet" href="/public/custom/css/Sidebar.css">
+  <%- include('inc/all/head'); -%>
   <title>Car Clutch Club</title>
 </head>
 
 <body>
-  <%- include('inc/basic/navbar'); -%>
+  <%- include('inc/all/navbar'); -%>
 
   <% if (typeof alert != "undefined") { %>
     <div class="alert alert-<%= alert.type %> m-0 h4 text-center" role="alert">
@@ -17,12 +16,11 @@
   <% } %>
 
   <!-- Modal include -->
-  <%- include('inc/popups/sellCarModal') %>
+  <%- include('inc/popups/main/sellCarModal') %>
   
   <div class="content container">
     <% if (session) { %> 
     <div class="row">
-      <!-- <input name="btnAddMore" data-toggle="modal" data-target="#profileeditModal" value="Edit Profile" /> -->
       <button type="button" class="btn btn-block btn-success btn-lg mt-3 ml-3 mr-3 h-100" data-toggle="modal" data-target="#sellCarModal"><span class="fas fa-hand-holding-usd"></span>
         Sell your car
       </button>
@@ -41,13 +39,13 @@
     <div class="row">
       <div class="col">
         <% marketAds.forEach((marketAd) =>{ %>
-        <%- include('inc/marketAd', {marketAd: marketAd}); -%>
+        <%- include('inc/marketAdCard', {marketAd: marketAd}); -%>
         <% }); %>
       </div>
     </div>
     <% } %>
   </div>
-  <%- include('inc/basic/scripts'); -%>
+  <%- include('inc/all/scripts'); -%>
   <!-- SIDE BAR SCRiPT -->
   <script type="text/javascript">
     $("[data-toggle=\"tooltip\"]").tooltip();

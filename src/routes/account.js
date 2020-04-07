@@ -12,14 +12,6 @@ const upload = multer({dest: '/uploads'});
 
 const sqlData = require('../sqldata.json');
 
-router.get('/', (req, res) => {
-  const marketAds = require('../market.example.json');
-  res.render('index', {
-    url: req.url,
-    marketAds: marketAds,
-  });
-});
-
 router.get('/profile', (req, res) => {
   if (req.session.user) {
     const getProfileDetails = syncSql.mysql(sqlData, `SELECT * FROM users WHERE id='${req.session.user}'`);
