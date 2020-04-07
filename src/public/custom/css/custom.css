@@ -34,3 +34,8 @@
  .embed-responsive .card-img{
   object-fit: cover;
 }
+
+/* FOR MOBILE VIEW -> MODALS ARE SCROLLABLE IF CAN'T FIT ON THE SCREEN */
+.modal{
+  overflow-y: auto;
+}
