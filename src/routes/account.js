@@ -219,7 +219,7 @@ router.post('/register', (req, res) => {
 
   /* OPTIONAL PARAMETERS */
   const birthdate = req.body.birth_date == '' ? '' : `'${req.body.birth_date}', `;
-  const phone = req.body.phone == '' ? '' :  `'${req.body.phone}', `;
+  const phone = req.body.phone == '' ? '' : `'${req.body.phone}', `;
   const country = req.body.country == '' ? '' : `'${req.body.country}', `;
 
   const birthdateSql = birthdate == '' ? '' : ', birth_date';
