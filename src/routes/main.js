@@ -76,32 +76,37 @@ router.post('/newmarketad', upload.array('photos', 6), (req, res) => {
 
   // console.log(result);
   // upload pictures
-  const fs = require('fs');
-  const path = require('path');
-  const dir = path.join(__dirname, '../public/img/uploads/market/' + result.data.rows.insertId);
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir);
-  }
-  // iterate over each uploaded file
-  for (let i = 0; i < req.files.length; i++) {
-    const tempPath = req.files[i].path;
-    const originalName = req.files[i].originalname;
-    const extension = path.extname(originalName).toLowerCase();
+  if (req.files.length != 0) {
+    const fs = require('fs');
+    const path = require('path');
+    const dir = path.join(__dirname, '../public/img/uploads/market/' + result.data.rows.insertId);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir);
+    }
+    // iterate over each uploaded file
+    for (let i = 0; i < req.files.length; i++) {
+      const tempPath = req.files[i].path;
+      const originalName = req.files[i].originalname;
+      const extension = path.extname(originalName).toLowerCase();
 
-    if (extension === '.png' || extension === '.jpg' || extension === '.jpeg') {
-      const targetPath = path.join(__dirname, '../public/img/uploads/market/' + result.data.rows.insertId + '/' + i + '.png');
-      fs.rename(tempPath, targetPath, (err) => {
+      if (extension === '.png' || extension === '.jpg' || extension === '.jpeg') {
+        const targetPath = path.join(__dirname, '../public/img/uploads/market/' + result.data.rows.insertId + '/' + i + '.png');
+        // Move files
+        fs.rename(tempPath, targetPath, (err) => {
         // console.log('File uploaded: ' + targetPath);
-      });
-    } else {
-      fs.unlink(tempPath, (err) => {
+        });
+      } else {
+        // Delete files if not photo
+        fs.unlink(tempPath, (err) => {
         // console.log('Only .png files are allowed!');
-      });
+        });
+      }
     }
   }
   res.redirect('/marketad/' + result.data.rows.insertId);
 });
 
+// Used to write today date to upload marketad
 function getCurrentDate() {
   let today = new Date();
   const dd = String(today.getDate()).padStart(2, '0');

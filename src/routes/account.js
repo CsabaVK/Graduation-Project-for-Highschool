@@ -34,9 +34,11 @@ router.get('/profile', (req, res) => {
 });
 
 router.get('/profile/:id', (req, res) => {
+  // Checks if your profile
   if (req.session.user == req.params.id) {
     return res.redirect('/account/profile');
   }
+  // if its 0 redirect to /
   const getProfileDetails = syncSql.mysql(sqlData, `SELECT * FROM users WHERE id='${req.params.id}'`);
   if (getProfileDetails.data.rows.length == 0) {
     return res.redirect('/');
@@ -63,6 +65,7 @@ router.post('/changepicture', upload.single('photos'), (req, res) => {
     const targetPath = path.join(__dirname, '../public/img/uploads/users/' + req.session.user + '.png');
     fs.rename(tempPath, targetPath, (err) => {
       if (err) {
+        // linux permission error
         renderProfilePage(req, res, 'warning', 'Something went wrong. Try again later.');
       } else {
         res.redirect('/account/profile');
@@ -215,6 +218,7 @@ router.post('/register', (req, res) => {
   const password = req.body.password;
   const password2 = req.body.password;
   const email = req.body.email;
+  // LITERALLY THE BEST ROW
   const languageselector = 'English';
 
   /* OPTIONAL PARAMETERS */
@@ -266,6 +270,7 @@ function checkIfUserExists(userEmail) {
   }
 }
 
+// ALERTS
 function renderMainPage(req, res, type, message) {
   const marketAds = syncSql.mysql(sqlData, `SELECT market.*, users.username FROM market INNER JOIN users ON users.id=market.ownerid;`);
   res.render('index', {

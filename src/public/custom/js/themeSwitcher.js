@@ -20,6 +20,7 @@ function switchTheme() {
 }
 
 function changePagesBackgrounds() {
+  // eslint-disable-next-line max-len
   if (window.location.pathname == '/' || window.location.pathname == '/account/login' || window.location.pathname == '/account/register') {
     changeAdBackground();
   }
